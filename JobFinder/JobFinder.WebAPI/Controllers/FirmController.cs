@@ -84,5 +84,39 @@ namespace JobFinder.WebAPI.Controllers
 
             return NoContent();
         }
+
+
+        // GET: api/firm/search?term=test&page=1&pageSize=10
+        [HttpGet("search")]
+        public async Task<IActionResult> Search(
+            string? term,
+            int page = 1,
+            int pageSize = 10)
+        {
+            var query = _context.Firms.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(term))
+            {
+                query = query.Where(f =>
+                    f.FirmName.Contains(term) ||
+                    (f.Description != null && f.Description.Contains(term)));
+            }
+
+            var totalCount = await query.CountAsync();
+
+            var firms = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return Ok(new
+            {
+                TotalCount = totalCount,
+                Page = page,
+                PageSize = pageSize,
+                Data = firms
+            });
+        }
+
     }
 }
