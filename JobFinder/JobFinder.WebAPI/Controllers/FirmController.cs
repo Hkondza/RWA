@@ -53,25 +53,22 @@ namespace JobFinder.WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Firm firm)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             if (id != firm.IDFirm)
-                return BadRequest();
+                return BadRequest("ID u URL-u i ID u bodyju se ne podudaraju.");
+
+            var exists = await _context.Firms.AnyAsync(f => f.IDFirm == id);
+            if (!exists)
+                return NotFound();
 
             _context.Entry(firm).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.Firms.Any(f => f.IDFirm == id))
-                    return NotFound();
-
-                throw;
-            }
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
 
         // DELETE: api/firm/5
         [HttpDelete("{id}")]

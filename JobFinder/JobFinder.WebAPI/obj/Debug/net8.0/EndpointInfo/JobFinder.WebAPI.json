@@ -178,6 +178,10 @@
         ],
         "type": "object",
         "properties": {
+          "idFirm": {
+            "type": "integer",
+            "format": "int32"
+          },
           "firmName": {
             "maxLength": 100,
             "minLength": 0,

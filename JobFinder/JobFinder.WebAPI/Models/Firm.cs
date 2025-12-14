@@ -10,7 +10,6 @@ namespace JobFinder.WebAPI.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public int IDFirm { get; set; }
 
         [Required]
