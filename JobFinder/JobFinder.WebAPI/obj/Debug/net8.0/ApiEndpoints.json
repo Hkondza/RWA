@@ -105,225 +105,25 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
-    "Method": "GetAll",
-    "RelativePath": "api/JobType",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
-    "Method": "Create",
-    "RelativePath": "api/JobType",
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "Apply",
+    "RelativePath": "api/JobApplication",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "jobType",
-        "Type": "JobFinder.WebAPI.Models.JobType",
+        "Name": "application",
+        "Type": "JobFinder.WebAPI.Models.JobApplication",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
-    "Method": "GetById",
-    "RelativePath": "api/JobType/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
-    "Method": "Update",
-    "RelativePath": "api/JobType/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "jobType",
-        "Type": "JobFinder.WebAPI.Models.JobType",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
-    "Method": "Delete",
-    "RelativePath": "api/JobType/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
-    "Method": "GetAll",
-    "RelativePath": "api/Location",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
-    "Method": "Create",
-    "RelativePath": "api/Location",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "location",
-        "Type": "JobFinder.WebAPI.Models.Location",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
-    "Method": "GetById",
-    "RelativePath": "api/Location/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
-    "Method": "Update",
-    "RelativePath": "api/Location/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "location",
-        "Type": "JobFinder.WebAPI.Models.Location",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
-    "Method": "Delete",
-    "RelativePath": "api/Location/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.RequestController",
-    "Method": "GetAll",
-    "RelativePath": "api/Request",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.RequestController",
-    "Method": "Create",
-    "RelativePath": "api/Request",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "JobFinder.WebAPI.Models.Request",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.RequestController",
-    "Method": "GetById",
-    "RelativePath": "api/Request/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.RequestController",
-    "Method": "Delete",
-    "RelativePath": "api/Request/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.RequestController",
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
     "Method": "UpdateStatus",
-    "RelativePath": "api/Request/{id}/status",
+    "RelativePath": "api/JobApplication/{id}/status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -336,6 +136,301 @@
       {
         "Name": "status",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "GetByOffer",
+    "RelativePath": "api/JobApplication/by-offer/{jobOfferId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobOfferId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "GetByUser",
+    "RelativePath": "api/JobApplication/by-user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
+    "Method": "GetAll",
+    "RelativePath": "api/JobOffer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "term",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "locationId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "jobTypeId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
+    "Method": "Create",
+    "RelativePath": "api/JobOffer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "offer",
+        "Type": "JobFinder.WebAPI.Models.JobOffer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
+    "Method": "GetById",
+    "RelativePath": "api/JobOffer/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
+    "Method": "Update",
+    "RelativePath": "api/JobOffer/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "offer",
+        "Type": "JobFinder.WebAPI.Models.JobOffer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
+    "Method": "Delete",
+    "RelativePath": "api/JobOffer/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
+    "Method": "GetAll",
+    "RelativePath": "api/JobType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
+    "Method": "Create",
+    "RelativePath": "api/JobType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobType",
+        "Type": "JobFinder.WebAPI.Models.JobType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
+    "Method": "GetById",
+    "RelativePath": "api/JobType/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
+    "Method": "Update",
+    "RelativePath": "api/JobType/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "jobType",
+        "Type": "JobFinder.WebAPI.Models.JobType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
+    "Method": "Delete",
+    "RelativePath": "api/JobType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
+    "Method": "GetAll",
+    "RelativePath": "api/Location",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
+    "Method": "Create",
+    "RelativePath": "api/Location",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "location",
+        "Type": "JobFinder.WebAPI.Models.Location",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
+    "Method": "GetById",
+    "RelativePath": "api/Location/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
+    "Method": "Update",
+    "RelativePath": "api/Location/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "location",
+        "Type": "JobFinder.WebAPI.Models.Location",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LocationController",
+    "Method": "Delete",
+    "RelativePath": "api/Location/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
