@@ -9,13 +9,19 @@ namespace JobFinder.WebAPI.Models
         [Key]
         public int IDRequest { get; set; }
 
+        [Required]
         public int UserID { get; set; }
+
+        [Required]
         public int FirmID { get; set; }
+
+        [Required]
+        public int LocationID { get; set; }   // ⬅⬅ NOVO
 
         public string? Description { get; set; }
 
         [Required]
-        public string Status { get; set; }
+        public string Status { get; set; } = "Created";
 
         public DateTime CreatedAt { get; set; }
     }
