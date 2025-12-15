@@ -34,15 +34,8 @@ namespace JobFinder.WebAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto dto)
         {
-            try
-            {
-                var user = await _service.LoginAsync(dto);
-                return Ok(user);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _service.LoginAsync(dto));
         }
+
     }
 }

@@ -3,6 +3,9 @@ using JobFinder.WebAPI.DTOs.User;
 using JobFinder.WebAPI.Models;
 using JobFinder.WebAPI.Repositories.Interfaces;
 using JobFinder.WebAPI.Services.Interfaces;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -13,11 +16,15 @@ namespace JobFinder.WebAPI.Services
         private readonly IUserRepository _repo;
         private readonly IMapper _mapper;
 
-        public UserService(IUserRepository repo, IMapper mapper)
+        private readonly IConfiguration _config;
+
+        public UserService(IUserRepository repo, IMapper mapper, IConfiguration config)
         {
             _repo = repo;
             _mapper = mapper;
+            _config = config;
         }
+
 
         public async Task<UserReadDto> RegisterAsync(UserRegisterDto dto)
         {
@@ -38,11 +45,42 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<UserReadDto>(created);
         }
 
-        public async Task<UserReadDto> LoginAsync(UserLoginDto dto)
+        
+
+
+        private string GenerateJwtToken(Models.User user)
+        {
+            var claims = new[]
+            {
+        new Claim(ClaimTypes.NameIdentifier, user.IDUser.ToString()),
+        new Claim(ClaimTypes.Email, user.Email),
+        new Claim(ClaimTypes.Role, user.Role)
+    };
+
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(_config["Jwt:Key"])
+            );
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: _config["Jwt:Issuer"],
+                audience: _config["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(
+                    int.Parse(_config["Jwt:ExpiresInMinutes"])
+                ),
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public async Task<LoginResponseDto> LoginAsync(UserLoginDto dto)
         {
             var user = await _repo.GetByEmailAsync(dto.Email);
             if (user == null)
-                throw new Exception("Neispravan email ili lozinka.");
+                throw new Exception("Neispravni podaci.");
 
             using var sha = SHA256.Create();
             var hash = Convert.ToBase64String(
@@ -50,9 +88,16 @@ namespace JobFinder.WebAPI.Services
             );
 
             if (user.PasswordHash != hash)
-                throw new Exception("Neispravan email ili lozinka.");
+                throw new Exception("Neispravni podaci.");
 
-            return _mapper.Map<UserReadDto>(user);
+            var token = GenerateJwtToken(user);
+
+            return new LoginResponseDto
+            {
+                Token = token,
+                User = _mapper.Map<UserReadDto>(user)
+            };
         }
+
     }
 }
