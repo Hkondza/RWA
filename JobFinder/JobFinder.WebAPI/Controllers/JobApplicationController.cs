@@ -1,7 +1,6 @@
-﻿using JobFinder.WebAPI.Data;
-using JobFinder.WebAPI.Models;
+﻿using JobFinder.WebAPI.DTOs.JobApplication;
+using JobFinder.WebAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace JobFinder.WebAPI.Controllers
 {
@@ -9,83 +8,40 @@ namespace JobFinder.WebAPI.Controllers
     [Route("api/[controller]")]
     public class JobApplicationController : ControllerBase
     {
-        private readonly JobFinderDbContext _context;
+        private readonly IJobApplicationService _service;
 
-        public JobApplicationController(JobFinderDbContext context)
+        public JobApplicationController(IJobApplicationService service)
         {
-            _context = context;
+            _service = service;
+        }
+
+        // POST: api/jobapplication
+        [HttpPost]
+        public async Task<IActionResult> Apply(JobApplicationCreateDto dto)
+        {
+            try
+            {
+                var result = await _service.ApplyAsync(dto);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET: api/jobapplication/by-offer/5
         [HttpGet("by-offer/{jobOfferId}")]
         public async Task<IActionResult> GetByOffer(int jobOfferId)
         {
-            var apps = await _context.JobApplications
-                .Where(a => a.JobOfferID == jobOfferId)
-                .ToListAsync();
-
-            return Ok(apps);
+            return Ok(await _service.GetByOfferAsync(jobOfferId));
         }
 
         // GET: api/jobapplication/by-user/5
         [HttpGet("by-user/{userId}")]
         public async Task<IActionResult> GetByUser(int userId)
         {
-            var apps = await _context.JobApplications
-                .Where(a => a.UserID == userId)
-                .ToListAsync();
-
-            return Ok(apps);
-        }
-
-        // POST: api/jobapplication
-        [HttpPost]
-        public async Task<IActionResult> Apply(JobApplication application)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            if (!await _context.Users.AnyAsync(u => u.IDUser == application.UserID))
-                return BadRequest("User ne postoji.");
-
-            if (!await _context.JobOffers.AnyAsync(o =>
-                o.IDJobOffer == application.JobOfferID && o.IsActive))
-                return BadRequest("Oglas ne postoji ili nije aktivan.");
-
-            // zabrana duple prijave
-            var exists = await _context.JobApplications.AnyAsync(a =>
-                a.JobOfferID == application.JobOfferID &&
-                a.UserID == application.UserID);
-
-            if (exists)
-                return BadRequest("Već ste se prijavili na ovaj oglas.");
-
-            application.Status = "Applied";
-            application.AppliedAt = DateTime.Now;
-
-            _context.JobApplications.Add(application);
-            await _context.SaveChangesAsync();
-
-            return Ok(application);
-        }
-
-        // PUT: api/jobapplication/5/status
-        [HttpPut("{id}/status")]
-        public async Task<IActionResult> UpdateStatus(int id, [FromBody] string status)
-        {
-            var app = await _context.JobApplications.FindAsync(id);
-
-            if (app == null)
-                return NotFound();
-
-            var allowed = new[] { "Applied", "Accepted", "Rejected" };
-            if (!allowed.Contains(status))
-                return BadRequest("Neispravan status.");
-
-            app.Status = status;
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok(await _service.GetByUserAsync(userId));
         }
     }
 }

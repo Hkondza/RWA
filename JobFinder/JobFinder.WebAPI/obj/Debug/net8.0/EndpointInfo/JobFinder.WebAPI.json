@@ -169,6 +169,37 @@
         }
       }
     },
+    "/api/JobApplication": {
+      "post": {
+        "tags": [
+          "JobApplication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobApplicationCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobApplicationCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobApplicationCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/JobApplication/by-offer/{jobOfferId}": {
       "get": {
         "tags": [
@@ -208,79 +239,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/JobApplication": {
-      "post": {
-        "tags": [
-          "JobApplication"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobApplication"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobApplication"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobApplication"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/JobApplication/{id}/status": {
-      "put": {
-        "tags": [
-          "JobApplication"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -645,18 +603,13 @@
         },
         "additionalProperties": false
       },
-      "JobApplication": {
+      "JobApplicationCreateDto": {
         "required": [
           "jobOfferID",
-          "status",
           "userID"
         ],
         "type": "object",
         "properties": {
-          "idJobApplication": {
-            "type": "integer",
-            "format": "int32"
-          },
           "jobOfferID": {
             "type": "integer",
             "format": "int32"
@@ -668,14 +621,6 @@
           "message": {
             "type": "string",
             "nullable": true
-          },
-          "status": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "appliedAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
