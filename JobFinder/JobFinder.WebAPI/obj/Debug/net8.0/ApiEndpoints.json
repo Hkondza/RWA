@@ -180,33 +180,7 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "term",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "locationId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "jobTypeId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -218,8 +192,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "offer",
-        "Type": "JobFinder.WebAPI.Models.JobOffer",
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.JobOffer.JobOfferCreateDto",
         "IsRequired": true
       }
     ],
@@ -230,43 +204,6 @@
     "Method": "GetById",
     "RelativePath": "api/JobOffer/{id}",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
-    "Method": "Update",
-    "RelativePath": "api/JobOffer/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "offer",
-        "Type": "JobFinder.WebAPI.Models.JobOffer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
-    "Method": "Delete",
-    "RelativePath": "api/JobOffer/{id}",
-    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -293,49 +293,6 @@
         "tags": [
           "JobOffer"
         ],
-        "parameters": [
-          {
-            "name": "term",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "locationId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "jobTypeId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
-            }
-          },
-          {
-            "name": "pageSize",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 10
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -350,17 +307,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobOffer"
+                "$ref": "#/components/schemas/JobOfferCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobOffer"
+                "$ref": "#/components/schemas/JobOfferCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/JobOffer"
+                "$ref": "#/components/schemas/JobOfferCreateDto"
               }
             }
           }
@@ -374,67 +331,6 @@
     },
     "/api/JobOffer/{id}": {
       "get": {
-        "tags": [
-          "JobOffer"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "JobOffer"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobOffer"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobOffer"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobOffer"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
         "tags": [
           "JobOffer"
         ],
@@ -784,7 +680,7 @@
         },
         "additionalProperties": false
       },
-      "JobOffer": {
+      "JobOfferCreateDto": {
         "required": [
           "description",
           "firmID",
@@ -794,10 +690,6 @@
         ],
         "type": "object",
         "properties": {
-          "idJobOffer": {
-            "type": "integer",
-            "format": "int32"
-          },
           "firmID": {
             "type": "integer",
             "format": "int32"
@@ -811,8 +703,7 @@
             "format": "int32"
           },
           "title": {
-            "maxLength": 200,
-            "minLength": 0,
+            "minLength": 1,
             "type": "string"
           },
           "description": {
@@ -822,13 +713,6 @@
           "salary": {
             "type": "string",
             "nullable": true
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false

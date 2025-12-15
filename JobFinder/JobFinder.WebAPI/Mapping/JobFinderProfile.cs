@@ -1,0 +1,16 @@
+﻿using AutoMapper;
+using JobFinder.WebAPI.DTOs.JobOffer;
+using JobFinder.WebAPI.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace JobFinder.WebAPI.Mapping
+{
+    public class JobFinderProfile : Profile
+    {
+        public JobFinderProfile()
+        {
+            CreateMap<JobOffer, JobOfferReadDto>();
+            CreateMap<JobOfferCreateDto, JobOffer>();
+        }
+    }
+}
