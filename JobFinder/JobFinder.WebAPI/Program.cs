@@ -28,6 +28,10 @@ builder.Services.AddScoped<IJobOfferService, JobOfferService>();
 builder.Services.AddScoped<IJobApplicationRepository, JobApplicationRepository>();
 builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

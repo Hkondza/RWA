@@ -351,5 +351,37 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/User/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.User.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.UserController",
+    "Method": "Register",
+    "RelativePath": "api/User/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.User.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
