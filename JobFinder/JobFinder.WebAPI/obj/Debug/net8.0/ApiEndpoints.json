@@ -353,6 +353,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LogsController",
+    "Method": "Count",
+    "RelativePath": "api/Logs/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.LogsController",
+    "Method": "GetLast",
+    "RelativePath": "api/Logs/get/{n}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "JobFinder.WebAPI.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/User/login",

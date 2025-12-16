@@ -1,4 +1,5 @@
 ﻿using JobFinder.WebAPI.Data;
+using JobFinder.WebAPI.Helpers;
 using JobFinder.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -46,7 +47,14 @@ namespace JobFinder.WebAPI.Controllers
             _context.Firms.Add(firm);
             await _context.SaveChangesAsync();
 
+            await LogHelper.WriteAsync(
+                _context,
+                "INFO",
+                $"Firm created. ID={firm.IDFirm}"
+            );
+
             return CreatedAtAction(nameof(GetById), new { id = firm.IDFirm }, firm);
+
         }
 
         // PUT: api/firm/5
@@ -66,7 +74,14 @@ namespace JobFinder.WebAPI.Controllers
             _context.Entry(firm).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
+            await LogHelper.WriteAsync(
+                _context,
+                "INFO",
+                $"Firm updated. ID={firm.IDFirm}"
+            );
+
             return NoContent();
+
         }
 
 
@@ -82,7 +97,14 @@ namespace JobFinder.WebAPI.Controllers
             _context.Firms.Remove(firm);
             await _context.SaveChangesAsync();
 
+            await LogHelper.WriteAsync(
+                _context,
+                "INFO",
+                $"Firm deleted. ID={firm.IDFirm}"
+            );
+
             return NoContent();
+
         }
 
 

@@ -40,6 +40,18 @@ ALTER TABLE Firm
 ADD CONSTRAINT FK_Firm_JobType
 FOREIGN KEY (JobTypeID) REFERENCES JobType(IDJobType);
 
+------------------------------------------------------
+-- TABLICA: Log
+------------------------------------------------------
+
+CREATE TABLE Log
+(
+    Id INT IDENTITY PRIMARY KEY,
+    Timestamp DATETIME NOT NULL,
+    Level NVARCHAR(50) NOT NULL,
+    Message NVARCHAR(MAX) NOT NULL
+);
+
 
 ------------------------------------------------------
 -- TABLICA: Users
@@ -253,8 +265,6 @@ VALUES
  N'https://www.adaptacijemax.hr',
  10);
 
- SELECT * FROM Firm
- GO
 
 
 /*		
