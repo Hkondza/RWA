@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using JobFinder.WebAPI.Data;
 using JobFinder.WebAPI.DTOs.JobOffer;
+using JobFinder.WebAPI.Helpers;
 using JobFinder.WebAPI.Models;
 using JobFinder.WebAPI.Repositories.Interfaces;
 using JobFinder.WebAPI.Services.Interfaces;
@@ -10,11 +12,13 @@ namespace JobFinder.WebAPI.Services
     {
         private readonly IJobOfferRepository _repo;
         private readonly IMapper _mapper;
+        private readonly JobFinderDbContext _context;
 
-        public JobOfferService(IJobOfferRepository repo, IMapper mapper)
+        public JobOfferService(IJobOfferRepository repo, IMapper mapper, JobFinderDbContext context)
         {
             _repo = repo;
             _mapper = mapper;
+            _context = context;
         }
 
         public async Task<List<JobOfferReadDto>> GetAllAsync()
@@ -36,6 +40,11 @@ namespace JobFinder.WebAPI.Services
             entity.IsActive = true;
 
             var created = await _repo.CreateAsync(entity);
+            await LogHelper.WriteAsync(
+           _context,
+           "INFO",
+           $"JobOffer created. ID={created.IDJobOffer}, FirmID={created.FirmID}, JobTypeID={created.JobTypeID}"
+       );
             return _mapper.Map<JobOfferReadDto>(created);
         }
     }

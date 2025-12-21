@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using JobFinder.WebAPI.Data;
 using JobFinder.WebAPI.DTOs.User;
+using JobFinder.WebAPI.Helpers;
 using JobFinder.WebAPI.Models;
 using JobFinder.WebAPI.Repositories.Interfaces;
 using JobFinder.WebAPI.Services.Interfaces;
@@ -17,35 +19,42 @@ namespace JobFinder.WebAPI.Services
         private readonly IMapper _mapper;
 
         private readonly IConfiguration _config;
+        private readonly JobFinderDbContext _context;
 
-        public UserService(IUserRepository repo, IMapper mapper, IConfiguration config)
+        public UserService(IUserRepository repo, IMapper mapper, IConfiguration config, JobFinderDbContext context)
         {
             _repo = repo;
             _mapper = mapper;
             _config = config;
+            _context = context;
         }
 
 
         public async Task<UserReadDto> RegisterAsync(UserRegisterDto dto)
         {
             if (await _repo.ExistsAsync(dto.Email, dto.Username))
+            {
+                await LogHelper.WriteAsync(
+                    _context,
+                    "ERROR",
+                    $"User registration failed. Email={dto.Email}, Username={dto.Username}"
+                );
+
                 throw new Exception("Korisnik već postoji.");
+            }
 
             var user = _mapper.Map<User>(dto);
-
-            // Dummy hash (OK za projekt)
-            using var sha = SHA256.Create();
-            user.PasswordHash = Convert.ToBase64String(
-                sha.ComputeHash(Encoding.UTF8.GetBytes(dto.Password))
-            );
-
+            user.PasswordHash = PasswordHelper.HashPassword(dto.Password);
             user.Role = "User";
 
             var created = await _repo.CreateAsync(user);
+            await LogHelper.WriteAsync(
+                    _context,
+                "INFO",
+              $"User registered. ID={created.IDUser}, Email={created.Email}"
+                  );
             return _mapper.Map<UserReadDto>(created);
         }
-
-        
 
 
         private string GenerateJwtToken(Models.User user)
@@ -80,17 +89,39 @@ namespace JobFinder.WebAPI.Services
         {
             var user = await _repo.GetByEmailAsync(dto.Email);
             if (user == null)
+            {
+                await LogHelper.WriteAsync(
+                    _context,
+                    "ERROR",
+                    $"Login failed. Email={dto.Email}"
+                );
+
                 throw new Exception("Neispravni podaci.");
+            }
 
             using var sha = SHA256.Create();
             var hash = Convert.ToBase64String(
                 sha.ComputeHash(Encoding.UTF8.GetBytes(dto.Password))
             );
 
-            if (user.PasswordHash != hash)
+            if (!PasswordHelper.VerifyPassword(dto.Password, user.PasswordHash))
+            {
+                await LogHelper.WriteAsync(
+                    _context,
+                    "ERROR",
+                    $"Login failed (wrong password). UserID={user.IDUser}"
+                );
+
                 throw new Exception("Neispravni podaci.");
+            }
 
             var token = GenerateJwtToken(user);
+
+            await LogHelper.WriteAsync(
+                _context,
+                "INFO",
+                $"User logged in. ID={user.IDUser}, Email={user.Email}"
+            );
 
             return new LoginResponseDto
             {
@@ -98,6 +129,7 @@ namespace JobFinder.WebAPI.Services
                 User = _mapper.Map<UserReadDto>(user)
             };
         }
+
 
     }
 }
