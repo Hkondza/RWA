@@ -1,5 +1,6 @@
 ﻿using JobFinder.WebAPI.Data;
 using JobFinder.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,7 @@ namespace JobFinder.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles ="Admin")]
     public class LogsController : ControllerBase
     {
         private readonly JobFinderDbContext _context;

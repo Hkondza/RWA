@@ -44,6 +44,10 @@ builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddScoped < IFirmRepository, FirmRepository>();
+builder.Services.AddScoped<IFirmService, FirmService>();
+
+
 // --------------------
 // JWT Authentication
 // --------------------

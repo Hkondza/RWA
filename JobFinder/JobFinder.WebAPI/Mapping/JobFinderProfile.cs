@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JobFinder.WebAPI.DTOs.Firm;
 using JobFinder.WebAPI.DTOs.JobApplication;
 using JobFinder.WebAPI.DTOs.JobOffer;
 using JobFinder.WebAPI.DTOs.User;
@@ -17,6 +18,8 @@ namespace JobFinder.WebAPI.Mapping
             CreateMap<JobApplication, JobApplicationReadDto>();
             CreateMap<UserRegisterDto, User>();
             CreateMap<User, UserReadDto>();
+            CreateMap<Firm,FirmReadDto>();
+            CreateMap<FirmCreateDto, Firm>();
         }
     }
 }

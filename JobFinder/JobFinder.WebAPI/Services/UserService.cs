@@ -45,6 +45,7 @@ namespace JobFinder.WebAPI.Services
 
             var user = _mapper.Map<User>(dto);
             user.PasswordHash = PasswordHelper.HashPassword(dto.Password);
+            //ovo ce tribat osigurat nekako !!!
             user.Role = "User";
 
             var created = await _repo.CreateAsync(user);
@@ -57,7 +58,7 @@ namespace JobFinder.WebAPI.Services
         }
 
 
-        private string GenerateJwtToken(Models.User user)
+        private string GenerateJwtToken(User user)
         {
             var claims = new[]
             {
@@ -84,7 +85,7 @@ namespace JobFinder.WebAPI.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
+        
         public async Task<LoginResponseDto> LoginAsync(UserLoginDto dto)
         {
             var user = await _repo.GetByEmailAsync(dto.Email);

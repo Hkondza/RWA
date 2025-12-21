@@ -10,6 +10,33 @@
         "tags": [
           "Firm"
         ],
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -24,17 +51,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Firm"
+                "$ref": "#/components/schemas/FirmCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Firm"
+                "$ref": "#/components/schemas/FirmCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Firm"
+                "$ref": "#/components/schemas/FirmCreateDto"
               }
             }
           }
@@ -87,17 +114,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Firm"
+                "$ref": "#/components/schemas/FirmUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Firm"
+                "$ref": "#/components/schemas/FirmUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Firm"
+                "$ref": "#/components/schemas/FirmUpdateDto"
               }
             }
           }
@@ -120,45 +147,6 @@
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Firm/search": {
-      "get": {
-        "tags": [
-          "Firm"
-        ],
-        "parameters": [
-          {
-            "name": "term",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
-            }
-          },
-          {
-            "name": "pageSize",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 10
             }
           }
         ],
@@ -660,32 +648,50 @@
   },
   "components": {
     "schemas": {
-      "Firm": {
+      "FirmCreateDto": {
         "required": [
-          "firmName"
+          "firmName",
+          "jobTypeID"
         ],
         "type": "object",
         "properties": {
-          "idFirm": {
-            "type": "integer",
-            "format": "int32"
-          },
           "firmName": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
           },
           "email": {
             "type": "string",
             "format": "email",
             "nullable": true
           },
-          "phoneNumber": {
+          "websiteUrl": {
             "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "jobTypeID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FirmUpdateDto": {
+        "required": [
+          "firmName",
+          "jobTypeID"
+        ],
+        "type": "object",
+        "properties": {
+          "firmName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
             "nullable": true
           },
           "websiteUrl": {
