@@ -1,5 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using JobFinder.WebApp.ViewModels.Auth
+@model RegisterVM
+
+<h2>Registracija</h2>
+
+<form asp-action="Register" method="post">
+
+    <div>
+        <label>Korisničko ime</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div>
+        <label>Lozinka</label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+
+    <div>
+        <label>Tip korisnika</label>
+        <select asp-for="UserType">
+            <option value="">-- odaberi --</option>
+            <option value="Employer">Employer</option>
+            <option value="Employee">Employee</option>
+        </select>
+        <span asp-validation-for="UserType"></span>
+    </div>
+
+    @if (Model?.ErrorMessage != null)
+    {
+        <p style="color:red">@Model.ErrorMessage</p>
+    }
+
+    <button type="submit">Registriraj se</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
