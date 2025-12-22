@@ -25,6 +25,13 @@ namespace JobFinder.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM vm)
         {
+
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
+
+
             if (!ModelState.IsValid)
                 return View(vm);
 
