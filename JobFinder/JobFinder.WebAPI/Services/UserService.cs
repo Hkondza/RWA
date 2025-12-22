@@ -45,8 +45,22 @@ namespace JobFinder.WebAPI.Services
 
             var user = _mapper.Map<User>(dto);
             user.PasswordHash = PasswordHelper.HashPassword(dto.Password);
+
             //ovo ce tribat osigurat nekako !!!
-            user.Role = "User";
+            if (dto.UserType != "Employer" && dto.UserType != "Employee") 
+            {
+                await LogHelper.WriteAsync(
+                  _context,
+                  "ERROR",
+                  $"User registration failed – invalid user type '{dto.UserType}'. Email={dto.Email}, Username={dto.Username}"
+              );
+
+                throw new Exception("Neispravan tip korisnika. Dozvoljene vrijednosti su Employer ili Employee.");
+
+            }
+
+            user.Role = dto.UserType;
+
 
             var created = await _repo.CreateAsync(user);
             await LogHelper.WriteAsync(
