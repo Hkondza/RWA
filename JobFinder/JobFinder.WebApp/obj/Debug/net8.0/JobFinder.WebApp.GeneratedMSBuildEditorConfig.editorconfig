@@ -20,28 +20,44 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Application/MyApplications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25cTXlBcHBsaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Firm/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlybVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/JobOffer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/JobOffer/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/JobOffer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iT2ZmZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Shared/_Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hrvoje/Documents/GitHub/RWA/JobFinder/JobFinder.WebApp/Views/Shared/_Layout.cshtml]

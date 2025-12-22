@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JobFinder.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e1092266603c40cccf07c2ccdde8681b823a9b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de49cef8c3feb4176e819688942aa0ad1fcd9d54")]
 [assembly: System.Reflection.AssemblyProductAttribute("JobFinder.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JobFinder.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
