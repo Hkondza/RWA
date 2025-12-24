@@ -19,9 +19,7 @@ C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\scopedcss\bundle\JobFinder.WebApp.styles.css
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\scopedcss\projectbundle\JobFinder.WebApp.bundle.scp.css
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder\JobFinder.WebApp\obj\Debug\net8.0\staticwebassets.development.json

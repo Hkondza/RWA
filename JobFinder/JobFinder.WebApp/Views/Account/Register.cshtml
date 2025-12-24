@@ -1,64 +1,74 @@
-﻿@using JobFinder.WebApp.ViewModels.Auth
-@model RegisterVM
+﻿@model JobFinder.WebApp.ViewModels.Auth.RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
 
-<h2>Registracija</h2>
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h2>Registracija</h2>
 
-<form asp-action="Register" method="post">
+        <form asp-action="Register" method="post">
 
-    <div>
-        <label>Korisničko ime</label>
-        <input asp-for="Username" />
-        <span asp-validation-for="Username"></span>
+            <div class="form-group">
+                <label>Korisničko ime</label>
+                <input asp-for="Username" />
+                <span asp-validation-for="Username" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" type="email" />
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Lozinka</label>
+                <input asp-for="Password" type="password" />
+                <span asp-validation-for="Password" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>First name</label>
+                <input asp-for="FirstName" />
+                <span asp-validation-for="FirstName" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Last name</label>
+                <input asp-for="LastName" />
+                <span asp-validation-for="LastName" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input asp-for="Phone" />
+                <span asp-validation-for="Phone" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Tip korisnika</label>
+                <select asp-for="UserType">
+                    <option value="">-- odaberi --</option>
+                    <option value="Employer">Employer</option>
+                    <option value="Employee">Employee</option>
+                </select>
+                <span asp-validation-for="UserType" class="error"></span>
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model?.ErrorMessage))
+            {
+                <p class="error">@Model.ErrorMessage</p>
+            }
+
+            <button type="submit" class="btn full">Registriraj se</button>
+        </form>
+
+        <p class="switch">
+            Već imate račun?
+            <a asp-action="Login">Login</a>
+        </p>
     </div>
-
-     <div>
-        <label>FirstName</label>
-        <input asp-for="FirstName" />
-        <span asp-validation-for="FirstName"></span>
-    </div>
-
-      <div>
-        <label>LastName</label>
-        <input asp-for="LastName" />
-        <span asp-validation-for="LastName"></span>
-    </div>
-
-    
-      <div>
-        <label>PhoneNumber</label>
-        <input asp-for="Phone" />
-        <span asp-validation-for="Phone"></span>
-    </div>
-
-    <div>
-        <label>Email</label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-
-    <div>
-        <label>Lozinka</label>
-        <input asp-for="Password" type="password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-
-    <div>
-        <label>Tip korisnika</label>
-        <select asp-for="UserType">
-            <option value="">-- odaberi --</option>
-            <option value="Employer">Employer</option>
-            <option value="Employee">Employee</option>
-        </select>
-        <span asp-validation-for="UserType"></span>
-    </div>
-
-    @if (Model?.ErrorMessage != null)
-    {
-        <p style="color:red">@Model.ErrorMessage</p>
-    }
-
-    <button type="submit">Registriraj se</button>
-</form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

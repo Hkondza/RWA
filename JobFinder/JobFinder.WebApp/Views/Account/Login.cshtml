@@ -1,28 +1,39 @@
-﻿@using JobFinder.WebApp.ViewModels.Auth
-@model LoginVM
+﻿@model JobFinder.WebApp.ViewModels.Auth.LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
 
-<h2>Login</h2>
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h2>Login</h2>
 
-<form asp-action="Login" method="post">
-    <div>
-        <label>Email</label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" type="email" />
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input asp-for="Password" type="password" />
+                <span asp-validation-for="Password" class="error"></span>
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model?.ErrorMessage))
+            {
+                <p class="error">@Model.ErrorMessage</p>
+            }
+
+            <button type="submit" class="btn full">Login</button>
+        </form>
+
+        <p class="switch">
+            Nemate račun?
+            <a asp-action="Register">Registrirajte se</a>
+        </p>
     </div>
-
-    <div>
-        <label>Password</label>
-        <input asp-for="Password" type="password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-
-    @if (Model?.ErrorMessage != null)
-    {
-        <p style="color:red">@Model.ErrorMessage</p>
-    }
-
-    <button type="submit">Login</button>
-</form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
