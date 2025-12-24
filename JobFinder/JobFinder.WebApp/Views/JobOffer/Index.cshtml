@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<JobFinder.WebApp.ViewModels.JobOffer.JobOfferListVM>
+
+<h2>Job Offers</h2>
+
+@if (!Model.Any())
+{
+    <p>Nema dostupnih oglasa.</p>
+}
+else
+{
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+        <thead>
+            <tr>
+                <th style="text-align:left;">Naziv</th>
+                <th>Firma</th>
+                <th>Lokacija</th>
+                <th>Tip</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var job in Model)
+        {
+            <tr style="border-bottom:1px solid #ddd;">
+                <td>@job.Title</td>
+                <td>@job.FirmName</td>
+                <td>@job.Location</td>
+                <td>@job.JobType</td>
+                <td>
+                    <a href="/JobOffer/Details/@job.Id">Details</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 }
