@@ -1,173 +1,17 @@
-﻿@using Microsoft.AspNetCore.Http
-@{
-    var jwt = Context.Session.GetString("JWT");
-    var role = Context.Session.GetString("ROLE");
-    var isLoggedIn = !string.IsNullOrEmpty(jwt);
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>JobFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Segoe UI, sans-serif;
-            background: #f4f6f8;
-        }
-
-        /* NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1e293b;
-            padding: 14px 30px;
-            color: white;
-        }
-
-        .navbar a {
-            color: white;
-            margin-right: 16px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .brand {
-            font-size: 22px;
-            font-weight: bold;
-            color: #38bdf8;
-        }
-
-        .nav-left, .nav-right {
-            display: flex;
-            align-items: center;
-        }
-
-        .btn {
-            padding: 6px 14px;
-            background: #38bdf8;
-            border-radius: 6px;
-            color: black;
-            font-weight: 600;
-        }
-
-        .btn.logout {
-            background: #ef4444;
-            color: white;
-        }
-
-        /* PAGE */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        .auth-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 70vh;
-        }
-
-        .auth-card {
-            background: white;
-            padding: 30px;
-            width: 380px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .auth-card h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group input,
-        .form-group select {
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-
-        .btn.full {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .error {
-            color: red;
-            font-size: 13px;
-        }
-
-        .switch {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            text-align: center;
-            background: #e5e7eb;
-        }
-
-        @@keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <div class="nav-left">
-            <a class="brand" asp-controller="Home" asp-action="Index">JobFinder</a>
+    @await Html.PartialAsync("_Navbar")
 
-            <a asp-controller="Firm" asp-action="Index">Firms</a>
-            <a asp-controller="JobOffer" asp-action="Index">Job Offers</a>
-
-            @if (role == "Employer")
-            {
-                <a asp-controller="JobOffer" asp-action="Create">Create Job</a>
-            }
-
-            @if (role == "Employee")
-            {
-                <a asp-controller="Application" asp-action="MyApplications">My Applications</a>
-            }
-        </div>
-
-        <div class="nav-right">
-            @if (!isLoggedIn)
-            {
-                <a asp-controller="Account" asp-action="Login">Login</a>
-                <a asp-controller="Account" asp-action="Register" class="btn">Register</a>
-            }
-            else
-            {
-                <a asp-controller="Account" asp-action="Profile">Profile</a>
-                <a asp-controller="Account" asp-action="Logout" class="btn logout">Logout</a>
-            }
-        </div>
-    </div>
-
-    <!-- PAGE CONTENT -->
     <div class="container">
         @RenderBody()
     </div>
@@ -176,8 +20,6 @@
         © @DateTime.Now.Year JobFinder – RWA Project
     </footer>
 
-    <!-- ✅ OVO JE KLJUČNO (popravlja grešku) -->
     @RenderSection("Scripts", required: false)
-
 </body>
 </html>

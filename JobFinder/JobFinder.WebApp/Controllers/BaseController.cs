@@ -5,13 +5,14 @@ namespace JobFinder.WebApp.Controllers
     public class BaseController : Controller
     {
         protected bool IsAuthenticated =>
-        !string.IsNullOrEmpty(HttpContext.Session.GetString("JWT"));
+            !string.IsNullOrEmpty(Request.Cookies["jwt"]);
 
         protected string? UserRole =>
-            HttpContext.Session.GetString("Role");
+             Request.Cookies["role"];
 
-        protected int? UserId =>
-            HttpContext.Session.GetInt32("UserId");
+
+        protected string? UserId =>
+            Request.Cookies["UserId"];
 
         protected bool IsAdmin => UserRole == "Admin";
         protected bool IsEmployer => UserRole == "Employer";

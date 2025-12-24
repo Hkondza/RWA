@@ -55,10 +55,45 @@ namespace JobFinder.WebApp.Controllers
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
             );
 
-            // ⬇️ privremeno (kasnije cookie / auth)
-            HttpContext.Session.SetString("JWT", loginResponse.Token);
-            HttpContext.Session.SetString("Role", loginResponse.User.Role);
-            HttpContext.Session.SetInt32("UserId", loginResponse.User.IDUser);
+            // JWT (HttpOnly)
+            Response.Cookies.Append(
+                "jwt",
+                loginResponse.Token,
+                new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTimeOffset.UtcNow.AddHours(2)
+                }
+            );
+
+            // USERNAME (za navbar)
+            Response.Cookies.Append(
+                "username",
+                loginResponse.User.UserName,
+                new CookieOptions
+                {
+                    HttpOnly = false,
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTimeOffset.UtcNow.AddHours(2)
+                }
+            );
+
+            // ROLE (Employer / Employee / Admin)
+            Response.Cookies.Append(
+                "role",
+                loginResponse.User.Role,
+                new CookieOptions
+                {
+                    HttpOnly = false,
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTimeOffset.UtcNow.AddHours(2)
+                }
+            );
+
 
 
             return RedirectToAction("Index", "Home");
@@ -96,8 +131,13 @@ namespace JobFinder.WebApp.Controllers
 
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();
+            Response.Cookies.Delete("jwt");
+            Response.Cookies.Delete("username");
+            Response.Cookies.Delete("role");
+
             return RedirectToAction("Login");
+
+
         }
 
 
