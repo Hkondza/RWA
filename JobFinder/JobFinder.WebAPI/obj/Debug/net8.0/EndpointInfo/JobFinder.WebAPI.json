@@ -823,7 +823,10 @@
       "UserRegisterDto": {
         "required": [
           "email",
+          "firstName",
+          "lastName",
           "password",
+          "phone",
           "username",
           "userType"
         ],
@@ -848,16 +851,16 @@
             "type": "string"
           },
           "firstName": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "lastName": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "phone": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

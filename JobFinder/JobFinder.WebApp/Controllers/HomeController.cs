@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace JobFinder.WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -23,6 +23,12 @@ namespace JobFinder.WebApp.Controllers
             return View();
         }
 
-      
+        public IActionResult Error()
+        {
+            return View();
+        }
+
+
+
     }
 }

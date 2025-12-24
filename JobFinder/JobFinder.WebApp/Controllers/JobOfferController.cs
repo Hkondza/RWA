@@ -2,7 +2,7 @@
 
 namespace JobFinder.WebApp.Controllers
 {
-    public class JobOfferController : Controller
+    public class JobOfferController : BaseController
     {
         public IActionResult Index()
         {

@@ -57,6 +57,9 @@ namespace JobFinder.WebApp.Controllers
 
             // ⬇️ privremeno (kasnije cookie / auth)
             HttpContext.Session.SetString("JWT", loginResponse.Token);
+            HttpContext.Session.SetString("Role", loginResponse.User.Role);
+            HttpContext.Session.SetInt32("UserId", loginResponse.User.IDUser);
+
 
             return RedirectToAction("Index", "Home");
         }
@@ -89,6 +92,12 @@ namespace JobFinder.WebApp.Controllers
 
             // nakon uspješne registracije → login
             return RedirectToAction(nameof(Login));
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
         }
 
 
