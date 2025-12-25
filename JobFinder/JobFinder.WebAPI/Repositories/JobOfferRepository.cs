@@ -17,14 +17,22 @@ namespace JobFinder.WebAPI.Repositories
         public async Task<List<JobOffer>> GetActiveAsync()
         {
             return await _context.JobOffers
+                .Include(o => o.Firm)
+                .Include(o => o.JobType)
+                .Include(o => o.Location)
                 .Where(o => o.IsActive)
                 .ToListAsync();
         }
 
-        public Task<JobOffer?> GetByIdAsync(int id)
+        public async Task<JobOffer?> GetByIdAsync(int id)
         {
-            return _context.JobOffers.FindAsync(id).AsTask();
+            return await _context.JobOffers
+                .Include(o => o.Firm)
+                .Include(o => o.JobType)
+                .Include(o => o.Location)
+                .FirstOrDefaultAsync(o => o.IDJobOffer == id);
         }
+
 
         public async Task<JobOffer> CreateAsync(JobOffer offer)
         {

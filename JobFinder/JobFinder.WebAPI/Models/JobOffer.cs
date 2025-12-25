@@ -11,15 +11,17 @@ namespace JobFinder.WebAPI.Models
 
         [Required]
         public int FirmID { get; set; }
+        public Firm Firm { get; set; }   // ✅ DODANO
 
         [Required]
         public int JobTypeID { get; set; }
+        public JobType JobType { get; set; } // ✅ DODANO
 
         [Required]
         public int LocationID { get; set; }
+        public Location Location { get; set; } // ✅ DODANO
 
-        [Required]
-        [StringLength(200)]
+        [Required, StringLength(200)]
         public string Title { get; set; }
 
         [Required]
@@ -28,7 +30,6 @@ namespace JobFinder.WebAPI.Models
         public string? Salary { get; set; }
 
         public bool IsActive { get; set; } = true;
-
         public DateTime CreatedAt { get; set; }
     }
 }
