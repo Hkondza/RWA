@@ -13,11 +13,11 @@
     </div>
 
     <div style="margin-bottom:15px;">
-        <strong>Lokacija:</strong> @Model.Location
+        <strong>Lokacija:</strong> @Model.LocationName
     </div>
 
     <div style="margin-bottom:15px;">
-        <strong>Tip posla:</strong> @Model.JobType
+        <strong>Tip posla:</strong> @Model.JobName
     </div>
 
     <hr style="margin:25px 0;" />
@@ -32,7 +32,7 @@
     @if (ViewBag.CanApply)
     {
         <form method="post" action="/Application/Apply">
-            <input type="hidden" name="JobOfferId" value="@Model.Id" />
+            <input type="hidden" name="JobOfferId" value="@Model.IDJobOffer" />
 
             <button type="submit">
                 Prijavi se na posao

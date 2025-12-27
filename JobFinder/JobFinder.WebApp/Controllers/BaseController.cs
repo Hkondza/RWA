@@ -12,7 +12,7 @@ namespace JobFinder.WebApp.Controllers
 
 
         protected string? UserId =>
-            Request.Cookies["UserId"];
+            Request.Cookies["userid"];
 
         protected bool IsAdmin => UserRole == "Admin";
         protected bool IsEmployer => UserRole == "Employer";

@@ -2,7 +2,7 @@
 {
     public class JobOfferListVM
     {
-        public int Id { get; set; }
+        public int IDJobOffer { get; set; }
         public string Title { get; set; }
         public string FirmName { get; set; }
         public string LocationName { get; set; }

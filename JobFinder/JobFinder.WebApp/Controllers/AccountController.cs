@@ -94,6 +94,20 @@ namespace JobFinder.WebApp.Controllers
                 }
             );
 
+            Response.Cookies.Append(
+               "userid",
+               loginResponse.User.IDUser + "",
+               new CookieOptions
+               {
+                   HttpOnly = false,
+                   Secure = true,
+                   SameSite = SameSiteMode.Strict,
+                   Expires = DateTimeOffset.UtcNow.AddHours(2)
+               }
+           );
+
+
+
 
 
             return RedirectToAction("Index", "Home");
@@ -134,6 +148,7 @@ namespace JobFinder.WebApp.Controllers
             Response.Cookies.Delete("jwt");
             Response.Cookies.Delete("username");
             Response.Cookies.Delete("role");
+            Response.Cookies.Delete("userid");
 
             return RedirectToAction("Login");
 

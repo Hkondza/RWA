@@ -14,6 +14,7 @@ namespace JobFinder.WebAPI.Mapping
         {
             
             CreateMap<JobOffer, JobOfferReadDto>()
+    .ForMember(dest => dest.IDJobOffer, opt => opt.MapFrom(s => s.IDJobOffer))
     .ForMember(d => d.FirmName, opt => opt.MapFrom(s => s.Firm.FirmName))
     .ForMember(d => d.JobName, opt => opt.MapFrom(s => s.JobType.JobName))
     .ForMember(d => d.LocationName, opt => opt.MapFrom(s => s.Location.LocationName));
