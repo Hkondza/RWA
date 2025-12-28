@@ -39,7 +39,12 @@ namespace JobFinder.WebAPI.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<Firm>> GetAllAsync(string? search, int page, int pageSize)
+        public Task<List<Firm>> GetAllAsync()
+        {
+           return _context.Firms.ToListAsync();
+        }
+
+        public async Task<List<Firm>> GetAllSearchAsync(string? search, int page, int pageSize)
         {
             var query = _context.Firms.AsQueryable();
 

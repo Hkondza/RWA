@@ -42,10 +42,16 @@ namespace JobFinder.WebApp.Controllers
             if (!ModelState.IsValid)
                 return RedirectToAction("Details", "JobOffer", new { id = vm.JobOfferID });
 
-            string nesto = UserId;
 
-            // 3. UserID NE DOLAZI S FRONTENDA
-            vm.UserID = int.Parse(UserId); // iz BaseController-a
+            try
+            {
+                vm.UserID = int.Parse(UserId);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Problem u cookieu");
+               
+            }
 
             var json = JsonSerializer.Serialize(vm);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

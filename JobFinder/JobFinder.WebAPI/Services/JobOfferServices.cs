@@ -35,17 +35,74 @@ namespace JobFinder.WebAPI.Services
 
         public async Task<JobOfferReadDto> CreateAsync(JobOfferCreateDto dto)
         {
-            var entity = _mapper.Map<JobOffer>(dto);
-            entity.CreatedAt = DateTime.Now;
-            entity.IsActive = true;
+            // 1️⃣ Resolve Firm
+            int firmId;
+            if (dto.FirmID.HasValue)
+            {
+                firmId = dto.FirmID.Value;
+            }
+            else
+            {
+                var firm = new Firm
+                {
+                    FirmName = dto.NewFirmName
+                };
+                _context.Firms.Add(firm);
+                await _context.SaveChangesAsync();
+                firmId = firm.IDFirm;
+            }
+
+            // 2️⃣ Resolve JobType
+            int jobTypeId;
+            if (dto.JobTypeID.HasValue)
+            {
+                jobTypeId = dto.JobTypeID.Value;
+            }
+            else
+            {
+                var jobType = new JobType
+                {
+                    JobName = dto.NewJobTypeName
+                };
+                _context.JobTypes.Add(jobType);
+                await _context.SaveChangesAsync();
+                jobTypeId = jobType.IDJobType;
+            }
+
+            // 3️⃣ Resolve Location
+            int locationId;
+            if (dto.LocationID.HasValue)
+            {
+                locationId = dto.LocationID.Value;
+            }
+            else
+            {
+                var location = new Location
+                {
+                    LocationName = dto.NewLocationName
+                };
+                _context.Locations.Add(location);
+                await _context.SaveChangesAsync();
+                locationId = location.IDLocation;
+            }
+
+            // 4️⃣ Create JobOffer
+            var entity = new JobOffer
+            {
+                Title = dto.Title,
+                Description = dto.Description,
+                Salary = dto.Salary,
+                FirmID = firmId,
+                JobTypeID = jobTypeId,
+                LocationID = locationId,
+                CreatedAt = DateTime.Now,
+                IsActive = true
+            };
 
             var created = await _repo.CreateAsync(entity);
-            await LogHelper.WriteAsync(
-           _context,
-           "INFO",
-           $"JobOffer created. ID={created.IDJobOffer}, FirmID={created.FirmID}, JobTypeID={created.JobTypeID}"
-       );
+
             return _mapper.Map<JobOfferReadDto>(created);
         }
+
     }
 }

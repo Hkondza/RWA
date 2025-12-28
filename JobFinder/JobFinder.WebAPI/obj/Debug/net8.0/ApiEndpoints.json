@@ -95,6 +95,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "JobFinder.WebAPI.Controllers.FirmController",
+    "Method": "Get",
+    "RelativePath": "api/Firm/firms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
     "Method": "Apply",
     "RelativePath": "api/JobApplication",

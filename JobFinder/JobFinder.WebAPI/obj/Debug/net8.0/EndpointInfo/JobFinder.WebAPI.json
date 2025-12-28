@@ -73,6 +73,18 @@
         }
       }
     },
+    "/api/Firm/firms": {
+      "get": {
+        "tags": [
+          "Firm"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Firm/{id}": {
       "get": {
         "tags": [
@@ -729,36 +741,44 @@
         "additionalProperties": false
       },
       "JobOfferCreateDto": {
-        "required": [
-          "description",
-          "firmID",
-          "jobTypeID",
-          "locationID",
-          "title"
-        ],
         "type": "object",
         "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "salary": {
+            "type": "string",
+            "nullable": true
+          },
           "firmID": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
+          },
+          "newFirmName": {
+            "type": "string",
+            "nullable": true
           },
           "jobTypeID": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
+          },
+          "newJobTypeName": {
+            "type": "string",
+            "nullable": true
           },
           "locationID": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
-          "title": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "description": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "salary": {
+          "newLocationName": {
             "type": "string",
             "nullable": true
           }

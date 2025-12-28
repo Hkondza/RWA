@@ -1,5 +1,6 @@
 ﻿using JobFinder.WebAPI.DTOs.Firm;
 using JobFinder.WebAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JobFinder.WebAPI.Controllers
@@ -25,7 +26,7 @@ namespace JobFinder.WebAPI.Controllers
             if (page <= 0 || pageSize <= 0)
                 return BadRequest("Page i pageSize moraju biti veći od 0.");
 
-            var firms = await _service.GetAllAsync(search, page, pageSize);
+            var firms = await _service.GetAllSearchAsync(search, page, pageSize);
             var totalCount = await _service.CountAsync(search);
 
             return Ok(new
@@ -36,6 +37,14 @@ namespace JobFinder.WebAPI.Controllers
                 pageSize
             });
         }
+
+        [HttpGet("firms")]
+        public async Task<IActionResult> Get() { 
+          return Ok(await _service.GetAllAsync());
+        }
+
+
+
 
         // GET: api/firm/5
         [HttpGet("{id}")]

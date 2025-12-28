@@ -4,7 +4,7 @@ namespace JobFinder.WebAPI.Repositories.Interfaces
 {
     public interface IFirmRepository
     {
-        Task<List<Firm>> GetAllAsync(string? search, int page, int pageSize);
+        Task<List<Firm>> GetAllSearchAsync(string? search, int page, int pageSize);
         Task<int> CountAsync(string? search);
 
         Task<Firm?> GetByIdAsync(int id);
@@ -14,5 +14,7 @@ namespace JobFinder.WebAPI.Repositories.Interfaces
         Task UpdateAsync(Firm firm);
 
         Task DeleteAsync(Firm firm);
+
+        Task<List<Firm>>GetAllAsync();
     }
 }

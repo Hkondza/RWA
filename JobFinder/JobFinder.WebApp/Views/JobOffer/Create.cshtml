@@ -1,5 +1,123 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model JobFinder.WebApp.ViewModels.JobOffer.JobOfferCreateVM
+
 @{
+    ViewData["Title"] = "Create Job Offer";
+}
+
+<h2>Create Job Offer</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <hr />
+
+    <!-- FIRM -->
+    <div class="mb-2">
+        <label class="form-label">Firma</label>
+        <select asp-for="FirmID" asp-items="Model.Firms" class="form-select" id="FirmSelect">
+            <option value="">-- odaberi firmu --</option>
+        </select>
+    </div>
+
+    <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="FirmNewToggle" />
+        <label class="form-check-label" for="FirmNewToggle">Upiši novu firmu</label>
+    </div>
+
+    <div class="mb-3" id="FirmNewBox" style="display:none;">
+        <input asp-for="NewFirmName" class="form-control" placeholder="Nova firma (naziv)" />
+        <span asp-validation-for="NewFirmName" class="text-danger"></span>
+    </div>
+
+    <!-- JOB TYPE -->
+    <div class="mb-2">
+        <label class="form-label">Tip posla</label>
+        <select asp-for="JobTypeID" asp-items="Model.JobTypes" class="form-select" id="JobTypeSelect">
+            <option value="">-- odaberi tip posla --</option>
+        </select>
+    </div>
+
+    <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="JobTypeNewToggle" />
+        <label class="form-check-label" for="JobTypeNewToggle">Upiši novi tip posla</label>
+    </div>
+
+    <div class="mb-3" id="JobTypeNewBox" style="display:none;">
+        <input asp-for="NewJobTypeName" class="form-control" placeholder="Novi tip posla (npr. Električar)" />
+        <span asp-validation-for="NewJobTypeName" class="text-danger"></span>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="mb-2">
+        <label class="form-label">Lokacija</label>
+        <select asp-for="LocationID" asp-items="Model.Locations" class="form-select" id="LocationSelect">
+            <option value="">-- odaberi lokaciju --</option>
+        </select>
+    </div>
+
+    <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="LocationNewToggle" />
+        <label class="form-check-label" for="LocationNewToggle">Upiši novu lokaciju</label>
+    </div>
+
+    <div class="mb-3" id="LocationNewBox" style="display:none;">
+        <input asp-for="NewLocationName" class="form-control" placeholder="Nova lokacija (npr. Zagreb)" />
+        <span asp-validation-for="NewLocationName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function wireToggle(toggleId, boxId, selectId, inputSelector) {
+            const toggle = document.getElementById(toggleId);
+            const box = document.getElementById(boxId);
+            const select = document.getElementById(selectId);
+            const input = box.querySelector(inputSelector);
+
+            function apply() {
+                const on = toggle.checked;
+                box.style.display = on ? "block" : "none";
+                if (on) {
+                    select.value = "";
+                    select.disabled = true;
+                    input.focus();
+                } else {
+                    select.disabled = false;
+                    input.value = "";
+                }
+            }
+
+            toggle.addEventListener("change", apply);
+            apply();
+        }
+
+        wireToggle("FirmNewToggle", "FirmNewBox", "FirmSelect", "input");
+        wireToggle("JobTypeNewToggle", "JobTypeNewBox", "JobTypeSelect", "input");
+        wireToggle("LocationNewToggle", "LocationNewBox", "LocationSelect", "input");
+    </script>
 }
