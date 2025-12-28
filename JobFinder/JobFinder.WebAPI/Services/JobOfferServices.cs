@@ -43,9 +43,17 @@ namespace JobFinder.WebAPI.Services
             }
             else
             {
+                //radi urednosti strancie stavio sam ovo default
+                //moga sam dto napunit sa svim podatima i onda jos napraviti text fildove
+                //al ovako je bolje
                 var firm = new Firm
                 {
-                    FirmName = dto.NewFirmName
+                    FirmName = dto.NewFirmName,
+                    Email = "email@gmail.com",
+                    PhoneNumber = "0994362136",
+                    WebsiteUrl = "https://www.elektroplus.hr",
+                    JobTypeID = dto.JobTypeID.GetValueOrDefault(1) 
+                    
                 };
                 _context.Firms.Add(firm);
                 await _context.SaveChangesAsync();
