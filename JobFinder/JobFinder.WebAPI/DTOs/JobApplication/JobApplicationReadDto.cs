@@ -9,5 +9,7 @@
         public string? Message { get; set; }
         public string Status { get; set; }
         public DateTime AppliedAt { get; set; }
+        public string FirmName { get; set; }
+        public string JobName { get; set; }
     }
 }

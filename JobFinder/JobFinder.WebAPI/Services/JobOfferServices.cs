@@ -51,6 +51,7 @@ namespace JobFinder.WebAPI.Services
                     FirmName = dto.NewFirmName,
                     Email = "email@gmail.com",
                     PhoneNumber = "0994362136",
+                    Description = dto.Description,
                     WebsiteUrl = "https://www.elektroplus.hr",
                     JobTypeID = dto.JobTypeID.GetValueOrDefault(1) 
                     

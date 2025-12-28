@@ -12,6 +12,8 @@ namespace JobFinder.WebAPI.Models
         [Required]
         public int JobOfferID { get; set; }
 
+        public JobOffer JobOffer { get; set; }
+
         [Required]
         public int UserID { get; set; }
 
@@ -21,5 +23,6 @@ namespace JobFinder.WebAPI.Models
         public string Status { get; set; } = "Applied";
 
         public DateTime AppliedAt { get; set; }
+
     }
 }

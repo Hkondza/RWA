@@ -38,8 +38,15 @@ namespace JobFinder.WebAPI.Repositories
         public Task<List<JobApplication>> GetByUserAsync(int userId)
         {
             return _context.JobApplications
-                .Where(a => a.UserID == userId)
-                .ToListAsync();
+                .Include(a => a.JobOffer)
+                    .ThenInclude(o => o.Firm)
+                .Include(a => a.JobOffer)
+                    .ThenInclude(o => o.JobType)
+                .Include(a => a.JobOffer)
+                    .ThenInclude(o => o.Location)
+             .Where(a => a.UserID == userId)
+             .ToListAsync();
+               
         }
     }
 }

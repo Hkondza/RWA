@@ -1,4 +1,5 @@
 ﻿using JobFinder.WebApp.ViewModels.Application;
+using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
 using System.Text.Json;
@@ -21,14 +22,25 @@ namespace JobFinder.WebApp.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _client.GetAsync("api/jobapplication/by-user/" + UserId);
+
+            if (!response.IsSuccessStatusCode)
+                return View(new List<JobApplicationListVM>());
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var offers = JsonSerializer.Deserialize<List<JobApplicationListVM>>(
+                json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+            );
+
+            return View(offers);
         }
 
 
-
-        [HttpPost]
+        
         public async Task<IActionResult> Apply(JobApplicationVM vm)
         {
             // 1. mora biti login
