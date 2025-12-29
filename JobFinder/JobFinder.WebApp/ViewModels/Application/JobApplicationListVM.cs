@@ -2,7 +2,7 @@
 {
     public class JobApplicationListVM
     {
-        public int IDJobOffer { get; set; }
+        public int JobOfferID { get; set; }
         public string FirmName { get; set; }
 
         public string Status { get; set; }
