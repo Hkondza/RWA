@@ -6,6 +6,12 @@
         public int JobOfferID { get; set; }
         public int UserID { get; set; }
 
+        public string? Salary { get; set; }
+
+        public string? LocationName { get; set; }
+
+        public bool IsActive { get; set; }
+
         public string? Message { get; set; }
         public string Status { get; set; }
         public DateTime AppliedAt { get; set; }

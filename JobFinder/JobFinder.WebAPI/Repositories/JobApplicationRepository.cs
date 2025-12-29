@@ -31,8 +31,14 @@ namespace JobFinder.WebAPI.Repositories
         public Task<List<JobApplication>> GetByOfferAsync(int jobOfferId)
         {
             return _context.JobApplications
-                .Where(a => a.JobOfferID == jobOfferId)
-                .ToListAsync();
+                     .Include(a => a.JobOffer)
+                         .ThenInclude(o => o.Firm)
+                     .Include(a => a.JobOffer)
+                         .ThenInclude(o => o.JobType)
+                     .Include(a => a.JobOffer)
+                         .ThenInclude(o => o.Location)
+                  .Where(a => a.JobOfferID == jobOfferId)
+                  .ToListAsync();
         }
 
         public Task<List<JobApplication>> GetByUserAsync(int userId)
@@ -47,6 +53,19 @@ namespace JobFinder.WebAPI.Repositories
              .Where(a => a.UserID == userId)
              .ToListAsync();
                
+        }
+
+        public Task<List<JobApplication>> GetByApplicationAsync(int jobApplicationId)
+        {
+            return _context.JobApplications
+                 .Include(a => a.JobOffer)
+                     .ThenInclude(o => o.Firm)
+                 .Include(a => a.JobOffer)
+                     .ThenInclude(o => o.JobType)
+                 .Include(a => a.JobOffer)
+                     .ThenInclude(o => o.Location)
+              .Where(a => a.IDJobApplication == jobApplicationId)
+              .ToListAsync();
         }
     }
 }

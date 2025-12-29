@@ -1,6 +1,7 @@
 ﻿using JobFinder.WebApp.ViewModels.Application;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
@@ -77,7 +78,32 @@ namespace JobFinder.WebApp.Controllers
             }
 
             TempData["Success"] = "Uspješno ste se prijavili na posao.";
-            return RedirectToAction("MyApplications");
+            return RedirectToAction("");
+        }
+
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var response = await _client.GetAsync($"api/jobapplication/by-application/{id}");
+
+            if (!response.IsSuccessStatusCode)
+                return NotFound();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var offer = JsonSerializer.Deserialize<List<JobApplicationDetailsVM>>(
+                json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+            );
+
+
+            var application = offer.FirstOrDefault();
+
+            if (application == null)
+                return NotFound();
+
+            return View(application);
+
         }
 
     }

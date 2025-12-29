@@ -51,6 +51,12 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<JobApplicationReadDto>(created);
         }
 
+        public async Task<List<JobApplicationReadDto>> GetByApplicationAsync(int jobApplicationId)
+        {
+            var list = await _repo.GetByApplicationAsync(jobApplicationId);
+            return _mapper.Map<List<JobApplicationReadDto>>(list);
+        }
+
         public async Task<List<JobApplicationReadDto>> GetByOfferAsync(int jobOfferId)
         {
             var list = await _repo.GetByOfferAsync(jobOfferId);

@@ -223,6 +223,29 @@
         }
       }
     },
+    "/api/JobApplication/by-application/{jobApplicationId}": {
+      "get": {
+        "tags": [
+          "JobApplication"
+        ],
+        "parameters": [
+          {
+            "name": "jobApplicationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/JobApplication/by-user/{userId}": {
       "get": {
         "tags": [
