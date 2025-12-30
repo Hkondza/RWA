@@ -4,13 +4,12 @@
 
     <h2>@Model.Title</h2>
 
-    <p style="color:#6b7280; margin-bottom:20px;">
-        Objavljeno: @Model.CreatedAt.ToString("dd.MM.yyyy")
-        Prijavljeno: @Model.AppliedAt.ToString("dd.MM.yyy")
-    </p>
-
     <div style="margin-bottom:15px;">
         <strong>Firma:</strong> @Model.FirmName
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <strong>Status:</strong> @Model.Status
     </div>
 
     <div style="margin-bottom:15px;">
@@ -25,6 +24,13 @@
         <strong>Salary:</strong> @Model.Salary
     </div>
 
+    <p style="color:#6b7280; margin-bottom:20px;">
+        Objavljeno: @Model.CreatedAt.ToString("dd.MM.yyyy")
+    </p>
+
+    <p style="color:#6b7280; margin-bottom:20px;">
+        Prijavljeno: @Model.AppliedAt.ToString("dd.MM.yyy")
+    </p>
 
 
     <hr style="margin:25px 0;" />

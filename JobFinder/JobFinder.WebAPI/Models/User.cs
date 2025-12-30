@@ -22,6 +22,10 @@ namespace JobFinder.WebAPI.Models
         [Required]
         public string Role { get; set; }
 
+        public int? FirmID { get; set; }   
+        public Firm? Firm { get; set; }
+
+
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Phone { get; set; }

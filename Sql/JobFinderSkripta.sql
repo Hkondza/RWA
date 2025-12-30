@@ -65,8 +65,13 @@ CREATE TABLE Users
     Role NVARCHAR(50) NOT NULL,
     FirstName NVARCHAR(100),
     LastName NVARCHAR(100),
-    Phone NVARCHAR(20)
+    Phone NVARCHAR(20),
+	FirmID int NULL
+
 );
+ALTER TABLE Users
+ADD CONSTRAINT FK_Users_Firm
+FOREIGN KEY (FirmID) REFERENCES Firm(IDFirm);
 
 ------------------------------------------------------
 -- TABLICA: JobOffer
@@ -120,6 +125,24 @@ FOREIGN KEY (JobOfferID) REFERENCES JobOffer(IDJobOffer);
 ALTER TABLE JobApplication
 ADD CONSTRAINT FK_JobApplication_User
 FOREIGN KEY (UserID) REFERENCES Users(IDUser);
+
+
+------------------------------------------------------
+-- TABLICA: UserFirm
+------------------------------------------------------
+
+CREATE TABLE UserFirm
+(
+    IDUserFirm INT PRIMARY KEY IDENTITY,
+    UserID INT NOT NULL,
+    FirmID INT NOT NULL,
+    Status NVARCHAR(20) NOT NULL, -- Pending, Approved, Rejected
+    RequestedAt DATETIME NOT NULL DEFAULT GETDATE(),
+    ApprovedAt DATETIME NULL,
+
+    CONSTRAINT FK_UserFirm_User FOREIGN KEY (UserID) REFERENCES Users(IDUser),
+    CONSTRAINT FK_UserFirm_Firm FOREIGN KEY (FirmID) REFERENCES Firm(IDFirm)
+);
 
 
 ------------------------------------------------------
