@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace JobFinder.WebAPI.Controllers
+namespace JobFinder.WebAPI.Controllers.Admin
 {
     [ApiController]
     [Route("api/[controller]")]

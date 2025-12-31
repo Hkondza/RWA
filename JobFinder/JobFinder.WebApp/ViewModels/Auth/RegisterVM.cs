@@ -29,7 +29,6 @@ namespace JobFinder.WebApp.ViewModels.Auth
             ErrorMessage = "Odaberite Employer ili Employee.")]
         public string UserType { get; set; }
 
-        public int? FirmID { get; set; }
 
         public string? ErrorMessage { get; set; }
     }

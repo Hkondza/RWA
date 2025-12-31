@@ -5,6 +5,80 @@
     "version": "v1"
   },
   "paths": {
+    "/api/admin/user-firm/pending": {
+      "get": {
+        "tags": [
+          "AdminUserFirm"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/user-firm/approve": {
+      "post": {
+        "tags": [
+          "AdminUserFirm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFirmActionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFirmActionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFirmActionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/user-firm/reject": {
+      "post": {
+        "tags": [
+          "AdminUserFirm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFirmActionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFirmActionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFirmActionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Firm": {
       "get": {
         "tags": [
@@ -840,6 +914,16 @@
             "maxLength": 100,
             "minLength": 0,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserFirmActionDto": {
+        "type": "object",
+        "properties": {
+          "userFirmId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

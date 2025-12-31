@@ -34,6 +34,12 @@
         {
             <a href="/Application" style="color:white; text-decoration:none;">My Applications</a>
         }
+
+        @if (isLoggedIn && role == "Admin")
+        {
+            <a href="/UserFirm" style="color:white; text-decoration:none;">Firm Application</a>
+        }
+
     </div>
 
     <!-- RIGHT -->

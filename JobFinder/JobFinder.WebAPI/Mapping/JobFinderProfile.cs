@@ -3,8 +3,8 @@ using JobFinder.WebAPI.DTOs.Firm;
 using JobFinder.WebAPI.DTOs.JobApplication;
 using JobFinder.WebAPI.DTOs.JobOffer;
 using JobFinder.WebAPI.DTOs.User;
+using JobFinder.WebAPI.DTOs.UserFirm;
 using JobFinder.WebAPI.Models;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace JobFinder.WebAPI.Mapping
 {
@@ -32,7 +32,10 @@ namespace JobFinder.WebAPI.Mapping
                 .ForMember(d => d.Title, opt => opt.MapFrom(s => s.JobOffer.Title))
                 .ForMember(d => d.Description, opt => opt.MapFrom(s => s.JobOffer.Description))
                 .ForMember(d => d.IsActive, opt => opt.MapFrom(s => s.JobOffer.IsActive));
-       
+
+            CreateMap<UserFirm, UserFirmReadDto>()
+                .ForMember(d => d.Username, o => o.MapFrom(s => s.User.Username))
+                .ForMember(d => d.FirmName, o => o.MapFrom(s => s.Firm.FirmName));
 
             CreateMap<UserRegisterDto, User>();
             CreateMap<User, UserReadDto>();

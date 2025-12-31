@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "JobFinder.WebAPI.Controllers.Admin.AdminUserFirmController",
+    "Method": "Approve",
+    "RelativePath": "api/admin/user-firm/approve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.UserFirm.UserFirmActionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.Admin.AdminUserFirmController",
+    "Method": "GetPending",
+    "RelativePath": "api/admin/user-firm/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.Admin.AdminUserFirmController",
+    "Method": "Reject",
+    "RelativePath": "api/admin/user-firm/reject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.UserFirm.UserFirmActionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "JobFinder.WebAPI.Controllers.FirmController",
     "Method": "GetAll",
     "RelativePath": "api/Firm",
@@ -369,7 +411,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LogsController",
+    "ContainingType": "JobFinder.WebAPI.Controllers.Admin.LogsController",
     "Method": "Count",
     "RelativePath": "api/Logs/count",
     "HttpMethod": "GET",
@@ -379,7 +421,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "JobFinder.WebAPI.Controllers.LogsController",
+    "ContainingType": "JobFinder.WebAPI.Controllers.Admin.LogsController",
     "Method": "GetLast",
     "RelativePath": "api/Logs/get/{n}",
     "HttpMethod": "GET",
