@@ -3,57 +3,32 @@
 <h2>Moj profil</h2>
 
 <h4>Osobni podaci</h4>
+<label class="col-sm-3 col-form-label fw-semibold">Email:</label>
 <input id="email" value="@Model.Email" placeholder="Email" />
+<label class="col-sm-3 col-form-label fw-semibold">Ime:</label>
 <input id="firstName" value="@Model.FirstName" placeholder="Ime" />
+<label class="col-sm-3 col-form-label fw-semibold">Prezime:</label>
 <input id="lastName" value="@Model.LastName" placeholder="Prezime" />
+<label class="col-sm-3 col-form-label fw-semibold">Telefon:</label>
 <input id="phone" value="@Model.Phone" placeholder="Telefon" />
+
 
 <button onclick="updateProfile()">Spremi</button>
 
-<hr />
+
 
 <h4>Promjena lozinke</h4>
+<label class="col-sm-3 col-form-label fw-semibold">Trenutna lozinka:</label>
 <input id="currentPassword" type="password" placeholder="Trenutna lozinka" />
+<label class="col-sm-3 col-form-label fw-semibold">Nova lozinka:</label>
 <input id="newPassword" type="password" placeholder="Nova lozinka" />
 <button onclick="changePassword()">Promijeni lozinku</button>
 
 
-<h5 class="mt-3">Osobni podaci</h5>
-
-<div class="row mb-3 align-items-center">
-    <label class="col-sm-3 col-form-label fw-semibold">Email</label>
-    <div class="col-sm-9">
-        <input class="form-control bg-warning-subtle" value="Tiho@gmail.com" />
-    </div>
-</div>
-
-<div class="row mb-3 align-items-center">
-    <label class="col-sm-3 col-form-label fw-semibold">Ime</label>
-    <div class="col-sm-9">
-        <input class="form-control" value="Tiho" />
-    </div>
-</div>
-
-<div class="row mb-3 align-items-center">
-    <label class="col-sm-3 col-form-label fw-semibold">Prezime</label>
-    <div class="col-sm-9">
-        <input class="form-control" value="Capin" />
-    </div>
-</div>
-
-<div class="row mb-4 align-items-center">
-    <label class="col-sm-3 col-form-label fw-semibold">Telefon</label>
-    <div class="col-sm-9">
-        <input class="form-control" value="132" />
-    </div>
-</div>
-
-<button class="btn btn-primary w-100 mb-4">Spremi</button>
-
 
 @if (Model.Role == "Employer")
 {
-    <hr />
+    
     <h4>Firma</h4>
 
     @if (Model.FirmID != null)
