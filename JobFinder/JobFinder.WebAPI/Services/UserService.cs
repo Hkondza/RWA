@@ -61,6 +61,9 @@ namespace JobFinder.WebAPI.Services
 
             user.Role = dto.UserType;
 
+            // stavljam defaultno null jer admin mora potvrdit
+            user.FirmID = null;
+
 
             var created = await _repo.CreateAsync(user);
             await LogHelper.WriteAsync(

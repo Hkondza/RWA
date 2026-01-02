@@ -6,5 +6,6 @@ namespace JobFinder.WebAPI.Services.Interfaces
     {
         Task<UserReadDto> RegisterAsync(UserRegisterDto dto);
         Task<LoginResponseDto> LoginAsync(UserLoginDto dto);
-    }
+        
+      }
 }

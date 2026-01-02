@@ -437,6 +437,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "JobFinder.WebAPI.Controllers.ProfileController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Profile/change-password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.Profile.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.ProfileController",
+    "Method": "Me",
+    "RelativePath": "api/Profile/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.ProfileController",
+    "Method": "RequestFirm",
+    "RelativePath": "api/Profile/request-firm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.Profile.FirmRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.ProfileController",
+    "Method": "Update",
+    "RelativePath": "api/Profile/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.Profile.ProfileUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "JobFinder.WebAPI.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/User/login",

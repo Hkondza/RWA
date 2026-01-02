@@ -1,0 +1,125 @@
+﻿@model JobFinder.WebApp.ViewModels.Profile.ProfileVM
+
+<h2>Moj profil</h2>
+
+<h4>Osobni podaci</h4>
+<input id="email" value="@Model.Email" placeholder="Email" />
+<input id="firstName" value="@Model.FirstName" placeholder="Ime" />
+<input id="lastName" value="@Model.LastName" placeholder="Prezime" />
+<input id="phone" value="@Model.Phone" placeholder="Telefon" />
+
+<button onclick="updateProfile()">Spremi</button>
+
+<hr />
+
+<h4>Promjena lozinke</h4>
+<input id="currentPassword" type="password" placeholder="Trenutna lozinka" />
+<input id="newPassword" type="password" placeholder="Nova lozinka" />
+<button onclick="changePassword()">Promijeni lozinku</button>
+
+
+<h5 class="mt-3">Osobni podaci</h5>
+
+<div class="row mb-3 align-items-center">
+    <label class="col-sm-3 col-form-label fw-semibold">Email</label>
+    <div class="col-sm-9">
+        <input class="form-control bg-warning-subtle" value="Tiho@gmail.com" />
+    </div>
+</div>
+
+<div class="row mb-3 align-items-center">
+    <label class="col-sm-3 col-form-label fw-semibold">Ime</label>
+    <div class="col-sm-9">
+        <input class="form-control" value="Tiho" />
+    </div>
+</div>
+
+<div class="row mb-3 align-items-center">
+    <label class="col-sm-3 col-form-label fw-semibold">Prezime</label>
+    <div class="col-sm-9">
+        <input class="form-control" value="Capin" />
+    </div>
+</div>
+
+<div class="row mb-4 align-items-center">
+    <label class="col-sm-3 col-form-label fw-semibold">Telefon</label>
+    <div class="col-sm-9">
+        <input class="form-control" value="132" />
+    </div>
+</div>
+
+<button class="btn btn-primary w-100 mb-4">Spremi</button>
+
+
+@if (Model.Role == "Employer")
+{
+    <hr />
+    <h4>Firma</h4>
+
+    @if (Model.FirmID != null)
+    {
+        <p>Firma: <strong>@Model.FirmName</strong></p>
+    }
+    else if (Model.HasPendingFirmRequest)
+    {
+        <p>Zahtjev za firmu je na čekanju.</p>
+    }
+    else
+    {
+        <select id="firmSelect">
+            <option value="">-- odaberi firmu --</option>
+            @foreach (var f in Model.Firms)
+            {
+                <option value="@f.Value">@f.Text</option>
+            }
+        </select>
+
+        <br />
+        <input id="newFirmName" placeholder="ili nova firma" />
+        <br />
+        <button onclick="requestFirm()">Pošalji zahtjev</button>
+    }
+}
+
+<script>
+async function updateProfile() {
+    await fetch('/Profile/UpdateProfile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            email: email.value,
+            firstName: firstName.value,
+            lastName: lastName.value,
+            phone: phone.value
+        })
+    });
+    alert('Spremljeno');
+}
+
+async function changePassword() {
+    const res = await fetch('/Profile/ChangePassword', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            currentPassword: currentPassword.value,
+            newPassword: newPassword.value
+        })
+    });
+
+    alert(res.ok ? 'Lozinka promijenjena' : 'Greška');
+}
+
+async function requestFirm() {
+    const payload = firmSelect.value
+        ? { firmID: parseInt(firmSelect.value) }
+        : { newFirmName: newFirmName.value };
+
+    const res = await fetch('/Profile/RequestFirm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+
+    alert(res.ok ? 'Zahtjev poslan adminu' : 'Greška');
+}
+</script>
