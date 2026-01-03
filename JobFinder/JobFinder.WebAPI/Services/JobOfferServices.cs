@@ -48,7 +48,7 @@ namespace JobFinder.WebAPI.Services
                 //al ovako je bolje
                 var firm = new Firm
                 {
-                    FirmName = "test", //ovo tribas pomaknit ili skontat
+                    FirmName = "test2", //ovo tribas pomaknit ili skontat
                     Email = "email@gmail.com",
                     PhoneNumber = "0994362136",
                     Description = dto.Description,

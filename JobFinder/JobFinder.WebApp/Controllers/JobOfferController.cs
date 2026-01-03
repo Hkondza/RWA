@@ -140,7 +140,7 @@ namespace JobFinder.WebApp.Controllers
                Description =  vm.Description,
                Salary = vm.Salary,
 
-                FirmID = vm.FirmID,
+                FirmID = FirmId,
                 FirmName = vm.FirmName,
 
                 JobTypeID = vm.JobTypeID,
