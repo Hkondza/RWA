@@ -29,25 +29,21 @@
         <span asp-validation-for="Salary" class="text-danger"></span>
     </div>
 
-    <hr />
+   
 
     <!-- FIRM -->
-    <div class="mb-2">
-        <label class="form-label">Firma</label>
-        <select asp-for="FirmID" asp-items="Model.Firms" class="form-select" id="FirmSelect">
-            <option value="">-- odaberi firmu --</option>
-        </select>
-    </div>
+   <div class="mb-3">
+    <label class="form-label">Firma</label>
 
-    <div class="form-check mb-2">
-        <input class="form-check-input" type="checkbox" id="FirmNewToggle" />
-        <label class="form-check-label" for="FirmNewToggle">Upiši novu firmu</label>
-    </div>
+        <input
+            type="text"
+            class="form-control"
+            value="@Model.FirmName"
+            readonly
+        />
+    
+</div>
 
-    <div class="mb-3" id="FirmNewBox" style="display:none;">
-        <input asp-for="NewFirmName" class="form-control" placeholder="Nova firma (naziv)" />
-        <span asp-validation-for="NewFirmName" class="text-danger"></span>
-    </div>
 
     <!-- JOB TYPE -->
     <div class="mb-2">
@@ -116,7 +112,7 @@
             apply();
         }
 
-        wireToggle("FirmNewToggle", "FirmNewBox", "FirmSelect", "input");
+       
         wireToggle("JobTypeNewToggle", "JobTypeNewBox", "JobTypeSelect", "input");
         wireToggle("LocationNewToggle", "LocationNewBox", "LocationSelect", "input");
     </script>

@@ -1,5 +1,14 @@
 ﻿@model JobFinder.WebApp.ViewModels.Profile.ProfileVM
 
+@if (TempData["Error"] != null)
+{
+    <script>
+        alert(@Html.Raw(Json.Serialize(TempData["Error"])));
+    </script>
+}
+
+
+
 <h2>Moj profil</h2>
 
 <h4>Osobni podaci</h4>

@@ -76,11 +76,10 @@ namespace JobFinder.WebAPI.Services
                 .FirstOrDefaultAsync(u => u.IDUser == userId)
                 ?? throw new Exception("User ne postoji.");
 
-            // ✅ ako već ima firmu, ne smije slati zahtjev
             if (user.FirmID != null)
                 throw new Exception("User već ima firmu dodijeljenu.");
 
-            // ✅ ako već ima pending, ne smije novi
+            
             var existingPending = await _context.UserFirms
                 .FirstOrDefaultAsync(x => x.UserID == userId && x.Status == "Pending");
 
@@ -89,7 +88,7 @@ namespace JobFinder.WebAPI.Services
 
             int firmId;
 
-            // 1) ako odabrao postojeću firmu
+            
             if (dto.FirmID.HasValue)
             {
                 var firmExists = await _context.Firms.AnyAsync(f => f.IDFirm == dto.FirmID.Value);
@@ -100,7 +99,7 @@ namespace JobFinder.WebAPI.Services
             }
             else
             {
-                // 2) ako želi novu firmu
+                
                 if (string.IsNullOrWhiteSpace(dto.NewFirmName))
                     throw new Exception("Moraš odabrati firmu ili upisati naziv nove firme.");
 
@@ -115,7 +114,7 @@ namespace JobFinder.WebAPI.Services
                 firmId = firm.IDFirm;
             }
 
-            // ✅ kreiraj UserFirm request (Pending)
+            
             var req = new Models.UserFirm
             {
                 UserID = userId,

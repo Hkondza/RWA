@@ -67,16 +67,29 @@ namespace JobFinder.WebApp.Controllers
         // =========================
         public async Task<IActionResult> Create()
         {
+
+            if (FirmId == 0 || !FirmId.HasValue)
+            {
+                TempData["Error"] = "Ne možeš kreirati oglas jer nemaš dodijeljenu firmu. Postavi firmu u profilu.";
+                return RedirectToAction("Index", "Profile");
+            }
+
             var vm = new JobOfferCreateVM();
 
-            // 🔹 Firms
-            var firms = await _client.GetFromJsonAsync<List<FirmLookupDto>>("/api/firm/firms");
-            if (firms != null)
+            FirmLookupDto? firm = null;
+
+
+
+
+            if (FirmId.HasValue)
             {
-                vm.Firms = firms
-                    .Select(f => new SelectListItem(f.FirmName, f.IDFirm.ToString()))
-                    .ToList();
+                firm = await _client.GetFromJsonAsync<FirmLookupDto>(
+                    $"/api/firm/{FirmId.Value}"
+                );
             }
+
+            vm.FirmName = firm?.FirmName;
+
 
             // 🔹 JobTypes
             var jobTypes = await _client.GetFromJsonAsync<List<JobTypeLookupDto>>("/api/jobtype");
@@ -106,9 +119,7 @@ namespace JobFinder.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(JobOfferCreateVM vm)
         {
-            // 🔐 Minimalna validacija (ili ID ili novo ime)
-            if (!vm.FirmID.HasValue && string.IsNullOrWhiteSpace(vm.NewFirmName))
-                ModelState.AddModelError(nameof(vm.NewFirmName), "Odaberi firmu ili upiši novu.");
+           
 
             if (!vm.JobTypeID.HasValue && string.IsNullOrWhiteSpace(vm.NewJobTypeName))
                 ModelState.AddModelError(nameof(vm.NewJobTypeName), "Odaberi tip posla ili upiši novi.");
@@ -123,21 +134,23 @@ namespace JobFinder.WebApp.Controllers
             }
 
             // 🔹 Payload TOČNO kakav API očekuje
-            var payload = new
+            var payload = new JobOfferCreateVM
             {
-                vm.Title,
-                vm.Description,
-                vm.Salary,
+              Title =  vm.Title,
+               Description =  vm.Description,
+               Salary = vm.Salary,
 
-                vm.FirmID,
-                vm.NewFirmName,
+                FirmID = vm.FirmID,
+                FirmName = vm.FirmName,
 
-                vm.JobTypeID,
-                vm.NewJobTypeName,
+                JobTypeID = vm.JobTypeID,
+                NewJobTypeName = vm.NewJobTypeName,
 
-                vm.LocationID,
-                vm.NewLocationName
+                LocationID = vm.LocationID,
+                NewLocationName = vm.NewLocationName
             };
+
+            
 
             var response = await _client.PostAsJsonAsync("/api/joboffer", payload);
 
@@ -153,11 +166,7 @@ namespace JobFinder.WebApp.Controllers
         // =========================
         // LOOKUP DTOs (samo za dropdown)
         // =========================
-        private class FirmLookupDto
-        {
-            public int IDFirm { get; set; }
-            public string FirmName { get; set; }
-        }
+   
 
         private class JobTypeLookupDto
         {
@@ -169,6 +178,12 @@ namespace JobFinder.WebApp.Controllers
         {
             public int IDLocation { get; set; }
             public string LocationName { get; set; }
+        }
+
+        private class FirmLookupDto
+        {
+            public int IDFirm { get; set; }
+            public string FirmName { get; set; }
         }
     }
 }

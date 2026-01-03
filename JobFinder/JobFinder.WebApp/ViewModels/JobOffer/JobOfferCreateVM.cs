@@ -19,13 +19,12 @@ namespace JobFinder.WebApp.ViewModels.JobOffer
         public int? LocationID { get; set; }
 
         // Ako korisnik upisuje novo
-        public string? NewFirmName { get; set; }
         public string? NewJobTypeName { get; set; }
         public string? NewLocationName { get; set; }
 
         // Liste za dropdown
-        public List<SelectListItem> Firms { get; set; } = new();
         public List<SelectListItem> JobTypes { get; set; } = new();
         public List<SelectListItem> Locations { get; set; } = new();
+        public string? FirmName { get; internal set; }
     }
 }

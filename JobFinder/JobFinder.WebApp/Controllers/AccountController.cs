@@ -106,6 +106,18 @@ namespace JobFinder.WebApp.Controllers
                }
            );
 
+            Response.Cookies.Append(
+              "firmid",
+              loginResponse.User.FirmID + "",
+              new CookieOptions
+              {
+                  HttpOnly = false,
+                  Secure = true,
+                  SameSite = SameSiteMode.Strict,
+                  Expires = DateTimeOffset.UtcNow.AddHours(2)
+              }
+          );
+
 
 
 
@@ -149,6 +161,7 @@ namespace JobFinder.WebApp.Controllers
             Response.Cookies.Delete("username");
             Response.Cookies.Delete("role");
             Response.Cookies.Delete("userid");
+            Response.Cookies.Delete("firmid");
 
             return RedirectToAction("Login");
 
