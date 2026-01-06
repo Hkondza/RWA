@@ -1,6 +1,7 @@
 ﻿using JobFinder.WebAPI.Data;
 using JobFinder.WebAPI.DTOs.Profile;
 using JobFinder.WebAPI.Helpers;
+using JobFinder.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace JobFinder.WebAPI.Services
@@ -103,9 +104,18 @@ namespace JobFinder.WebAPI.Services
                 if (string.IsNullOrWhiteSpace(dto.NewFirmName))
                     throw new Exception("Moraš odabrati firmu ili upisati naziv nove firme.");
 
-                var firm = new Models.Firm
+                //radi urednosti strancie stavio sam ovo default
+                //moga sam dto napunit sa svim podatima i onda jos napraviti text fildove
+                //al ovako je bolje
+                var firm = new Firm
                 {
-                    FirmName = dto.NewFirmName.Trim()
+                    FirmName = dto.NewFirmName,
+                    Email = "email@gmail.com",
+                    PhoneNumber = "0994362136",
+                    Description = "Description",
+                    WebsiteUrl = "https://www.test.hr",
+                    JobTypeID = 1
+
                 };
 
                 _context.Firms.Add(firm);
