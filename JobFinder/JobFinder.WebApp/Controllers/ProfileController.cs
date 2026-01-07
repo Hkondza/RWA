@@ -90,11 +90,6 @@ namespace JobFinder.WebApp.Controllers
         {
             AttachJwt();
 
-            if (vm.FirmID == null || vm.FirmID == 0) 
-            {
-                
-            }
-
             var res = await _client.PostAsJsonAsync("/api/profile/request-firm", vm);
             if (!res.IsSuccessStatusCode)
                 return BadRequest(await res.Content.ReadAsStringAsync());

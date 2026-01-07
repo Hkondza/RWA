@@ -50,5 +50,15 @@ namespace JobFinder.WebAPI.Controllers
         {
             return Ok(await _service.GetByUserAsync(userId));
         }
+
+
+        // GET: api/jobapplication/by-firm/5
+        [HttpGet("by-firm/{firmId}")]
+        public async Task<IActionResult> GetByFirm(int firmId)
+        {
+            return Ok(await _service.GetByFirmAsync(firmId));
+        }
+
+
     }
 }

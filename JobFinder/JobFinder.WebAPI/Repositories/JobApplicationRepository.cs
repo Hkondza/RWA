@@ -67,5 +67,18 @@ namespace JobFinder.WebAPI.Repositories
               .Where(a => a.IDJobApplication == jobApplicationId)
               .ToListAsync();
         }
+
+        public Task<List<JobApplication>> GetByFirmAsync(int firmId)
+        {
+            return _context.JobApplications
+               .Include(a => a.JobOffer)
+                   .ThenInclude(o => o.Firm)
+               .Include(a => a.JobOffer)
+                   .ThenInclude(o => o.JobType)
+               .Include(a => a.JobOffer)
+                   .ThenInclude(o => o.Location)
+            .Where(a => a.JobOffer.Firm.IDFirm == firmId)
+            .ToListAsync();
+        }
     }
 }

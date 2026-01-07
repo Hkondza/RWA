@@ -25,7 +25,9 @@ namespace JobFinder.WebApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var response = await _client.GetAsync("api/jobapplication/by-user/" + UserId);
+
+           var response = await _client.GetAsync("api/jobapplication/by-user/" + UserId);
+            
 
             if (!response.IsSuccessStatusCode)
                 return View(new List<JobApplicationListVM>());
