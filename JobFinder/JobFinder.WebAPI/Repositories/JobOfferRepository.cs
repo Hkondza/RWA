@@ -40,5 +40,15 @@ namespace JobFinder.WebAPI.Repositories
             await _context.SaveChangesAsync();
             return offer;
         }
+
+        public async Task<List<JobOffer>> GetAllByFirmAsync(int firmId)
+        {
+            return await _context.JobOffers
+               .Include(o => o.Firm)
+               .Include(o => o.JobType)
+               .Include(o => o.Location)
+               .Where(o => o.FirmID == firmId)
+               .ToListAsync();
+        }
     }
 }

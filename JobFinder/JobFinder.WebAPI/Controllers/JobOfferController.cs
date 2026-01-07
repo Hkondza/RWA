@@ -40,5 +40,13 @@ namespace JobFinder.WebAPI.Controllers
             var created = await _service.CreateAsync(dto);
             return Ok(created);
         }
+
+
+        [HttpGet("by-firm/{firmId}")]
+        public async Task<IActionResult> GetByFirmAsync(int firmId)
+        {
+            return Ok(await _service.GetByFirmAsync(firmId));
+        }
+
     }
 }

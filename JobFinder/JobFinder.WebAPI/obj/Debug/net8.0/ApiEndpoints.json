@@ -269,6 +269,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobOfferController",
+    "Method": "GetByFirmAsync",
+    "RelativePath": "api/JobOffer/by-firm/{firmId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "firmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "JobFinder.WebAPI.Controllers.JobTypeController",
     "Method": "GetAll",
     "RelativePath": "api/JobType",

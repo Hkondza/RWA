@@ -113,5 +113,10 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<JobOfferReadDto>(created);
         }
 
+        public async Task<List<JobOfferReadDto>> GetByFirmAsync(int firmId)
+        {
+            var offers = await _repo.GetAllByFirmAsync(firmId);
+            return _mapper.Map<List<JobOfferReadDto>>(offers);
+        }
     }
 }

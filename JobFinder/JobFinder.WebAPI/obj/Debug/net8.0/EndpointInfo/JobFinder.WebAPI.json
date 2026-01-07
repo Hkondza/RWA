@@ -430,6 +430,29 @@
         }
       }
     },
+    "/api/JobOffer/by-firm/{firmId}": {
+      "get": {
+        "tags": [
+          "JobOffer"
+        ],
+        "parameters": [
+          {
+            "name": "firmId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/JobType": {
       "get": {
         "tags": [
