@@ -77,6 +77,7 @@ namespace JobFinder.WebAPI.Repositories
                    .ThenInclude(o => o.JobType)
                .Include(a => a.JobOffer)
                    .ThenInclude(o => o.Location)
+            .Include(a => a.User)
             .Where(a => a.JobOffer.Firm.IDFirm == firmId)
             .ToListAsync();
         }

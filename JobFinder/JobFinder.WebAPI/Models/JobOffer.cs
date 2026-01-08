@@ -27,6 +27,7 @@ namespace JobFinder.WebAPI.Models
         [Required]
         public string Description { get; set; }
 
+
         public string? Salary { get; set; }
 
         public bool IsActive { get; set; } = true;

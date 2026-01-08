@@ -1,0 +1,69 @@
+﻿@model List<JobFinder.WebApp.ViewModels.Application.JobApplicationUsers>
+
+@{
+    ViewData["Title"] = "Admin – Zahtjevi za firme";
+}
+
+<h2 class="mb-4">Zahtjevi za dodjelu firme</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Trenutno nema zahtjeva za odobravanje.
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Email</th>
+                        <th>Tel</th>
+                        <th>Zatraženo</th>
+                        <th class="text-center">Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>
+                            <span class="badge bg-warning text-dark">
+                                @item.Email
+                            </span>
+                        </td>
+                        <td>
+                            @item.AppliedAt.ToString("dd.MM.yyyy HH:mm")
+                        </td>
+                        <td class="text-center">
+                            <form asp-action="Approve"
+                                  method="post"
+                                  class="d-inline">
+                                <input type="hidden" name="id" value="@item.UserID" />
+                                <button class="btn btn-success btn-sm">
+                                    ✔ Odobri
+                                </button>
+                            </form>
+
+                            <form asp-action="Reject"
+                                  method="post"
+                                  class="d-inline ms-2">
+                                <input type="hidden" name="id" value="@item.UserID" />
+                                <button class="btn btn-danger btn-sm">
+                                    ✖ Odbij
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

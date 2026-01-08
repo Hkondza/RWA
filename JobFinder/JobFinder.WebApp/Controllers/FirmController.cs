@@ -1,5 +1,8 @@
-﻿using JobFinder.WebApp.ViewModels.JobOffer;
+﻿using JobFinder.WebApp.ViewModels.Admin;
+using JobFinder.WebApp.ViewModels.Application;
+using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 using System.Text.Json;
 
 namespace JobFinder.WebApp.Controllers
@@ -36,5 +39,64 @@ namespace JobFinder.WebApp.Controllers
 
             return View(offers);
         }
+
+        public async Task<IActionResult> Details()
+        {
+            var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId);
+
+            if (!response.IsSuccessStatusCode)
+                return View(new List<JobApplicationUsers>());
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var offers = JsonSerializer.Deserialize<List<JobApplicationUsers>>(
+                json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+            );
+
+            return View(offers);
+        }
+
+
+        // ✅ APPROVE
+        [HttpPost]
+        public async Task<IActionResult> Approve(int id)
+        {
+            if (!IsAuthenticated || !IsEmployer)
+                return Unauthorized();
+
+            var jwt = Request.Cookies["jwt"];
+            _client.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
+
+            var body = JsonSerializer.Serialize(new { userFirmId = id });
+            var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+            await _client.PostAsync("api/admin/user-firm/approve", content);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        // ❌ REJECT
+        [HttpPost]
+        public async Task<IActionResult> Reject(int id)
+        {
+            if (!IsAuthenticated || !IsEmployer)
+                return Unauthorized();
+
+            var jwt = Request.Cookies["jwt"];
+            _client.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
+
+            var body = JsonSerializer.Serialize(new { userFirmId = id });
+            var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+            await _client.PostAsync("api/admin/user-firm/reject", content);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
     }
 }

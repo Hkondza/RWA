@@ -28,5 +28,8 @@ namespace JobFinder.WebAPI.Models
 
         [ForeignKey(nameof(JobType))]
         public int JobTypeID { get; set; }
+
+
+        public User? User { get; set; }
     }
 }

@@ -31,6 +31,11 @@ namespace JobFinder.WebAPI.Mapping
                 .ForMember(d => d.Salary, opt => opt.MapFrom(s => s.JobOffer.Salary))
                 .ForMember(d => d.Title, opt => opt.MapFrom(s => s.JobOffer.Title))
                 .ForMember(d => d.Description, opt => opt.MapFrom(s => s.JobOffer.Description))
+                .ForMember(d => d.UserID, opt => opt.MapFrom(s => s.UserID))
+                .ForMember(d => d.FirstName, opt => opt.MapFrom(s => s.User.FirstName))
+                .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.User.LastName))
+                .ForMember(d => d.Email, opt => opt.MapFrom(s => s.User.Email))
+                .ForMember(d => d.Phone, opt => opt.MapFrom(s => s.User.Phone))
                 .ForMember(d => d.IsActive, opt => opt.MapFrom(s => s.JobOffer.IsActive));
 
             CreateMap<UserFirm, UserFirmReadDto>()
