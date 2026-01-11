@@ -164,6 +164,38 @@
   },
   {
     "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "Approve",
+    "RelativePath": "api/JobApplication/{id}/approve",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "Approve",
+    "RelativePath": "api/JobApplication/approve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.JobApplication.JobApplicationReadDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
     "Method": "GetByApplication",
     "RelativePath": "api/JobApplication/by-application/{jobApplicationId}",
     "HttpMethod": "GET",
@@ -182,6 +214,22 @@
     "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
     "Method": "GetByFirm",
     "RelativePath": "api/JobApplication/by-firm/{firmId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "firmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "GetByFirmApplied",
+    "RelativePath": "api/JobApplication/by-firm/{firmId}/applied",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -221,6 +269,22 @@
       {
         "Name": "userId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "Reject",
+    "RelativePath": "api/JobApplication/reject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.UserFirm.UserFirmActionDto",
         "IsRequired": true
       }
     ],

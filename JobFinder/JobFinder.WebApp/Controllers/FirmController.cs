@@ -2,6 +2,7 @@
 using JobFinder.WebApp.ViewModels.Application;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
@@ -42,7 +43,7 @@ namespace JobFinder.WebApp.Controllers
 
         public async Task<IActionResult> Details()
         {
-            var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId);
+            var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId+"/applied");
 
             if (!response.IsSuccessStatusCode)
                 return View(new List<JobApplicationUsers>());
@@ -62,17 +63,14 @@ namespace JobFinder.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Approve(int id)
         {
-            if (!IsAuthenticated || !IsEmployer)
-                return Unauthorized();
-
             var jwt = Request.Cookies["jwt"];
             _client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
+                new AuthenticationHeaderValue("Bearer", jwt);
 
-            var body = JsonSerializer.Serialize(new { userFirmId = id });
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
-
-            await _client.PostAsync("api/admin/user-firm/approve", content);
+            var response = await _client.PutAsync(
+                $"api/jobapplication/{id}/approve",
+                null
+            );
 
             return RedirectToAction(nameof(Index));
         }
@@ -91,7 +89,7 @@ namespace JobFinder.WebApp.Controllers
             var body = JsonSerializer.Serialize(new { userFirmId = id });
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
-            await _client.PostAsync("api/admin/user-firm/reject", content);
+            await _client.PostAsync("api/jobapplication/reject", content);
 
             return RedirectToAction(nameof(Index));
         }

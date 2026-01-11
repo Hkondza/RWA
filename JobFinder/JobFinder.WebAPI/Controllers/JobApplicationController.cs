@@ -1,4 +1,5 @@
 ﻿using JobFinder.WebAPI.DTOs.JobApplication;
+using JobFinder.WebAPI.DTOs.UserFirm;
 using JobFinder.WebAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,6 +53,12 @@ namespace JobFinder.WebAPI.Controllers
         }
 
 
+        //treab dodati da tobijes sve koji su Applied , Accepeted .
+
+        // kada se prihvati accepted. imas novu tab workers . u njemu mozes start job i end job.
+        //start job -> minja bazu iz accepeted u working. 
+        //end work -> minja bazu iz working u finnished.
+
         // GET: api/jobapplication/by-firm/5
         [HttpGet("by-firm/{firmId}")]
         public async Task<IActionResult> GetByFirm(int firmId)
@@ -59,6 +66,38 @@ namespace JobFinder.WebAPI.Controllers
             return Ok(await _service.GetByFirmAsync(firmId));
         }
 
+        [HttpGet("by-firm/{firmId}/applied")]
+        public async Task<IActionResult> GetByFirmApplied(int firmId)
+        {
+            return Ok(await _service.GetByFirmAppliedAsync(firmId));
+        }
+
+
+        // PUT: api/jobapplication/{id}/approve
+        [HttpPut("{id}/approve")]
+        public async Task<IActionResult> Approve(int id)
+        {
+            await _service.ApproveAsync(id);
+            return NoContent();
+        }
+
+
+
+        // 2️⃣ Approve
+        [HttpPost("approve")]
+        public async Task<IActionResult> Approve([FromBody] JobApplicationReadDto dto)
+        {
+            await _service.ApproveAsync(dto.IDJobApplication);
+            return Ok();
+        }
+
+        // 3️⃣ Reject
+        [HttpPost("reject")]
+        public async Task<IActionResult> Reject([FromBody] UserFirmActionDto dto)
+        {
+            await _service.RejectAsync(dto.UserFirmId);
+            return Ok();
+        }
 
     }
 }

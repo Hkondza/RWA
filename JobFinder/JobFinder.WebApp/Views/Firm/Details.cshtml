@@ -45,7 +45,7 @@ else
                             <form asp-action="Approve"
                                   method="post"
                                   class="d-inline">
-                                <input type="hidden" name="id" value="@item.UserID" />
+                                <input type="hidden" name="id" value="@item.IdJobApplication" />
                                 <button class="btn btn-success btn-sm">
                                     ✔ Odobri
                                 </button>
@@ -54,7 +54,7 @@ else
                             <form asp-action="Reject"
                                   method="post"
                                   class="d-inline ms-2">
-                                <input type="hidden" name="id" value="@item.UserID" />
+                                <input type="hidden" name="id" value="@item.IdJobApplication" />
                                 <button class="btn btn-danger btn-sm">
                                     ✖ Odbij
                                 </button>

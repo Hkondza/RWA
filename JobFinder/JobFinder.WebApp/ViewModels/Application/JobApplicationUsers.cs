@@ -2,7 +2,7 @@
 {
     public class JobApplicationUsers
     {
-
+        public int IdJobApplication { get; set; }
         public int UserID { get; set; }
         public string FirstName { get; set; }
 
