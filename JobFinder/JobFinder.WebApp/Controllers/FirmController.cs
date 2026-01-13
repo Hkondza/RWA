@@ -41,9 +41,26 @@ namespace JobFinder.WebApp.Controllers
             return View(offers);
         }
 
-        public async Task<IActionResult> Details()
+        public async Task<IActionResult> Details(int id)
         {
-            var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId+"/applied");
+             //var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId+"/applied");
+            var response = await _client.GetAsync("api/jobapplication/by-offer/" + id+"/applied");
+            if (!response.IsSuccessStatusCode)
+                return View(new List<JobApplicationUsers>());
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var offers = JsonSerializer.Deserialize<List<JobApplicationUsers>>(
+                json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+            );
+
+            return View(offers);
+        }
+
+        public async Task<IActionResult> Details2(int jobOfferID)
+        {
+            var response = await _client.GetAsync("api/jobapplication/by-offer/" + jobOfferID);
 
             if (!response.IsSuccessStatusCode)
                 return View(new List<JobApplicationUsers>());
@@ -60,7 +77,7 @@ namespace JobFinder.WebApp.Controllers
 
 
 
-     
+
         public async Task<IActionResult> Approve(int id)
         {
             var jwt = Request.Cookies["jwt"];

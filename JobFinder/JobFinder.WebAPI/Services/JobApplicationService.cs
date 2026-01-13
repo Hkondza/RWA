@@ -11,6 +11,7 @@ namespace JobFinder.WebAPI.Services
 {
     public class JobApplicationService : IJobApplicationService
     {
+        private const string APPLIED = "Applied";
         private readonly IJobApplicationRepository _repo;
         private readonly IMapper _mapper;
         private readonly JobFinderDbContext _context;
@@ -39,7 +40,7 @@ namespace JobFinder.WebAPI.Services
             }
 
             var entity = _mapper.Map<JobApplication>(dto);
-            entity.Status = "Applied";
+            entity.Status = APPLIED;
             entity.AppliedAt = DateTime.Now;
 
             var created = await _repo.CreateAsync(entity);
@@ -66,7 +67,7 @@ namespace JobFinder.WebAPI.Services
             }
 
 
-            if (jobapplication.Status != "Applied")
+            if (jobapplication.Status != APPLIED)
                 throw new Exception("Zahtjev već obrađen.");
 
           
@@ -99,7 +100,7 @@ namespace JobFinder.WebAPI.Services
             var list = await _repo.GetByFirmAsync(firmId);
 
             List<JobApplication> acceptedList = list
-                .Where(l => l.Status == "Applied")
+                .Where(l => l.Status == APPLIED)
                 .ToList();
 
             return _mapper.Map<List<JobApplicationReadDto>>(acceptedList);
@@ -133,6 +134,16 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<List<JobApplicationReadDto>>(workingList);
         }
 
+        public async Task<List<JobApplicationReadDto>> GetByOfferAppliedAsync(int jobOfferId)
+        {
+            var list = await _repo.GetByOfferAsync(jobOfferId);
+
+            List<JobApplication> appliedList = list 
+                .Where(l => l.Status == APPLIED)
+                .ToList();
+            return _mapper.Map<List<JobApplicationReadDto>>(appliedList);
+        }
+
         public async Task<List<JobApplicationReadDto>> GetByOfferAsync(int jobOfferId)
         {
             var list = await _repo.GetByOfferAsync(jobOfferId);
@@ -160,7 +171,7 @@ namespace JobFinder.WebAPI.Services
             }
 
 
-            if (jobapplication.Status != "Applied")
+            if (jobapplication.Status != APPLIED)
                 throw new Exception("Zahtjev već obrađen.");
 
 

@@ -38,6 +38,12 @@ namespace JobFinder.WebAPI.Controllers
             return Ok(await _service.GetByOfferAsync(jobOfferId));
         }
 
+        [HttpGet("by-offer/{jobOfferId}/applied")]
+        public async Task<IActionResult> GetByOfferApplied(int jobOfferId)
+        {
+            return Ok(await _service.GetByOfferAppliedAsync(jobOfferId));
+        }
+
         [HttpGet("by-application/{jobApplicationId}")]
         public async Task<IActionResult> GetByApplication(int jobApplicationId)
         {

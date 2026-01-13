@@ -6,6 +6,7 @@ namespace JobFinder.WebAPI.Services.Interfaces
     {
         Task<JobApplicationReadDto> ApplyAsync(JobApplicationCreateDto dto);
         Task<List<JobApplicationReadDto>> GetByOfferAsync(int jobOfferId);
+        Task<List<JobApplicationReadDto>> GetByOfferAppliedAsync(int jobOfferId);
         Task<List<JobApplicationReadDto>> GetByApplicationAsync(int jobApplicationId);
         Task<List<JobApplicationReadDto>> GetByUserAsync(int userId);
         Task<List<JobApplicationReadDto>> GetByFirmAsync(int firmId);

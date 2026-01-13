@@ -260,6 +260,22 @@
   },
   {
     "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "GetByOfferApplied",
+    "RelativePath": "api/JobApplication/by-offer/{jobOfferId}/applied",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobOfferId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
     "Method": "GetByUser",
     "RelativePath": "api/JobApplication/by-user/{userId}",
     "HttpMethod": "GET",
