@@ -27,7 +27,7 @@ namespace JobFinder.WebAPI.Controllers
             return int.Parse(idStr);
         }
 
-        // GET: api/profile/me
+        
         [HttpGet("me")]
         public async Task<IActionResult> Me()
         {
@@ -35,7 +35,7 @@ namespace JobFinder.WebAPI.Controllers
             return Ok(await _service.GetMeAsync(userId));
         }
 
-        // PUT: api/profile/update
+        
         [HttpPut("update")]
         public async Task<IActionResult> Update(ProfileUpdateDto dto)
         {
@@ -44,7 +44,7 @@ namespace JobFinder.WebAPI.Controllers
             return Ok();
         }
 
-        // PUT: api/profile/change-password
+        
         [HttpPut("change-password")]
         public async Task<IActionResult> ChangePassword(ChangePasswordDto dto)
         {
@@ -53,7 +53,7 @@ namespace JobFinder.WebAPI.Controllers
             return Ok();
         }
 
-        // POST: api/profile/request-firm
+        
         [HttpPost("request-firm")]
         public async Task<IActionResult> RequestFirm(FirmRequestDto dto)
         {

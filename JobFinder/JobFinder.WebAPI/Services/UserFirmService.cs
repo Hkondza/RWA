@@ -19,7 +19,7 @@ namespace JobFinder.WebAPI.Services
             _context = context;
         }
 
-        // Employer šalje zahtjev
+        
         public async Task CreateRequestAsync(int userId, int firmId)
         {
             var existing = await _userFirmRepo.GetPendingByUserAsync(userId);
@@ -37,13 +37,13 @@ namespace JobFinder.WebAPI.Services
             await _userFirmRepo.CreateAsync(userFirm);
         }
 
-        // Admin vidi sve pending zahtjeve
+        
         public async Task<List<UserFirm>> GetPendingAsync()
         {
             return await _userFirmRepo.GetPendingAsync();
         }
 
-        // Admin odobrava
+        
         public async Task ApproveAsync(int userFirmId)
         {
             using var tx = await _context.Database.BeginTransactionAsync();
@@ -54,11 +54,11 @@ namespace JobFinder.WebAPI.Services
             if (userFirm.Status != "Pending")
                 throw new Exception("Zahtjev već obrađen.");
 
-            // 1️⃣ update UserFirm
+            
             userFirm.Status = "Approved";
             userFirm.ApprovedAt = DateTime.Now;
 
-            // 2️⃣ upis u Users
+            
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.IDUser == userFirm.UserID)
                 ?? throw new Exception("User ne postoji.");
@@ -69,7 +69,7 @@ namespace JobFinder.WebAPI.Services
             await tx.CommitAsync();
         }
 
-        // Admin odbija
+        
         public async Task RejectAsync(int userFirmId)
         {
             var userFirm = await _userFirmRepo.GetByIdAsync(userFirmId)

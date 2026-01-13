@@ -35,7 +35,7 @@ namespace JobFinder.WebAPI.Services
 
         public async Task<JobOfferReadDto> CreateAsync(JobOfferCreateDto dto)
         {
-            // 1️⃣ Resolve Firm
+            // ovo pomakni stari kod nova logika
             int firmId;
             if (dto.FirmID.HasValue)
             {
@@ -61,7 +61,7 @@ namespace JobFinder.WebAPI.Services
                 firmId = firm.IDFirm;
             }
 
-            // 2️⃣ Resolve JobType
+            
             int jobTypeId;
             if (dto.JobTypeID.HasValue)
             {
@@ -78,7 +78,7 @@ namespace JobFinder.WebAPI.Services
                 jobTypeId = jobType.IDJobType;
             }
 
-            // 3️⃣ Resolve Location
+            
             int locationId;
             if (dto.LocationID.HasValue)
             {
@@ -95,7 +95,7 @@ namespace JobFinder.WebAPI.Services
                 locationId = location.IDLocation;
             }
 
-            // 4️⃣ Create JobOffer
+            
             var entity = new JobOffer
             {
                 Title = dto.Title,

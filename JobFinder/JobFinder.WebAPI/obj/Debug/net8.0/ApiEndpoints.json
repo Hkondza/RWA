@@ -180,15 +180,15 @@
   },
   {
     "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
-    "Method": "Approve",
-    "RelativePath": "api/JobApplication/approve",
-    "HttpMethod": "POST",
+    "Method": "Reject",
+    "RelativePath": "api/JobApplication/{id}/reject",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "JobFinder.WebAPI.DTOs.JobApplication.JobApplicationReadDto",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -269,22 +269,6 @@
       {
         "Name": "userId",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
-    "Method": "Reject",
-    "RelativePath": "api/JobApplication/reject",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "JobFinder.WebAPI.DTOs.UserFirm.UserFirmActionDto",
         "IsRequired": true
       }
     ],

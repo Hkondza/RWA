@@ -26,7 +26,7 @@ namespace JobFinder.WebAPI.Services
 
         public async Task<JobApplicationReadDto> ApplyAsync(JobApplicationCreateDto dto)
         {
-            // Poslovno pravilo: nema duple prijave
+            
             if (await _repo.ExistsAsync(dto.JobOfferID, dto.UserID))
             {
                 await LogHelper.WriteAsync(
@@ -51,11 +51,11 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<JobApplicationReadDto>(created);
         }
 
-        public async Task ApproveAsync(int UserID)
+        public async Task ApproveAsync(int jobApplicationID)
         {
             using var tx = await _context.Database.BeginTransactionAsync();
 
-            var jobApplications = await _repo.GetByApplicationAsync(UserID)
+            var jobApplications = await _repo.GetByApplicationAsync(jobApplicationID)
                 ?? throw new Exception("Zahtjev ne postoji.");
 
             var jobapplication = jobApplications.FirstOrDefault();
@@ -145,9 +145,30 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<List<JobApplicationReadDto>>(list);
         }
 
-        public Task RejectAsync(int userFirmId)
+        public async Task RejectAsync(int jobApplicationID)
         {
-            throw new NotImplementedException();
+            using var tx = await _context.Database.BeginTransactionAsync();
+
+            var jobApplications = await _repo.GetByApplicationAsync(jobApplicationID)
+                ?? throw new Exception("Zahtjev ne postoji.");
+
+            var jobapplication = jobApplications.FirstOrDefault();
+
+            if (jobapplication == null)
+            {
+                throw new Exception("JobApplication nepostiji");
+            }
+
+
+            if (jobapplication.Status != "Applied")
+                throw new Exception("Zahtjev već obrađen.");
+
+
+            jobapplication.Status = "Rejected";
+            // dodat approved at u tablicu job application jobapplication.ApprovedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+            await tx.CommitAsync();
         }
     }
 }

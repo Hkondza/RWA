@@ -20,9 +20,7 @@ namespace JobFinder.WebApp.Controllers
             };
         }
 
-        // =========================
-        // GET: /JobOffer
-        // =========================
+    
         public async Task<IActionResult> Index()
         {
             var response = await _client.GetAsync("/api/joboffer");
@@ -40,9 +38,7 @@ namespace JobFinder.WebApp.Controllers
             return View(offers);
         }
 
-        // =========================
-        // GET: /JobOffer/Details/5
-        // =========================
+   
         public async Task<IActionResult> Details(int id)
         {
             var response = await _client.GetAsync($"/api/joboffer/{id}");
@@ -62,9 +58,7 @@ namespace JobFinder.WebApp.Controllers
             return View(offer);
         }
 
-        // =========================
-        // GET: /JobOffer/Create
-        // =========================
+    
         public async Task<IActionResult> Create()
         {
 
@@ -81,6 +75,7 @@ namespace JobFinder.WebApp.Controllers
 
 
 
+              // ovoo pomakni
             if (FirmId.HasValue)
             {
                 firm = await _client.GetFromJsonAsync<FirmLookupDto>(
@@ -91,7 +86,7 @@ namespace JobFinder.WebApp.Controllers
             vm.FirmName = firm?.FirmName;
 
 
-            // 🔹 JobTypes
+      
             var jobTypes = await _client.GetFromJsonAsync<List<JobTypeLookupDto>>("/api/jobtype");
             if (jobTypes != null)
             {
@@ -100,7 +95,7 @@ namespace JobFinder.WebApp.Controllers
                     .ToList();
             }
 
-            // 🔹 Locations
+            
             var locations = await _client.GetFromJsonAsync<List<LocationLookupDto>>("/api/location");
             if (locations != null)
             {
@@ -112,9 +107,7 @@ namespace JobFinder.WebApp.Controllers
             return View(vm);
         }
 
-        // =========================
-        // POST: /JobOffer/Create
-        // =========================
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(JobOfferCreateVM vm)
@@ -163,9 +156,7 @@ namespace JobFinder.WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // =========================
-        // LOOKUP DTOs (samo za dropdown)
-        // =========================
+      
    
 
         private class JobTypeLookupDto

@@ -15,7 +15,7 @@ namespace JobFinder.WebAPI.Controllers
             _service = service;
         }
 
-        // POST: api/user/register
+        
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDto dto)
         {
@@ -30,7 +30,7 @@ namespace JobFinder.WebAPI.Controllers
             }
         }
 
-        // POST: api/user/login
+        
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto dto)
         {

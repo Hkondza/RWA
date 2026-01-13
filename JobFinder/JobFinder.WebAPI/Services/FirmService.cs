@@ -17,7 +17,7 @@ namespace JobFinder.WebAPI.Services
             _mapper = mapper;
         }
 
-        // GET ALL + SEARCH + PAGING
+        
         public async Task<List<FirmReadDto>> GetAllSearchAsync(string? search, int page, int pageSize)
         {
             var firms = await _repo.GetAllSearchAsync(search, page, pageSize);
@@ -29,7 +29,7 @@ namespace JobFinder.WebAPI.Services
             return await _repo.CountAsync(search);
         }
 
-        // GET BY ID
+ 
         public async Task<FirmReadDto?> GetByIdAsync(int id)
         {
             var firm = await _repo.GetByIdAsync(id);
@@ -39,7 +39,7 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<FirmReadDto>(firm);
         }
 
-        // CREATE
+        
         public async Task<FirmReadDto> CreateAsync(FirmCreateDto dto)
         {
             var firm = _mapper.Map<Firm>(dto);
@@ -49,7 +49,7 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<FirmReadDto>(created);
         }
 
-        // UPDATE
+
         public async Task<bool> UpdateAsync(int id, FirmUpdateDto dto)
         {
             var firm = await _repo.GetByIdAsync(id);
@@ -62,7 +62,7 @@ namespace JobFinder.WebAPI.Services
             return true;
         }
 
-        // DELETE
+
         public async Task<bool> DeleteAsync(int id)
         {
             var firm = await _repo.GetByIdAsync(id);

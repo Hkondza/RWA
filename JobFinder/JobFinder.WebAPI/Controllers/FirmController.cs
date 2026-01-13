@@ -16,7 +16,7 @@ namespace JobFinder.WebAPI.Controllers
             _service = service;
         }
 
-        // GET: api/firm?search=abc&page=1&pageSize=10
+        
         [HttpGet]
         public async Task<IActionResult> GetAll(
             [FromQuery] string? search,
@@ -46,7 +46,7 @@ namespace JobFinder.WebAPI.Controllers
 
 
 
-        // GET: api/firm/5
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -57,7 +57,7 @@ namespace JobFinder.WebAPI.Controllers
             return Ok(firm);
         }
 
-        // POST: api/firm
+        
         [HttpPost]
         public async Task<IActionResult> Create(FirmCreateDto dto)
         {
@@ -73,7 +73,7 @@ namespace JobFinder.WebAPI.Controllers
             );
         }
 
-        // PUT: api/firm/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, FirmUpdateDto dto)
         {
@@ -87,7 +87,7 @@ namespace JobFinder.WebAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/firm/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

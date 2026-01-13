@@ -59,8 +59,8 @@ namespace JobFinder.WebApp.Controllers
         }
 
 
-        // ✅ APPROVE
-        [HttpPost]
+
+     
         public async Task<IActionResult> Approve(int id)
         {
             var jwt = Request.Cookies["jwt"];
@@ -75,21 +75,18 @@ namespace JobFinder.WebApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ❌ REJECT
-        [HttpPost]
+       
+        
         public async Task<IActionResult> Reject(int id)
         {
-            if (!IsAuthenticated || !IsEmployer)
-                return Unauthorized();
-
             var jwt = Request.Cookies["jwt"];
             _client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
+                new AuthenticationHeaderValue("Bearer", jwt);
 
-            var body = JsonSerializer.Serialize(new { userFirmId = id });
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
-
-            await _client.PostAsync("api/jobapplication/reject", content);
+            var response = await _client.PutAsync(
+                $"api/jobapplication/{id}/reject",
+                null
+            );
 
             return RedirectToAction(nameof(Index));
         }

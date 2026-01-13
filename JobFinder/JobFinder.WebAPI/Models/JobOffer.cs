@@ -11,7 +11,7 @@ namespace JobFinder.WebAPI.Models
 
         [Required]
         public int FirmID { get; set; }
-        public Firm Firm { get; set; }   // ✅ DODANO
+        public Firm Firm { get; set; }   
 
         [Required]
         public int JobTypeID { get; set; }

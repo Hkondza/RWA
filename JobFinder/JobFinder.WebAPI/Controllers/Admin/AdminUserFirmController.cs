@@ -22,7 +22,7 @@ namespace JobFinder.WebAPI.Controllers.Admin
             _mapper = mapper;
         }
 
-        // 1️⃣ Svi pending zahtjevi
+        
         [HttpGet("pending")]
         public async Task<IActionResult> GetPending()
         {
@@ -32,7 +32,7 @@ namespace JobFinder.WebAPI.Controllers.Admin
             return Ok(dto);
         }
 
-        // 2️⃣ Approve
+        
         [HttpPost("approve")]
         public async Task<IActionResult> Approve([FromBody] UserFirmActionDto dto)
         {
@@ -40,7 +40,7 @@ namespace JobFinder.WebAPI.Controllers.Admin
             return Ok();
         }
 
-        // 3️⃣ Reject
+        
         [HttpPost("reject")]
         public async Task<IActionResult> Reject([FromBody] UserFirmActionDto dto)
         {

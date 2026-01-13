@@ -15,6 +15,6 @@
         public string? FirmName { get; set; }
 
         public bool HasPendingFirmRequest { get; set; }
-        public string? PendingStatus { get; set; } // Pending / Rejected / ...
+        public string? PendingStatus { get; set; } // Pending / Rejected 
     }
 }

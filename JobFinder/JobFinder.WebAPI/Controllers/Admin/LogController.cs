@@ -18,7 +18,7 @@ namespace JobFinder.WebAPI.Controllers.Admin
             _context = context;
         }
 
-        // GET: api/logs/get/10
+        
         [HttpGet("get/{n}")]
         public async Task<IActionResult> GetLast(int n)
         {
@@ -33,7 +33,7 @@ namespace JobFinder.WebAPI.Controllers.Admin
             return Ok(logs);
         }
 
-        // GET: api/logs/count
+        
         [HttpGet("count")]
         public async Task<IActionResult> Count()
         {

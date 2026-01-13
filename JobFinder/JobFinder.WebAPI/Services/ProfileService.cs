@@ -49,7 +49,7 @@ namespace JobFinder.WebAPI.Services
                 .FirstOrDefaultAsync(u => u.IDUser == userId)
                 ?? throw new Exception("User ne postoji.");
 
-            // ✅ update samo normalnih polja
+          
             user.Email = dto.Email;
             user.FirstName = dto.FirstName;
             user.LastName = dto.LastName;

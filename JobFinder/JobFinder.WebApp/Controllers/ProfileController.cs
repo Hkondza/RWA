@@ -20,7 +20,7 @@ namespace JobFinder.WebApp.Controllers
             };
         }
 
-        // GET: /Profile
+        
         public async Task<IActionResult> Index()
         {
             if (!IsAuthenticated)
@@ -38,7 +38,7 @@ namespace JobFinder.WebApp.Controllers
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
             )!;
 
-            // dohvat firmi za dropdown
+           
             var firmsRes = await _client.GetAsync("/api/firm/firms");
             if (firmsRes.IsSuccessStatusCode)
             {
@@ -58,7 +58,7 @@ namespace JobFinder.WebApp.Controllers
             return View(vm);
         }
 
-        // AJAX: update profila
+        
         [HttpPost]
         public async Task<IActionResult> UpdateProfile([FromBody] ProfileUpdateVM vm)
         {
@@ -71,7 +71,7 @@ namespace JobFinder.WebApp.Controllers
             return Ok();
         }
 
-        // AJAX: promjena lozinke
+        
         [HttpPost]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordVM vm)
         {
@@ -84,7 +84,7 @@ namespace JobFinder.WebApp.Controllers
             return Ok();
         }
 
-        // AJAX: zahtjev za firmu
+        
         [HttpPost]
         public async Task<IActionResult> RequestFirm([FromBody] FirmRequestVM vm)
         {

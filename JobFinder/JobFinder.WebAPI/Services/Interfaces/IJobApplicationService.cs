@@ -13,7 +13,7 @@ namespace JobFinder.WebAPI.Services.Interfaces
         Task<List<JobApplicationReadDto>> GetByFirmAcceptedAsync(int firmId);
         Task<List<JobApplicationReadDto>> GetByFirmWorkingAsync(int firmId);
         Task<List<JobApplicationReadDto>> GetByFirmFinishedAsync(int firmId);
-        Task ApproveAsync(int iDUser);
-        Task RejectAsync(int userFirmId);
+        Task ApproveAsync(int jobApplicationID);
+        Task RejectAsync(int jobApplicationID);
     }
 }

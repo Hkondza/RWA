@@ -16,7 +16,7 @@ namespace JobFinder.WebAPI.Controllers
             _context = context;
         }
 
-        // GET: api/jobtype
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -24,7 +24,7 @@ namespace JobFinder.WebAPI.Controllers
             return Ok(jobTypes);
         }
 
-        // GET: api/jobtype/5
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -36,7 +36,7 @@ namespace JobFinder.WebAPI.Controllers
             return Ok(jobType);
         }
 
-        // POST: api/jobtype
+        
         [HttpPost]
         public async Task<IActionResult> Create(JobType jobType)
         {
@@ -51,7 +51,7 @@ namespace JobFinder.WebAPI.Controllers
                 jobType);
         }
 
-        // PUT: api/jobtype/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, JobType jobType)
         {
@@ -71,7 +71,7 @@ namespace JobFinder.WebAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/jobtype/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

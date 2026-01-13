@@ -16,7 +16,7 @@ namespace JobFinder.WebAPI.Controllers
             _service = service;
         }
 
-        // POST: api/jobapplication
+        
         [HttpPost]
         public async Task<IActionResult> Apply(JobApplicationCreateDto dto)
         {
@@ -31,7 +31,7 @@ namespace JobFinder.WebAPI.Controllers
             }
         }
 
-        // GET: api/jobapplication/by-offer/5
+        
         [HttpGet("by-offer/{jobOfferId}")]
         public async Task<IActionResult> GetByOffer(int jobOfferId)
         {
@@ -45,7 +45,7 @@ namespace JobFinder.WebAPI.Controllers
         }
 
 
-        // GET: api/jobapplication/by-user/5
+       
         [HttpGet("by-user/{userId}")]
         public async Task<IActionResult> GetByUser(int userId)
         {
@@ -59,7 +59,7 @@ namespace JobFinder.WebAPI.Controllers
         //start job -> minja bazu iz accepeted u working. 
         //end work -> minja bazu iz working u finnished.
 
-        // GET: api/jobapplication/by-firm/5
+        
         [HttpGet("by-firm/{firmId}")]
         public async Task<IActionResult> GetByFirm(int firmId)
         {
@@ -73,7 +73,7 @@ namespace JobFinder.WebAPI.Controllers
         }
 
 
-        // PUT: api/jobapplication/{id}/approve
+       
         [HttpPut("{id}/approve")]
         public async Task<IActionResult> Approve(int id)
         {
@@ -81,23 +81,14 @@ namespace JobFinder.WebAPI.Controllers
             return NoContent();
         }
 
-
-
-        // 2️⃣ Approve
-        [HttpPost("approve")]
-        public async Task<IActionResult> Approve([FromBody] JobApplicationReadDto dto)
+        [HttpPut("{id}/reject")]
+        public async Task<IActionResult> Reject(int id)
         {
-            await _service.ApproveAsync(dto.IDJobApplication);
-            return Ok();
+            await _service.RejectAsync(id);
+            return NoContent();
         }
 
-        // 3️⃣ Reject
-        [HttpPost("reject")]
-        public async Task<IActionResult> Reject([FromBody] UserFirmActionDto dto)
-        {
-            await _service.RejectAsync(dto.UserFirmId);
-            return Ok();
-        }
+
 
     }
 }
