@@ -4,6 +4,7 @@ using JobFinder.WebAPI.DTOs.JobApplication;
 using JobFinder.WebAPI.DTOs.JobOffer;
 using JobFinder.WebAPI.DTOs.User;
 using JobFinder.WebAPI.DTOs.UserFirm;
+using JobFinder.WebAPI.DTOs.Worker;
 using JobFinder.WebAPI.Models;
 
 namespace JobFinder.WebAPI.Mapping
@@ -46,6 +47,15 @@ namespace JobFinder.WebAPI.Mapping
             CreateMap<User, UserReadDto>();
             CreateMap<Firm,FirmReadDto>();
             CreateMap<FirmCreateDto, Firm>();
+
+            CreateMap<WorkerCreateDto, Worker>();
+            CreateMap<Worker, WorkerReadDto>()
+                .ForMember(d => d.IDWorker, opt => opt.MapFrom(s => s.IDWorker))
+                .ForMember(d => d.JobApplicationId, opt => opt.MapFrom(s => s.JobApplication.IDJobApplication))
+                .ForMember(d => d.FirstName, opt => opt.MapFrom(s => s.JobApplication.User.FirstName))
+                .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.JobApplication.User.LastName));
+                
+
         }
     }
 }

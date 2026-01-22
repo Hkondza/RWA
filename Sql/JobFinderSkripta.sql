@@ -144,6 +144,25 @@ CREATE TABLE UserFirm
     CONSTRAINT FK_UserFirm_Firm FOREIGN KEY (FirmID) REFERENCES Firm(IDFirm)
 );
 
+------------------------------------------------------
+-- TABLICA: UserFirm
+------------------------------------------------------
+CREATE TABLE Workers (
+    IDWorker INT IDENTITY(1,1) PRIMARY KEY,
+
+    JobApplicationId INT NOT NULL,
+
+    Status NVARCHAR(20) NOT NULL, 
+    -- Working | Finished
+
+    WorkStartedAt DATETIME2 NOT NULL,
+    WorkFinishedAt DATETIME2 NULL,
+
+    CONSTRAINT FK_Workers_JobApplication
+        FOREIGN KEY (JobApplicationId)
+        REFERENCES JobApplication(IDJobApplication)
+);
+
 
 ------------------------------------------------------
 -- DEFAULT PODACI: JobType (bez duplikata)

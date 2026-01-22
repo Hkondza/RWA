@@ -8,6 +8,7 @@ namespace JobFinder.WebAPI.Services
 {
     public class ProfileService : Interfaces.IProfileService
     {
+        private const string PENDING = "Pending";
         private readonly JobFinderDbContext _context;
 
         public ProfileService(JobFinderDbContext context)
@@ -38,7 +39,7 @@ namespace JobFinder.WebAPI.Services
                 Phone = user.Phone,
                 FirmID = user.FirmID,
                 FirmName = user.Firm?.FirmName,
-                HasPendingFirmRequest = pending != null && pending.Status == "Pending",
+                HasPendingFirmRequest = pending != null && pending.Status == PENDING,
                 PendingStatus = pending?.Status
             };
         }
@@ -82,7 +83,7 @@ namespace JobFinder.WebAPI.Services
 
             
             var existingPending = await _context.UserFirms
-                .FirstOrDefaultAsync(x => x.UserID == userId && x.Status == "Pending");
+                .FirstOrDefaultAsync(x => x.UserID == userId && x.Status == PENDING);
 
             if (existingPending != null)
                 throw new Exception("Već postoji pending zahtjev.");
@@ -129,7 +130,7 @@ namespace JobFinder.WebAPI.Services
             {
                 UserID = userId,
                 FirmID = firmId,
-                Status = "Pending",
+                Status = PENDING,
                 RequestedAt = DateTime.Now
             };
 

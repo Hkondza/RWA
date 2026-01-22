@@ -15,11 +15,11 @@ namespace JobFinder.WebAPI.Models
 
         [Required]
         public int JobTypeID { get; set; }
-        public JobType JobType { get; set; } // ✅ DODANO
+        public JobType JobType { get; set; } 
 
         [Required]
         public int LocationID { get; set; }
-        public Location Location { get; set; } // ✅ DODANO
+        public Location Location { get; set; }
 
         [Required, StringLength(200)]
         public string Title { get; set; }

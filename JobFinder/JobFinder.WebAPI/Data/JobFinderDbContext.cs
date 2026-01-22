@@ -18,6 +18,7 @@ namespace JobFinder.WebAPI.Data
         public DbSet<UserFirm> UserFirms { get; set; }
         public DbSet<JobOffer> JobOffers { get; set; }
         public DbSet<JobApplication> JobApplications { get; set; }
+        public DbSet<Worker> Worker { get; set; }
 
 
     }

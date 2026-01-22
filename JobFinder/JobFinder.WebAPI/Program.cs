@@ -52,6 +52,9 @@ builder.Services.AddScoped<IUserFirmService, UserFirmService>();
 
 builder.Services.AddScoped<IProfileService, ProfileService>();
 
+builder.Services.AddScoped<IWorkerRepository, WorkerRepository>();
+builder.Services.AddScoped<IWorkerService, WorkerService>();
+
 
 // --------------------
 // JWT Authentication

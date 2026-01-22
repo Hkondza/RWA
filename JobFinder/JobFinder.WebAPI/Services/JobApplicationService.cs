@@ -12,6 +12,9 @@ namespace JobFinder.WebAPI.Services
     public class JobApplicationService : IJobApplicationService
     {
         private const string APPLIED = "Applied";
+        private const string APPROVED = "Approved";
+        private const string REJECTED = "Rejected";
+
         private readonly IJobApplicationRepository _repo;
         private readonly IMapper _mapper;
         private readonly JobFinderDbContext _context;
@@ -71,29 +74,22 @@ namespace JobFinder.WebAPI.Services
                 throw new Exception("Zahtjev već obrađen.");
 
           
-            jobapplication.Status = "Approved";
+            jobapplication.Status = APPROVED;
            // dodat approved at u tablicu job application jobapplication.ApprovedAt = DateTime.Now;
 
             await _context.SaveChangesAsync();
             await tx.CommitAsync();
         }
 
+
+        //job application bezveze vraca listu jedan postoji samo jedan aplplciation sa tim id
+        //ali zato postoji vise joboffer sa tim id 
         public async Task<List<JobApplicationReadDto>> GetByApplicationAsync(int jobApplicationId)
         {
             var list = await _repo.GetByApplicationAsync(jobApplicationId);
             return _mapper.Map<List<JobApplicationReadDto>>(list);
         }
 
-        public async Task<List<JobApplicationReadDto>> GetByFirmAcceptedAsync(int firmId)
-        {
-            var list = await _repo.GetByFirmAsync(firmId);
-
-            List<JobApplication> acceptedList = list
-                .Where(l => l.Status == "Accepted")
-                .ToList();
-
-            return _mapper.Map<List<JobApplicationReadDto>>(acceptedList);
-        }
 
         public async Task<List<JobApplicationReadDto>> GetByFirmAppliedAsync(int firmId)
         {
@@ -112,6 +108,9 @@ namespace JobFinder.WebAPI.Services
             return _mapper.Map<List<JobApplicationReadDto>>(list);
         }
 
+
+
+        //ovoa dva donja pomakni . nov logika ide u tablicu worker
         public async Task<List<JobApplicationReadDto>> GetByFirmFinishedAsync(int firmId)
         {
             var list = await _repo.GetByFirmAsync(firmId);
@@ -132,6 +131,13 @@ namespace JobFinder.WebAPI.Services
                 .ToList();
 
             return _mapper.Map<List<JobApplicationReadDto>>(workingList);
+        }
+
+        public async Task<List<JobApplicationReadDto>> GetByOfferApprovedAsync(int jobOfferId)
+        {
+            var list = await _repo.GetByOfferAsync(jobOfferId);
+
+            return _mapper.Map<List<JobApplicationReadDto>>(list.Where(l => l.Status == APPROVED).ToList());
         }
 
         public async Task<List<JobApplicationReadDto>> GetByOfferAppliedAsync(int jobOfferId)
@@ -175,7 +181,7 @@ namespace JobFinder.WebAPI.Services
                 throw new Exception("Zahtjev već obrađen.");
 
 
-            jobapplication.Status = "Rejected";
+            jobapplication.Status = REJECTED;
             // dodat approved at u tablicu job application jobapplication.ApprovedAt = DateTime.Now;
 
             await _context.SaveChangesAsync();

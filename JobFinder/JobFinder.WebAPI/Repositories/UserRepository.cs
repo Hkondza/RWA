@@ -14,15 +14,15 @@ namespace JobFinder.WebAPI.Repositories
             _context = context;
         }
 
-        public Task<bool> ExistsAsync(string email, string username)
+        public async Task<bool> ExistsAsync(string email, string username)
         {
-            return _context.Users.AnyAsync(u =>
+            return await _context.Users.AnyAsync(u =>
                 u.Email == email || u.Username == username);
         }
 
-        public Task<User?> GetByEmailAsync(string email)
+        public async Task<User?> GetByEmailAsync(string email)
         {
-            return _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task<User> CreateAsync(User user)

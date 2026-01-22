@@ -14,9 +14,9 @@ namespace JobFinder.WebAPI.Repositories
             _context = context;
         }
 
-        public Task<bool> ExistsAsync(int jobOfferId, int userId)
+        public async Task<bool> ExistsAsync(int jobOfferId, int userId)
         {
-            return _context.JobApplications.AnyAsync(a =>
+            return await _context.JobApplications.AnyAsync(a =>
                 a.JobOfferID == jobOfferId &&
                 a.UserID == userId);
         }
@@ -28,9 +28,9 @@ namespace JobFinder.WebAPI.Repositories
             return application;
         }
 
-        public Task<List<JobApplication>> GetByOfferAsync(int jobOfferId)
+        public async Task<List<JobApplication>> GetByOfferAsync(int jobOfferId)
         {
-            return _context.JobApplications
+            return await _context.JobApplications
                      .Include(a => a.JobOffer)
                          .ThenInclude(o => o.Firm)
                      .Include(a => a.JobOffer)
@@ -42,9 +42,9 @@ namespace JobFinder.WebAPI.Repositories
                   .ToListAsync();
         }
 
-        public Task<List<JobApplication>> GetByUserAsync(int userId)
+        public async Task<List<JobApplication>> GetByUserAsync(int userId)
         {
-            return _context.JobApplications
+            return await _context.JobApplications
                 .Include(a => a.JobOffer)
                     .ThenInclude(o => o.Firm)
                 .Include(a => a.JobOffer)
@@ -56,9 +56,9 @@ namespace JobFinder.WebAPI.Repositories
                
         }
 
-        public Task<List<JobApplication>> GetByApplicationAsync(int jobApplicationId)
+        public async Task<List<JobApplication>> GetByApplicationAsync(int jobApplicationId)
         {
-            return _context.JobApplications
+            return await _context.JobApplications
                  .Include(a => a.JobOffer)
                      .ThenInclude(o => o.Firm)
                  .Include(a => a.JobOffer)
@@ -69,9 +69,9 @@ namespace JobFinder.WebAPI.Repositories
               .ToListAsync();
         }
 
-        public Task<List<JobApplication>> GetByFirmAsync(int firmId)
+        public async Task<List<JobApplication>> GetByFirmAsync(int firmId)
         {
-            return _context.JobApplications
+            return await _context.JobApplications
                .Include(a => a.JobOffer)
                    .ThenInclude(o => o.Firm)
                .Include(a => a.JobOffer)

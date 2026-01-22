@@ -320,6 +320,29 @@
         }
       }
     },
+    "/api/JobApplication/by-offer/{jobOfferId}/approved": {
+      "get": {
+        "tags": [
+          "JobApplication"
+        ],
+        "parameters": [
+          {
+            "name": "jobOfferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/JobApplication/by-application/{jobApplicationId}": {
       "get": {
         "tags": [
@@ -996,6 +1019,106 @@
           }
         }
       }
+    },
+    "/api/Worker": {
+      "post": {
+        "tags": [
+          "Worker"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkerCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkerCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkerCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Worker/by-offer/{jobOfferId}/working": {
+      "get": {
+        "tags": [
+          "Worker"
+        ],
+        "parameters": [
+          {
+            "name": "jobOfferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Worker/by-offer/{jobOfferId}/finished": {
+      "get": {
+        "tags": [
+          "Worker"
+        ],
+        "parameters": [
+          {
+            "name": "jobOfferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Worker/by-application/{id}/finish": {
+      "put": {
+        "tags": [
+          "Worker"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1282,6 +1405,16 @@
           "phone": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkerCreateDto": {
+        "type": "object",
+        "properties": {
+          "jobApplicationId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

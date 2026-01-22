@@ -276,6 +276,22 @@
   },
   {
     "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
+    "Method": "GetByOfferApproved",
+    "RelativePath": "api/JobApplication/by-offer/{jobOfferId}/approved",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobOfferId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.JobApplicationController",
     "Method": "GetByUser",
     "RelativePath": "api/JobApplication/by-user/{userId}",
     "HttpMethod": "GET",
@@ -617,6 +633,70 @@
       {
         "Name": "dto",
         "Type": "JobFinder.WebAPI.DTOs.User.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.WorkerController",
+    "Method": "StartWork",
+    "RelativePath": "api/Worker",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JobFinder.WebAPI.DTOs.Worker.WorkerCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.WorkerController",
+    "Method": "Finish",
+    "RelativePath": "api/Worker/by-application/{id}/finish",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.WorkerController",
+    "Method": "GetByOfferFinished",
+    "RelativePath": "api/Worker/by-offer/{jobOfferId}/finished",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobOfferId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobFinder.WebAPI.Controllers.WorkerController",
+    "Method": "GetByApplicationWorking",
+    "RelativePath": "api/Worker/by-offer/{jobOfferId}/working",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobOfferId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
