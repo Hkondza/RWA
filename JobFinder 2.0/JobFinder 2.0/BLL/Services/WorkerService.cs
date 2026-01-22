@@ -1,0 +1,92 @@
+﻿using AutoMapper;
+using BLL.DTOs.Worker;
+using BLL.Helpers;
+using BLL.Repositories.Interfaces;
+using BLL.Services.Interfaces;
+using DAL.Data;
+using DAL.Models;
+namespace BLL.Services
+{
+    public class WorkerService : IWorkerService
+    {
+        private const string WORKING = "Working";
+        private const string FINISHED = "Finished";
+        private readonly IWorkerRepository _repo;
+        private readonly IMapper _mapper;
+        private readonly JobFinderContext _context;
+
+        public WorkerService(IWorkerRepository repo, IMapper mapper, JobFinderContext context)
+        {
+            _repo = repo;
+            _mapper = mapper;
+            _context = context;
+        }
+
+        public async Task<WorkerReadDto> CreateAsync(WorkerCreateDto dto)
+        {
+            if (!await _repo.ExistsAsync(dto.JobApplicationId))
+            {
+                await LogHelper.WriteAsync(
+                    _context,
+                    "ERROR",
+                    $"Start Work failed. JobApplication: {dto.JobApplicationId} doesn't exist"
+                );
+
+                throw new Exception("JobApplication nepostoji !!!");
+            }
+
+            var entity = _mapper.Map<Worker>(dto);
+            entity.Status = WORKING;
+            entity.WorkStartedAt = DateTime.Now;
+
+            //stavit usera ako se sitis
+
+            var created = await _repo.CreateAsync(entity);
+            await LogHelper.WriteAsync(
+                _context,
+                "INFO",
+                $"Work started for JobApplication. ID={created.JobApplicationId}");
+
+            return _mapper.Map<WorkerReadDto>(created);
+        }
+
+        public async Task FinishAsync(int jobApplicationID)
+        {
+
+            using var tx = await _context.Database.BeginTransactionAsync();
+
+            var worker = await _repo.GetByApplicationIdAsync(jobApplicationID)
+                ?? throw new Exception("Worker nepostoji.");
+
+           
+
+            if (worker.Status != WORKING)
+                throw new Exception("Zahtjev već obrađen.");
+
+
+            worker.Status = FINISHED;
+            worker.WorkFinishedAt = DateTime.Now;
+            
+
+            await _context.SaveChangesAsync();
+            await tx.CommitAsync();
+
+
+
+        }
+
+        public async Task<List<WorkerReadDto>> GetByFinishedAsync(int jobOfferId)
+        {
+           var list = await _repo.GetAllByJobOfferAsync(jobOfferId);
+
+           return _mapper.Map<List<WorkerReadDto>>(list.Where(l => l.Status == FINISHED).ToList());
+        }
+
+        public async Task<List<WorkerReadDto>> GetByWorkingAsync(int jobOfferId)
+        {
+            var list = await _repo.GetAllByJobOfferAsync(jobOfferId);
+
+            return _mapper.Map<List<WorkerReadDto>>(list.Where(l => l.Status == WORKING).ToList());
+        }
+    }
+}

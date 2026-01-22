@@ -1,0 +1,32 @@
+﻿namespace BLL.DTOs.JobOffer
+{
+    public class JobOfferReadDto
+    {
+        public int IDJobOffer { get; set; }
+
+        public int FirmID { get; set; }
+        public int JobTypeID { get; set; }
+        public int LocationID { get; set; }
+
+      
+        public string FirmName { get; set; }
+        public string JobName { get; set; }
+        public string LocationName { get; set; }
+
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string? Salary { get; set; }
+
+        public bool IsActive { get; set; }
+        public DateTime CreatedAt { get; set; }
+    }
+}

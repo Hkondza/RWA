@@ -1,0 +1,20 @@
+﻿using DAL.Models;
+
+namespace BLL.Repositories.Interfaces
+{
+    public interface IFirmRepository
+    {
+        Task<List<Firm>> GetAllSearchAsync(string? search, int page, int pageSize);
+        Task<int> CountAsync(string? search);
+
+        Task<Firm?> GetByIdAsync(int id);
+
+        Task<Firm> CreateAsync(Firm firm);
+
+        Task UpdateAsync(Firm firm);
+
+        Task DeleteAsync(Firm firm);
+
+        Task<List<Firm>>GetAllAsync();
+    }
+}

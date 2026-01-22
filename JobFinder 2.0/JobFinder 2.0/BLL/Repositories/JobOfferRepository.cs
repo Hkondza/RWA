@@ -1,0 +1,54 @@
+﻿using DAL.Models;
+using DAL.Data;
+using Microsoft.EntityFrameworkCore;
+using BLL.Repositories.Interfaces;
+
+namespace BLL.Repositories
+{
+    public class JobOfferRepository : IJobOfferRepository
+    {
+        private readonly JobFinderContext _context;
+
+        public JobOfferRepository(JobFinderContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<JobOffer>> GetActiveAsync()
+        {
+            return await _context.JobOffers
+                .Include(o => o.Firm)
+                .Include(o => o.JobType)
+                .Include(o => o.Location)
+                .Where(o => o.IsActive)
+                .ToListAsync();
+        }
+
+        public async Task<JobOffer?> GetByIdAsync(int id)
+        {
+            return await _context.JobOffers
+                .Include(o => o.Firm)
+                .Include(o => o.JobType)
+                .Include(o => o.Location)
+                .FirstOrDefaultAsync(o => o.IdjobOffer == id);
+        }
+
+
+        public async Task<JobOffer> CreateAsync(JobOffer offer)
+        {
+            _context.JobOffers.Add(offer);
+            await _context.SaveChangesAsync();
+            return offer;
+        }
+
+        public async Task<List<JobOffer>> GetAllByFirmAsync(int firmId)
+        {
+            return await _context.JobOffers
+               .Include(o => o.Firm)
+               .Include(o => o.JobType)
+               .Include(o => o.Location)
+               .Where(o => o.FirmId == firmId)
+               .ToListAsync();
+        }
+    }
+}

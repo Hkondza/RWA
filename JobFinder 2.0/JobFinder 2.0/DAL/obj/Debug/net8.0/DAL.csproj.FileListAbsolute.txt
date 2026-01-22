@@ -1,0 +1,15 @@
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\bin\Debug\net8.0\DAL.deps.json
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\bin\Debug\net8.0\DAL.dll
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\bin\Debug\net8.0\DAL.pdb
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.dll
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\refint\DAL.dll
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.pdb
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\DAL\obj\Debug\net8.0\ref\DAL.dll
