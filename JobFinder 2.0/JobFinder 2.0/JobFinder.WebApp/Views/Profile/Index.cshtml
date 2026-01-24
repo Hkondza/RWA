@@ -1,0 +1,109 @@
+﻿@model JobFinder.WebApp.ViewModels.Profile.ProfileVM
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        alert(@Html.Raw(Json.Serialize(TempData["Error"])));
+    </script>
+}
+
+
+
+<h2>Moj profil</h2>
+
+<h4>Osobni podaci</h4>
+<label class="col-sm-3 col-form-label fw-semibold">Email:</label>
+<input id="email" value="@Model.Email" placeholder="Email" />
+<label class="col-sm-3 col-form-label fw-semibold">Ime:</label>
+<input id="firstName" value="@Model.FirstName" placeholder="Ime" />
+<label class="col-sm-3 col-form-label fw-semibold">Prezime:</label>
+<input id="lastName" value="@Model.LastName" placeholder="Prezime" />
+<label class="col-sm-3 col-form-label fw-semibold">Telefon:</label>
+<input id="phone" value="@Model.Phone" placeholder="Telefon" />
+
+
+<button onclick="updateProfile()">Spremi</button>
+
+
+
+<h4>Promjena lozinke</h4>
+<label class="col-sm-3 col-form-label fw-semibold">Trenutna lozinka:</label>
+<input id="currentPassword" type="password" placeholder="Trenutna lozinka" />
+<label class="col-sm-3 col-form-label fw-semibold">Nova lozinka:</label>
+<input id="newPassword" type="password" placeholder="Nova lozinka" />
+<button onclick="changePassword()">Promijeni lozinku</button>
+
+
+
+@if (Model.Role == "Employer")
+{
+    
+    <h4>Firma</h4>
+
+    @if (Model.FirmID != null)
+    {
+        <p>Firma: <strong>@Model.FirmName</strong></p>
+    }
+    else if (Model.HasPendingFirmRequest)
+    {
+        <p>Zahtjev za firmu je na čekanju.</p>
+    }
+    else
+    {
+        <select id="firmSelect">
+            <option value="">-- odaberi firmu --</option>
+            @foreach (var f in Model.Firms)
+            {
+                <option value="@f.Value">@f.Text</option>
+            }
+        </select>
+
+        <br />
+        <input id="newFirmName" placeholder="ili nova firma" />
+        <br />
+        <button onclick="requestFirm()">Pošalji zahtjev</button>
+    }
+}
+
+<script>
+async function updateProfile() {
+    await fetch('/Profile/UpdateProfile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            email: email.value,
+            firstName: firstName.value,
+            lastName: lastName.value,
+            phone: phone.value
+        })
+    });
+    alert('Spremljeno');
+}
+
+async function changePassword() {
+    const res = await fetch('/Profile/ChangePassword', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            currentPassword: currentPassword.value,
+            newPassword: newPassword.value
+        })
+    });
+
+    alert(res.ok ? 'Lozinka promijenjena' : 'Greška');
+}
+
+async function requestFirm() {
+    const payload = firmSelect.value
+        ? { firmID: parseInt(firmSelect.value) }
+        : { newFirmName: newFirmName.value };
+
+    const res = await fetch('/Profile/RequestFirm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+
+    alert(res.ok ? 'Zahtjev poslan adminu' : 'Greška');
+}
+</script>

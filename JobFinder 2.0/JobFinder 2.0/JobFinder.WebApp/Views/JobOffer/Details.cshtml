@@ -1,0 +1,59 @@
+﻿@model JobFinder.WebApp.ViewModels.JobOffer.JobOfferDetailsVM
+
+<div class="card">
+
+    <h2>@Model.Title</h2>
+
+    <p style="color:#6b7280; margin-bottom:20px;">
+        Objavljeno: @Model.CreatedAt.ToString("dd.MM.yyyy")
+    </p>
+
+    <div style="margin-bottom:15px;">
+        <strong>Firma:</strong> @Model.FirmName
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <strong>Lokacija:</strong> @Model.LocationName
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <strong>Tip posla:</strong> @Model.JobName
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <strong>Placa:</strong> @Model.Salary
+    </div>
+
+
+
+    <hr style="margin:25px 0;" />
+
+    <h4>Opis posla</h4>
+    <p style="line-height:1.6;">
+        @Model.Description
+    </p>
+
+    <hr style="margin:25px 0;" />
+
+    @if (ViewBag.CanApply)
+    {
+        <form method="post" action="/Application/Apply">
+            <input type="hidden" name="JobOfferId" value="@Model.IDJobOffer" />
+
+            <button type="submit">
+                Prijavi se na posao
+            </button>
+        </form>
+    }
+    else
+    {
+        <p style="color:#6b7280;">
+            👉 Prijava je moguća samo za prijavljene korisnike s ulogom <strong>Employee</strong>.
+        </p>
+    }
+
+    <div style="margin-top:25px;">
+        <a href="/JobOffer">← Povratak na oglase</a>
+    </div>
+
+</div>

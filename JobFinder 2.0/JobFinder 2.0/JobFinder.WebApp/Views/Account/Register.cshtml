@@ -1,0 +1,53 @@
+﻿@model JobFinder.WebApp.ViewModels.Auth.RegisterVM
+
+<div class="card">
+    <h2>Registracija</h2>
+
+    <form asp-action="Register" method="post">
+
+        <div class="form-group">
+            <label>Korisničko ime</label>
+            <input asp-for="Username" />
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input asp-for="Email" />
+        </div>
+
+        <div class="form-group">
+            <label>Lozinka</label>
+            <input asp-for="Password" type="password" />
+        </div>
+
+        <div class="form-group">
+            <label>First name</label>
+            <input asp-for="FirstName" />
+        </div>
+
+        <div class="form-group">
+            <label>Last name</label>
+            <input asp-for="LastName" />
+        </div>
+
+        <div class="form-group">
+            <label>Phone</label>
+            <input asp-for="Phone" />
+        </div>
+
+        <div class="form-group">
+            <label>Tip korisnika</label>
+            <select asp-for="UserType">
+                <option value="">-- odaberi --</option>
+                <option value="Employer">Employer</option>
+                <option value="Employee">Employee</option>
+            </select>
+        </div>
+
+        <button type="submit">Registriraj se</button>
+    </form>
+
+    <div class="text-center">
+        Već imate račun? <a asp-controller="Account" asp-action="Login">Login</a>
+    </div>
+</div>
