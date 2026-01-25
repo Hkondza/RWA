@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "RWA",
+    "Projects": [
+      {
+        "Path": "JobFinder.WebAPI\\JobFinder.WebAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "JobFinder.WebApp\\JobFinder.WebApp.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
