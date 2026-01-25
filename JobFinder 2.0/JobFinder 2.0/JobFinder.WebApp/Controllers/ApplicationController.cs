@@ -1,4 +1,8 @@
-﻿using JobFinder.WebApp.ViewModels.Application;
+﻿using AutoMapper;
+using BLL.DTOs.JobApplication;
+using BLL.Services.Interfaces;
+using DAL.Models;
+using JobFinder.WebApp.ViewModels.Application;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,36 +14,28 @@ namespace JobFinder.WebApp.Controllers
     public class ApplicationController : BaseController
     {
 
-        private readonly HttpClient _client;
-        private readonly IConfiguration _config;
+        private readonly IJobApplicationService _jobApplicationService;
+        private readonly IMapper _mapper;
 
-        public ApplicationController(IConfiguration config)
+        public ApplicationController(IJobApplicationService jobApplicationService, IMapper mapper)
         {
-            _config = config;
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri(_config["ApiSettings:BaseUrl"])
-            };
+            _jobApplicationService = jobApplicationService;
+            _mapper = mapper;
         }
-
 
         public async Task<IActionResult> Index()
         {
 
-           var response = await _client.GetAsync("api/jobapplication/by-user/" + UserId);
-            
+            int userId = int.Parse(UserId);
 
-            if (!response.IsSuccessStatusCode)
+            if (userId == 0)
                 return View(new List<JobApplicationListVM>());
 
-            var json = await response.Content.ReadAsStringAsync();
 
-            var offers = JsonSerializer.Deserialize<List<JobApplicationListVM>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
+            var list = await _jobApplicationService.GetByUserAsync(userId);
+            var converter = _mapper.Map<JobApplicationListVM>(list);
 
-            return View(offers);
+            return View(converter);
         }
 
 
@@ -68,12 +64,12 @@ namespace JobFinder.WebApp.Controllers
                
             }
 
-            var json = JsonSerializer.Serialize(vm);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _client.PostAsync("/api/jobapplication", content);
+            var converter = _mapper.Map<JobApplicationCreateDto>(vm);
+            var response = await _jobApplicationService.ApplyAsync(converter);
 
-            if (!response.IsSuccessStatusCode)
+
+            if (response.UserID == 0)
             {
                 TempData["Error"] = "Prijava na posao nije uspjela.";
                 return RedirectToAction("Details", "JobOffer", new { id = vm.JobOfferID });
@@ -86,20 +82,18 @@ namespace JobFinder.WebApp.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var response = await _client.GetAsync($"api/jobapplication/by-application/{id}");
 
-            if (!response.IsSuccessStatusCode)
-                return NotFound();
+            var response = await _jobApplicationService.GetByOfferAsync(id);
 
-            var json = await response.Content.ReadAsStringAsync();
-
-            var offer = JsonSerializer.Deserialize<List<JobApplicationDetailsVM>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
+            var converter = _mapper.Map<List<JobApplicationDetailsVM>>(response);
 
 
-            var application = offer.FirstOrDefault();
+            //if (response.)
+            //    return NotFound();
+
+
+            //Samo sam moga iz baze dokvatit jedan objakt umjest liste
+            var application = converter.FirstOrDefault();
 
             if (application == null)
                 return NotFound();

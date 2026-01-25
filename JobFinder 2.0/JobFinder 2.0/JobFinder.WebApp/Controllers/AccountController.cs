@@ -1,19 +1,29 @@
-﻿using JobFinder.WebApp.ViewModels.Auth;
+﻿using AutoMapper;
+using BLL.DTOs.User;
+using BLL.Services.Interfaces;
+using JobFinder.WebApp.ViewModels.Auth;
 using Microsoft.AspNetCore.Mvc;
-using System.Text;
-using System.Text.Json;
+
+
 
 namespace JobFinder.WebApp.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IConfiguration _config;
-        private readonly IHttpClientFactory _http;
 
-        public AccountController(IConfiguration config, IHttpClientFactory http)
+
+        // pogledaj treba li dodati service u web app.
+        //
+        // Mozda treba jer nema izgradenih servisa
+        // Mozda NE treba ako su se izgradili u BLL sa njegovim servisima
+
+        private readonly IUserService _userService;
+        private readonly  IMapper _mapper;
+
+        public AccountController(IUserService userService, IMapper mapper)
         {
-            _config = config;
-            _http = http;
+            _userService = userService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -35,25 +45,15 @@ namespace JobFinder.WebApp.Controllers
             if (!ModelState.IsValid)
                 return View(vm);
 
-            var client = _http.CreateClient();
-            var apiUrl = $"{_config["ApiSettings:BaseUrl"]}/user/login";
 
-            var json = JsonSerializer.Serialize(vm);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var converter = _mapper.Map<UserLoginDto>(vm);
+            var loginResponse = await _userService.LoginAsync(converter);
 
-            var response = await client.PostAsync(apiUrl, content);
-
-            if (!response.IsSuccessStatusCode)
+            if (loginResponse.User == null)
             {
                 vm.ErrorMessage = "Neispravni podaci za prijavu.";
                 return View(vm);
             }
-
-            var responseBody = await response.Content.ReadAsStringAsync();
-            var loginResponse = JsonSerializer.Deserialize<LoginResponseModel>(
-                responseBody,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
 
             // JWT (HttpOnly)
             Response.Cookies.Append(
@@ -71,7 +71,7 @@ namespace JobFinder.WebApp.Controllers
             // USERNAME (za navbar)
             Response.Cookies.Append(
                 "username",
-                loginResponse.User.UserName,
+                loginResponse.User.Username,
                 new CookieOptions
                 {
                     HttpOnly = false,
@@ -118,10 +118,6 @@ namespace JobFinder.WebApp.Controllers
               }
           );
 
-
-
-
-
             return RedirectToAction("Index", "Home");
         }
 
@@ -137,15 +133,11 @@ namespace JobFinder.WebApp.Controllers
             if (!ModelState.IsValid)
                 return View(vm);
 
-            var client = _http.CreateClient();
-            var apiUrl = $"{_config["ApiSettings:BaseUrl"]}/user/register";
 
-            var json = JsonSerializer.Serialize(vm);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var converter = _mapper.Map<UserRegisterDto>(vm);
+            var register = await _userService.RegisterAsync(converter);
 
-            var response = await client.PostAsync(apiUrl, content);
-
-            if (!response.IsSuccessStatusCode)
+            if (register == null)
             {
                 vm.ErrorMessage = "Registracija nije uspjela. Provjerite podatke.";
                 return View(vm);

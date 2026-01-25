@@ -1,4 +1,7 @@
-﻿using JobFinder.WebApp.ViewModels.Admin;
+﻿using AutoMapper;
+using BLL.Services.Interfaces;
+using DAL.Models;
+using JobFinder.WebApp.ViewModels.Admin;
 using JobFinder.WebApp.ViewModels.Application;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
@@ -11,66 +14,52 @@ namespace JobFinder.WebApp.Controllers
     public class FirmController : BaseController
     {
 
-        private readonly HttpClient _client;
-        private readonly IConfiguration _config;
-
-        public FirmController(IConfiguration config)
+        private readonly IMapper _mapper;
+        private readonly IJobOfferService _jobOfferService;
+        private readonly IJobApplicationService _jobApplicationService;
+        public FirmController(IMapper mapper, IJobOfferService jobOfferService, IJobApplicationService jobApplicationService)
         {
-            _config = config;
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri(_config["ApiSettings:BaseUrl"])
-            };
+            _mapper = mapper;
+            _jobOfferService = jobOfferService;
+            _jobApplicationService = jobApplicationService;
         }
-
 
         public async Task<IActionResult> Index()
         {
-            var response = await _client.GetAsync("/api/joboffer/by-firm/" + FirmId);
 
-            if (!response.IsSuccessStatusCode)
-                return View(new List<JobOfferListVM>());
+            int firmID = FirmId ?? 0;
 
-            var json = await response.Content.ReadAsStringAsync();
+            var response = await _jobOfferService.GetByFirmAsync(firmID);
 
-            var offers = JsonSerializer.Deserialize<List<JobOfferListVM>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
+            var converter = _mapper.Map<List<JobOfferListVM>>(response);
 
-            return View(offers);
+            //if (!response.IsSuccessStatusCode)
+            //    return View(new List<JobOfferListVM>());
+            return View(converter);
         }
 
         public async Task<IActionResult> Details(int id)
         {
-             //var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId+"/applied");
-            var response = await _client.GetAsync("api/jobapplication/by-offer/" + id+"/applied");
-            if (!response.IsSuccessStatusCode)
-                return View(new List<JobApplicationUsers>());
+            //var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId+"/applied");
 
-            var json = await response.Content.ReadAsStringAsync();
+            var response = await _jobApplicationService.GetByOfferApprovedAsync(id);
+            var converter = _mapper.Map<List<JobApplicationUsers>>(response);
 
-            var offers = JsonSerializer.Deserialize<List<JobApplicationUsers>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
+           
+            //if (!response.IsSuccessStatusCode)
+            //    return View(new List<JobApplicationUsers>());
 
-            return View(offers);
+            return View(converter);
         }
 
+
+        //pogledaj ovo sutra sta ces za clinet 
+        // 
      
 
         public async Task<IActionResult> Approve(int id)
         {
-            var jwt = Request.Cookies["jwt"];
-            _client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", jwt);
-
-            var response = await _client.PutAsync(
-                $"api/jobapplication/{id}/approve",
-                null
-            );
-
+            var response = _jobApplicationService.ApproveAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
@@ -78,15 +67,7 @@ namespace JobFinder.WebApp.Controllers
         
         public async Task<IActionResult> Reject(int id)
         {
-            var jwt = Request.Cookies["jwt"];
-            _client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", jwt);
-
-            var response = await _client.PutAsync(
-                $"api/jobapplication/{id}/reject",
-                null
-            );
-
+            var response = _jobApplicationService.RejectAsync(id);
             return RedirectToAction(nameof(Index));
         }
 

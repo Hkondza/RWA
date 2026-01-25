@@ -1,12 +1,3 @@
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.csproj.AssemblyReference.cache
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.AssemblyInfoInputs.cache
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.AssemblyInfo.cs
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.sourcelink.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\appsettings.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\JobFinder.WebAPI.staticwebassets.endpoints.json
@@ -18,6 +9,7 @@ C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAP
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
@@ -67,6 +59,15 @@ C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAP
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\DAL.dll
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\BLL.pdb
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\DAL.pdb
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.csproj.AssemblyReference.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.AssemblyInfo.cs
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.sourcelink.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -82,4 +83,3 @@ C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAP
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.pdb
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\JobFinder.WebAPI.genruntimeconfig.cache
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\obj\Debug\net8.0\ref\JobFinder.WebAPI.dll
-C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

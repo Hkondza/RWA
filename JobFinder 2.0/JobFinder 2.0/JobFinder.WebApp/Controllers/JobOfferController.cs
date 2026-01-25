@@ -1,4 +1,6 @@
-﻿using JobFinder.WebApp.ViewModels.JobOffer;
+﻿using AutoMapper;
+using BLL.Services.Interfaces;
+using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Net.Http.Json;
@@ -8,54 +10,47 @@ namespace JobFinder.WebApp.Controllers
 {
     public class JobOfferController : BaseController
     {
-        private readonly HttpClient _client;
-        private readonly IConfiguration _config;
+        private readonly IJobOfferService _jobOfferService;
+        private readonly  _jobOfferService;
+        private readonly IJobOfferService _jobOfferService;
+        private readonly IFirmService _firmService;
+        private readonly IMapper _mapper;
 
-        public JobOfferController(IConfiguration config)
+        public JobOfferController(IJobOfferService jobOfferService, IFirmService firmService, IMapper mapper)
         {
-            _config = config;
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri(_config["ApiSettings:BaseUrl"])
-            };
+            _jobOfferService = jobOfferService;
+            _firmService = firmService;
+            _mapper = mapper;
         }
 
-    
+
         public async Task<IActionResult> Index()
         {
-            var response = await _client.GetAsync("/api/joboffer");
 
-            if (!response.IsSuccessStatusCode)
-                return View(new List<JobOfferListVM>());
+            var response = await _jobOfferService.GetAllAsync();
 
-            var json = await response.Content.ReadAsStringAsync();
 
-            var offers = JsonSerializer.Deserialize<List<JobOfferListVM>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
+            //if (!response.IsSuccessStatusCode)
+            //    return View(new List<JobOfferListVM>());
 
-            return View(offers);
+            var converter = _mapper.Map<List<JobOfferListVM>>(response);
+            return View(converter);
         }
 
    
         public async Task<IActionResult> Details(int id)
         {
-            var response = await _client.GetAsync($"/api/joboffer/{id}");
+            var response = await _jobOfferService.GetByIdAsync(id);
 
-            if (!response.IsSuccessStatusCode)
-                return NotFound();
+ 
+            var converter = _mapper.Map<List<JobOfferDetailsVM>>(response);
+            //if (!response.IsSuccessStatusCode)
+            //    return NotFound();
 
-            var json = await response.Content.ReadAsStringAsync();
-
-            var offer = JsonSerializer.Deserialize<JobOfferDetailsVM>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
 
             ViewBag.CanApply = IsAuthenticated && IsEmployee;
 
-            return View(offer);
+            return View(converter);
         }
 
     
@@ -70,23 +65,7 @@ namespace JobFinder.WebApp.Controllers
 
             var vm = new JobOfferCreateVM();
 
-            FirmLookupDto? firm = null;
-
-
-
-
-              // ovoo pomakni
-            if (FirmId.HasValue)
-            {
-                firm = await _client.GetFromJsonAsync<FirmLookupDto>(
-                    $"/api/firm/{FirmId.Value}"
-                );
-            }
-
-            vm.FirmName = firm?.FirmName;
-
-
-      
+            
             var jobTypes = await _client.GetFromJsonAsync<List<JobTypeLookupDto>>("/api/jobtype");
             if (jobTypes != null)
             {
