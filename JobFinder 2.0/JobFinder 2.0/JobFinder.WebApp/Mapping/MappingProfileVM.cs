@@ -68,6 +68,7 @@ namespace JobFinder.WebApp.Mapping
 
             CreateMap<LoginResponseDto, LoginVM>();
             CreateMap<LoginVM, LoginResponseDto>();
+            CreateMap<LoginVM, UserLoginDto>();
 
 
 

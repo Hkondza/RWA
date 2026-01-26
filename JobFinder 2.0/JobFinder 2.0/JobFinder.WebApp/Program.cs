@@ -3,7 +3,9 @@ using BLL.Repositories;
 using BLL.Repositories.Interfaces;
 using BLL.Services;
 using BLL.Services.Interfaces;
+using DAL.Data;
 using JobFinder.WebApp.Mapping;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -13,7 +15,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<MappingProfileVM>();
+    cfg.AddProfile<JobFinderProfile>();
 });
+
+builder.Services.AddDbContext<JobFinderContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("JobFinderDB"))
+);
+
 
 builder.Services.AddScoped<IJobOfferRepository, JobOfferRepository>();
 builder.Services.AddScoped<IJobOfferService, JobOfferService>();

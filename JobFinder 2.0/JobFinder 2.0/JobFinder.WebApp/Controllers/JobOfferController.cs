@@ -11,8 +11,6 @@ namespace JobFinder.WebApp.Controllers
     public class JobOfferController : BaseController
     {
         private readonly IJobOfferService _jobOfferService;
-        private readonly  _jobOfferService;
-        private readonly IJobOfferService _jobOfferService;
         private readonly IFirmService _firmService;
         private readonly IMapper _mapper;
 
@@ -66,22 +64,22 @@ namespace JobFinder.WebApp.Controllers
             var vm = new JobOfferCreateVM();
 
             
-            var jobTypes = await _client.GetFromJsonAsync<List<JobTypeLookupDto>>("/api/jobtype");
-            if (jobTypes != null)
-            {
-                vm.JobTypes = jobTypes
-                    .Select(j => new SelectListItem(j.JobName, j.IDJobType.ToString()))
-                    .ToList();
-            }
+            //var jobTypes = await _client.GetFromJsonAsync<List<JobTypeLookupDto>>("/api/jobtype");
+            //if (jobTypes != null)
+            //{
+            //    vm.JobTypes = jobTypes
+            //        .Select(j => new SelectListItem(j.JobName, j.IDJobType.ToString()))
+            //        .ToList();
+            //}
 
             
-            var locations = await _client.GetFromJsonAsync<List<LocationLookupDto>>("/api/location");
-            if (locations != null)
-            {
-                vm.Locations = locations
-                    .Select(l => new SelectListItem(l.LocationName, l.IDLocation.ToString()))
-                    .ToList();
-            }
+            //var locations = await _client.GetFromJsonAsync<List<LocationLookupDto>>("/api/location");
+            //if (locations != null)
+            //{
+            //    vm.Locations = locations
+            //        .Select(l => new SelectListItem(l.LocationName, l.IDLocation.ToString()))
+            //        .ToList();
+            //}
 
             return View(vm);
         }
@@ -124,13 +122,13 @@ namespace JobFinder.WebApp.Controllers
 
             
 
-            var response = await _client.PostAsJsonAsync("/api/joboffer", payload);
+            //var response = await _client.PostAsJsonAsync("/api/joboffer", payload);
 
-            if (!response.IsSuccessStatusCode)
-            {
-                ModelState.AddModelError("", "Greška pri kreiranju oglasa.");
-                return await Create();
-            }
+            //if (!response.IsSuccessStatusCode)
+            //{
+            //    ModelState.AddModelError("", "Greška pri kreiranju oglasa.");
+            //    return await Create();
+            //}
 
             return RedirectToAction(nameof(Index));
         }
