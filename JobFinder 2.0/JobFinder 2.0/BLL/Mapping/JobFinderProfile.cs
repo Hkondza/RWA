@@ -53,7 +53,8 @@ namespace BLL.Mapping
                 .ForMember(d => d.IDWorker, opt => opt.MapFrom(s => s.Idworker))
                 .ForMember(d => d.JobApplicationId, opt => opt.MapFrom(s => s.JobApplication.IdjobApplication))
                 .ForMember(d => d.FirstName, opt => opt.MapFrom(s => s.JobApplication.User.FirstName))
-                .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.JobApplication.User.LastName));
+                .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.JobApplication.User.LastName))
+                .ForMember(d => d.Email, opt => opt.MapFrom(s => s.JobApplication.User.Email));
                 
 
         }

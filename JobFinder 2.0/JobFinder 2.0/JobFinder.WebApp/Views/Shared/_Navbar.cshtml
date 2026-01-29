@@ -22,12 +22,12 @@
         </a>
 
         <a href="/JobOffer" style="color:white; text-decoration:none;">Job Offers</a>
-        <a href="/Firm" style="color:white; text-decoration:none;">Firms</a>
 
         @if (isLoggedIn && role == "Employer")
         {
+            <a href="/Firm" style="color:white; text-decoration:none;">My Offers</a>
             <a href="/JobOffer/Create" style="color:white; text-decoration:none;">Create Job</a>
-            <a href="/Application" style="color:white; text-decoration:none;">Applications</a>
+            <a href="/Worker" style="color:white; text-decoration:none;">Workers</a>
         }
 
         @if (isLoggedIn && role == "Employee")

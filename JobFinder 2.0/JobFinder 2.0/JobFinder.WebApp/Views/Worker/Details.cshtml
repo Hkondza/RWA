@@ -1,0 +1,80 @@
+﻿@model List<JobFinder.WebApp.ViewModels.Worker.WorkerDetailsVM>
+
+@{
+    ViewData["Title"] = "Admin – Zahtjevi za firme";
+}
+
+<h2 class="mb-4">Zahtjevi za dodjelu firme</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Trenutno nema zahtjeva za odobravanje.
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Email</th>
+                        <th>Time Started</th>
+                        <th>Time Ended</th>
+                        <th class="text-center">Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.Email</td>
+                            <td>
+                                @(item.WorkStartedAt?.ToString("dd.MM.yyyy HH:mm") ?? "Na Poso")
+                            </td>
+                            <td>
+                                @(item.WorkFinishedAt?.ToString("dd.MM.yyyy HH:mm") ?? "Još Radi")
+                            </td>
+
+
+                            <td class="text-center">
+                                @if (item.WorkStartedAt == null)
+                                {
+                                <td class="text-center">
+                                    <form asp-action="StartWork"
+                                          method="post"
+                                          class="d-inline">
+                                        <input type="hidden" name="id" value="@item.JobApplicationId" />
+                                        <button class="btn btn-success btn-sm">
+                                            ✔ Start Work
+                                        </button>
+                                    </form>
+                                    </td>
+                                }
+                                else
+                                {
+                                    @if (item.WorkFinishedAt == null)
+                                    {
+                                        <td class="text-center">
+                                        <form asp-action="FinishWork" method="post"
+                                              class="d-inline">
+                                            <input type="hidden" name="id" value="@item.JobApplicationId" />
+                                            <button type="submit" class="btn btn-warning btn-sm">
+                                                🏁 Finish Request
+                                            </button>
+                                        </form>
+                                        </td>
+                                    }
+                                }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

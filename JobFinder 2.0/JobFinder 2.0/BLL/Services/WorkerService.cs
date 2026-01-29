@@ -77,11 +77,24 @@ namespace BLL.Services
 
         }
 
+        public async Task<List<WorkerReadDto>> GetAllByJobOfferAsync(int jobOfferId)
+        {
+            var list = await _repo.GetAllByJobOfferAsync(jobOfferId);
+
+            return _mapper.Map<List<WorkerReadDto>>(list);
+        }
+
         public async Task<List<WorkerReadDto>> GetByFinishedAsync(int jobOfferId)
         {
            var list = await _repo.GetAllByJobOfferAsync(jobOfferId);
 
            return _mapper.Map<List<WorkerReadDto>>(list.Where(l => l.Status == FINISHED).ToList());
+        }
+
+        public async Task<WorkerReadDto> GetByJobApplicationAsync(int jobApplicationd)
+        {
+           var worker = await _repo.GetByApplicationIdAsync(jobApplicationd);
+            return _mapper.Map<WorkerReadDto>(worker);
         }
 
         public async Task<List<WorkerReadDto>> GetByWorkingAsync(int jobOfferId)
@@ -90,5 +103,7 @@ namespace BLL.Services
 
             return _mapper.Map<List<WorkerReadDto>>(list.Where(l => l.Status == WORKING).ToList());
         }
+
+
     }
 }

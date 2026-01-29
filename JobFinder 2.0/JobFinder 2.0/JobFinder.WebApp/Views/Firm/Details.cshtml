@@ -28,40 +28,40 @@ else
                     </tr>
                 </thead>
                 <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.FirstName</td>
-                        <td>@item.LastName</td>
-                        <td>
-                            <span class="badge bg-warning text-dark">
-                                @item.Email
-                            </span>
-                        </td>
-                        <td>
-                            @item.AppliedAt.ToString("dd.MM.yyyy HH:mm")
-                        </td>
-                        <td class="text-center">
-                            <form asp-action="Approve"
-                                  method="put"
-                                  class="d-inline">
-                                <input type="hidden" name="id" value="@item.IdJobApplication" />
-                                <button class="btn btn-success btn-sm">
-                                    ✔ Odobri
-                                </button>
-                            </form>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>
+                                <span class="badge bg-warning text-dark">
+                                    @item.Email
+                                </span>
+                            </td>
+                            <td>
+                                @item.AppliedAt.ToString("dd.MM.yyyy HH:mm")
+                            </td>
+                            <td class="text-center">
+                                <form asp-action="Approve"
+                                      method="put"
+                                      class="d-inline">
+                                    <input type="hidden" name="id" value="@item.IdJobApplication" />
+                                    <button class="btn btn-success btn-sm">
+                                        ✔ Odobri
+                                    </button>
+                                </form>
 
-                            <form asp-action="Reject"
-                                  method="put"
-                                  class="d-inline ms-2">
-                                <input type="hidden" name="id" value="@item.IdJobApplication" />
-                                <button class="btn btn-danger btn-sm">
-                                    ✖ Odbij
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                }
+                                <form asp-action="Reject"
+                                      method="put"
+                                      class="d-inline ms-2">
+                                    <input type="hidden" name="id" value="@item.IdJobApplication" />
+                                    <button class="btn btn-danger btn-sm">
+                                        ✖ Odbij
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

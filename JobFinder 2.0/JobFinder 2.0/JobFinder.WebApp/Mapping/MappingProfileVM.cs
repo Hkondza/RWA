@@ -12,6 +12,7 @@ using JobFinder.WebApp.ViewModels.Application;
 using JobFinder.WebApp.ViewModels.Auth;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using JobFinder.WebApp.ViewModels.Profile;
+using JobFinder.WebApp.ViewModels.Worker;
 
 namespace JobFinder.WebApp.Mapping
 {
@@ -57,6 +58,8 @@ namespace JobFinder.WebApp.Mapping
 
             CreateMap<JobApplicationVM, JobApplicationCreateDto>();
             CreateMap<JobApplicationReadDto, JobApplicationDetailsVM>();
+            CreateMap<JobApplicationReadDto, WorkerDetailsVM>()
+                .ForMember(d => d.JobApplicationId, opt => opt.MapFrom(s => s.IDJobApplication));
             CreateMap<JobApplicationDetailsVM, JobApplicationReadDto>();
          
             CreateMap<JobApplicationReadDto, JobApplicationListVM>();
@@ -70,6 +73,9 @@ namespace JobFinder.WebApp.Mapping
 
             CreateMap<RegisterVM, UserRegisterDto>();
             CreateMap<UserRegisterDto,RegisterVM>();
+
+
+            CreateMap<WorkerReadDto, WorkerDetailsVM>();
             
 
 
