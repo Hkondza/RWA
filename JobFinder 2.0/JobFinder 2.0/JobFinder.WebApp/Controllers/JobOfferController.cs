@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BLL.DTOs.JobOffer;
+using BLL.Repositories.Interfaces;
 using BLL.Services.Interfaces;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +13,18 @@ namespace JobFinder.WebApp.Controllers
     public class JobOfferController : BaseController
     {
         private readonly IJobOfferService _jobOfferService;
+        private readonly IJobTypeRepository _jobTypeRepo;
+        private readonly ILocationRepository _locationRepo;
         private readonly IFirmService _firmService;
         private readonly IMapper _mapper;
 
-        public JobOfferController(IJobOfferService jobOfferService, IFirmService firmService, IMapper mapper)
+        public JobOfferController(IJobOfferService jobOfferService, IFirmService firmService, IMapper mapper, IJobTypeRepository jobTypeRepo, ILocationRepository locationRepo)
         {
             _jobOfferService = jobOfferService;
             _firmService = firmService;
             _mapper = mapper;
+            _jobTypeRepo = jobTypeRepo;
+            _locationRepo = locationRepo;
         }
 
 
@@ -41,7 +47,7 @@ namespace JobFinder.WebApp.Controllers
             var response = await _jobOfferService.GetByIdAsync(id);
 
  
-            var converter = _mapper.Map<List<JobOfferDetailsVM>>(response);
+            var converter = _mapper.Map<JobOfferDetailsVM>(response);
             //if (!response.IsSuccessStatusCode)
             //    return NotFound();
 
@@ -63,23 +69,26 @@ namespace JobFinder.WebApp.Controllers
 
             var vm = new JobOfferCreateVM();
 
-            
-            //var jobTypes = await _client.GetFromJsonAsync<List<JobTypeLookupDto>>("/api/jobtype");
-            //if (jobTypes != null)
-            //{
-            //    vm.JobTypes = jobTypes
-            //        .Select(j => new SelectListItem(j.JobName, j.IDJobType.ToString()))
-            //        .ToList();
-            //}
 
-            
-            //var locations = await _client.GetFromJsonAsync<List<LocationLookupDto>>("/api/location");
-            //if (locations != null)
-            //{
-            //    vm.Locations = locations
-            //        .Select(l => new SelectListItem(l.LocationName, l.IDLocation.ToString()))
-            //        .ToList();
-            //}
+
+
+
+            var jobTypes = await _jobTypeRepo.GetAllAsync();
+            if (jobTypes != null)
+            {
+                vm.JobTypes = jobTypes
+                    .Select(j => new SelectListItem(j.JobName, j.IdjobType.ToString()))
+                    .ToList();
+            }
+
+
+            var locations = await _locationRepo.GetAllAsync();
+            if (locations != null)
+            {
+                vm.Locations = locations
+                    .Select(l => new SelectListItem(l.LocationName, l.Idlocation.ToString()))
+                    .ToList();
+            }
 
             return View(vm);
         }
@@ -111,7 +120,6 @@ namespace JobFinder.WebApp.Controllers
                Salary = vm.Salary,
 
                 FirmID = FirmId,
-                FirmName = vm.FirmName,
 
                 JobTypeID = vm.JobTypeID,
                 NewJobTypeName = vm.NewJobTypeName,
@@ -120,22 +128,24 @@ namespace JobFinder.WebApp.Controllers
                 NewLocationName = vm.NewLocationName
             };
 
-            
+            var converter = _mapper.Map<JobOfferCreateDto>(payload);
+
+
+            var response = await _jobOfferService.CreateAsync(converter);
+
 
             //var response = await _client.PostAsJsonAsync("/api/joboffer", payload);
 
-            //if (!response.IsSuccessStatusCode)
-            //{
-            //    ModelState.AddModelError("", "Greška pri kreiranju oglasa.");
-            //    return await Create();
-            //}
+            if (response == null)
+            {
+                ModelState.AddModelError("", "Greška pri kreiranju oglasa.");
+                return await Create();
+            }
 
             return RedirectToAction(nameof(Index));
         }
 
       
-   
-
         private class JobTypeLookupDto
         {
             public int IDJobType { get; set; }
@@ -148,10 +158,6 @@ namespace JobFinder.WebApp.Controllers
             public string LocationName { get; set; }
         }
 
-        private class FirmLookupDto
-        {
-            public int IDFirm { get; set; }
-            public string FirmName { get; set; }
-        }
+     
     }
 }

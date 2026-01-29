@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Repositories
 {
-    internal class JobTypeRepository : IJobTypeRepository
+    public class JobTypeRepository : IJobTypeRepository
     {
 
         private readonly JobFinderContext _context;

@@ -80,3 +80,4 @@ C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebAp
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebApp\bin\Debug\net8.0\DAL.pdb
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebApp\obj\Debug\net8.0\JobFinder.WebApp.csproj.AssemblyReference.cache
 C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebApp\obj\Debug\net8.0\JobFinde.ADA8D62A.Up2Date
+C:\Users\Hrvoje\Documents\GitHub\RWA\JobFinder 2.0\JobFinder 2.0\JobFinder.WebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

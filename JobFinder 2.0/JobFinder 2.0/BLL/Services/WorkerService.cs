@@ -50,6 +50,8 @@ namespace BLL.Services
             return _mapper.Map<WorkerReadDto>(created);
         }
 
+
+        //puknit ce garant
         public async Task FinishAsync(int jobApplicationID)
         {
 

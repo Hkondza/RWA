@@ -3,57 +3,49 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using JobFinder.WebApp.ViewModels.Profile;
+using System.Runtime.CompilerServices;
+using BLL.Services.Interfaces;
+using AutoMapper;
+using System.Runtime.InteropServices;
+using BLL.DTOs.Profile;
 
 namespace JobFinder.WebApp.Controllers
 {
     public class ProfileController : BaseController
     {
-        private readonly HttpClient _client;
-        private readonly IConfiguration _config;
+        private readonly IProfileService _profileService;
+        private readonly IFirmService _firmService;
+        private readonly IMapper _mapper;
 
-        public ProfileController(IConfiguration config)
+        public ProfileController(IProfileService profileService, IFirmService firmService, IMapper mapper)
         {
-            _config = config;
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri(_config["ApiSettings:BaseUrl"])
-            };
+            _profileService = profileService;
+            _firmService = firmService;
+            _mapper = mapper;
         }
 
-        
         public async Task<IActionResult> Index()
         {
             if (!IsAuthenticated)
                 return RedirectToAction("Login", "Account");
 
-            AttachJwt();
+            //AttachJwt();
 
-            var profileRes = await _client.GetAsync("/api/profile/me");
-            if (!profileRes.IsSuccessStatusCode)
-                return RedirectToAction("Login", "Account");
 
-            var profileJson = await profileRes.Content.ReadAsStringAsync();
-            var vm = JsonSerializer.Deserialize<ProfileVM>(
-                profileJson,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            )!;
+            //nemoze biti nul jer gore trazi autnetifikaciju
+            var profile = await _profileService.GetMeAsync(int.Parse(UserId));
+            var vm = _mapper.Map<ProfileVM>(profile);
 
            
-            var firmsRes = await _client.GetAsync("/api/firm/firms");
-            if (firmsRes.IsSuccessStatusCode)
-            {
-                var firmsJson = await firmsRes.Content.ReadAsStringAsync();
-                var firms = JsonSerializer.Deserialize<List<FirmLookupVM>>(
-                    firmsJson,
-                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-                )!;
+            var firms = await _firmService.GetAllAsync();
+            var firmConverter = _mapper.Map<List<FirmLookupVM>>(firms);
 
-                vm.Firms = firms.Select(f => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+                vm.Firms = firmConverter.Select(f => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
                 {
                     Value = f.IDFirm.ToString(),
                     Text = f.FirmName
                 }).ToList();
-            }
+            
 
             return View(vm);
         }
@@ -62,11 +54,15 @@ namespace JobFinder.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateProfile([FromBody] ProfileUpdateVM vm)
         {
-            AttachJwt();
+            //AttachJwt();
 
-            var res = await _client.PutAsJsonAsync("/api/profile/update", vm);
-            if (!res.IsSuccessStatusCode)
-                return BadRequest();
+            var converter = _mapper.Map<ProfileUpdateDto>(vm);
+
+            await _profileService.UpdateAsync(int.Parse(UserId), converter);
+
+          
+            //if (!res.IsSuccessStatusCode)
+            //    return BadRequest();
 
             return Ok();
         }
@@ -75,11 +71,15 @@ namespace JobFinder.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordVM vm)
         {
-            AttachJwt();
+            //AttachJwt();
 
-            var res = await _client.PutAsJsonAsync("/api/profile/change-password", vm);
-            if (!res.IsSuccessStatusCode)
-                return BadRequest(await res.Content.ReadAsStringAsync());
+            var converter = _mapper.Map<ChangePasswordDto>(vm);
+
+            await _profileService.ChangePasswordAsync(int.Parse(UserId), converter);
+
+      
+            //if (!res.IsSuccessStatusCode)
+            //    return BadRequest(await res.Content.ReadAsStringAsync());
 
             return Ok();
         }
@@ -88,20 +88,24 @@ namespace JobFinder.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> RequestFirm([FromBody] FirmRequestVM vm)
         {
-            AttachJwt();
+           // AttachJwt();
 
-            var res = await _client.PostAsJsonAsync("/api/profile/request-firm", vm);
-            if (!res.IsSuccessStatusCode)
-                return BadRequest(await res.Content.ReadAsStringAsync());
+            var converter = _mapper.Map<FirmRequestDto>(vm);
+
+            await _profileService.RequestFirmAsync(int.Parse(UserId), converter);
+
+       
+            //if (!res.IsSuccessStatusCode)
+            //    return BadRequest(await res.Content.ReadAsStringAsync());
 
             return Ok(new { status = "Pending" });
         }
 
-        private void AttachJwt()
-        {
-            var jwt = Request.Cookies["JWT"];
-            _client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", jwt);
-        }
+        //private void AttachJwt()
+        //{
+        //    var jwt = Request.Cookies["JWT"];
+        //    _client.DefaultRequestHeaders.Authorization =
+        //        new AuthenticationHeaderValue("Bearer", jwt);
+        //}
     }
 }

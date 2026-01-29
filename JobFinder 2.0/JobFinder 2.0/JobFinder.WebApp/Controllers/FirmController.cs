@@ -42,7 +42,7 @@ namespace JobFinder.WebApp.Controllers
         {
             //var response = await _client.GetAsync("api/jobapplication/by-firm/" + FirmId+"/applied");
 
-            var response = await _jobApplicationService.GetByOfferApprovedAsync(id);
+            var response = await _jobApplicationService.GetByOfferAppliedAsync(id);
             var converter = _mapper.Map<List<JobApplicationUsers>>(response);
 
            
@@ -55,19 +55,19 @@ namespace JobFinder.WebApp.Controllers
 
         //pogledaj ovo sutra sta ces za clinet 
         // 
-     
 
-        public async Task<IActionResult> Approve(int id)
+
+        public async Task< IActionResult> Approve(int id)
         {
-            var response = _jobApplicationService.ApproveAsync(id);
+            await _jobApplicationService.ApproveAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
-       
-        
-        public async Task<IActionResult> Reject(int id)
+
+
+        public async Task <IActionResult> Reject(int id)
         {
-            var response = _jobApplicationService.RejectAsync(id);
+            await _jobApplicationService.RejectAsync(id);
             return RedirectToAction(nameof(Index));
         }
 

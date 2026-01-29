@@ -1,5 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json;
+using AutoMapper;
+using BLL.Services.Interfaces;
 using JobFinder.WebApp.ViewModels.Admin;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,16 +10,15 @@ namespace JobFinder.WebApp.Controllers.Admin
    
     public class UserFirmController : BaseController
     {
-        private readonly HttpClient _client;
-        private readonly IConfiguration _config;
 
-        public UserFirmController(IConfiguration config)
+        private readonly IUserFirmService _userFirmService;
+        private readonly IMapper _mapper;
+
+
+        public UserFirmController(IUserFirmService userFirmService, IMapper mapper)
         {
-            _config = config;
-            _client = new HttpClient
-            {
-                BaseAddress = new Uri(_config["ApiSettings:BaseUrl"])
-            };
+            _userFirmService = userFirmService;
+            _mapper = mapper;
         }
 
         // 📋 LISTA PENDING ZAHTJEVA
@@ -27,24 +28,14 @@ namespace JobFinder.WebApp.Controllers.Admin
             if (!IsAuthenticated || !IsAdmin)
                 return Unauthorized();
 
-            // 🔐 JWT iz cookie-ja
-            var jwt = Request.Cookies["jwt"];
-            _client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
+  
+            var response = await _userFirmService.GetPendingAsync();
+            var converter = _mapper.Map<List<UserFirmAdminVM>>(response);
 
-            var response = await _client.GetAsync("api/admin/user-firm/pending");
+            //if (!response.IsSuccessStatusCode)
+            //    return View(new List<UserFirmAdminVM>());
 
-            if (!response.IsSuccessStatusCode)
-                return View(new List<UserFirmAdminVM>());
-
-            var json = await response.Content.ReadAsStringAsync();
-
-            var data = JsonSerializer.Deserialize<List<UserFirmAdminVM>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            );
-
-            return View(data);
+            return View(converter);
         }
 
         // ✅ APPROVE
@@ -54,14 +45,7 @@ namespace JobFinder.WebApp.Controllers.Admin
             if (!IsAuthenticated || !IsAdmin)
                 return Unauthorized();
 
-            var jwt = Request.Cookies["jwt"];
-            _client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
-
-            var body = JsonSerializer.Serialize(new { userFirmId = id });
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
-
-            await _client.PostAsync("api/admin/user-firm/approve", content);
+            await _userFirmService.ApproveAsync(id);
 
             return RedirectToAction(nameof(Index));
         }
@@ -73,14 +57,7 @@ namespace JobFinder.WebApp.Controllers.Admin
             if (!IsAuthenticated || !IsAdmin)
                 return Unauthorized();
 
-            var jwt = Request.Cookies["jwt"];
-            _client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwt);
-
-            var body = JsonSerializer.Serialize(new { userFirmId = id });
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
-
-            await _client.PostAsync("api/admin/user-firm/reject", content);
+            await _userFirmService.RejectAsync(id);
 
             return RedirectToAction(nameof(Index));
         }

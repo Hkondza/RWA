@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Repositories.Interfaces
 {
-    internal interface IJobTypeRepository
+    public interface IJobTypeRepository
     {
         Task<JobType?> GetByIdAsync(int id);
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Repositories.Interfaces
 {
-    internal interface ILocationRepository
+    public interface ILocationRepository
     {
         Task<Location?> GetByIdAsync(int id);
 

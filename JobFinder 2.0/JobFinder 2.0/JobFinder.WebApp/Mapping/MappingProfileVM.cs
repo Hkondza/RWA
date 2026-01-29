@@ -2,13 +2,16 @@
 using BLL.DTOs.Firm;
 using BLL.DTOs.JobApplication;
 using BLL.DTOs.JobOffer;
+using BLL.DTOs.Profile;
 using BLL.DTOs.User;
 using BLL.DTOs.UserFirm;
 using BLL.DTOs.Worker;
 using DAL.Models;
+using JobFinder.WebApp.ViewModels.Admin;
 using JobFinder.WebApp.ViewModels.Application;
 using JobFinder.WebApp.ViewModels.Auth;
 using JobFinder.WebApp.ViewModels.JobOffer;
+using JobFinder.WebApp.ViewModels.Profile;
 
 namespace JobFinder.WebApp.Mapping
 {
@@ -39,16 +42,23 @@ namespace JobFinder.WebApp.Mapping
             //     .ForMember(d => d.LocationName, opt => opt.MapFrom(s => s.LocationName));
 
 
+            CreateMap<ProfileReadDto, ProfileVM>();
+            CreateMap<ProfileUpdateDto, ProfileUpdateVM>();
 
-            CreateMap<JobOfferCreateDto, JobOffer>();
+
+            CreateMap<ChangePasswordDto, ChangePasswordVM>();
+
+            CreateMap<JobOfferCreateDto, JobOfferCreateVM>();
+            CreateMap<JobOfferCreateVM, JobOfferCreateDto>();
 
             CreateMap<JobOfferReadDto, JobOfferListVM>();
             CreateMap<JobOfferReadDto, JobOfferDetailsVM>();
-           
-
+            CreateMap<JobOfferReadDto, JobOfferDetailsVM>();
 
             CreateMap<JobApplicationVM, JobApplicationCreateDto>();
             CreateMap<JobApplicationReadDto, JobApplicationDetailsVM>();
+            CreateMap<JobApplicationDetailsVM, JobApplicationReadDto>();
+         
             CreateMap<JobApplicationReadDto, JobApplicationListVM>();
             CreateMap<JobApplicationReadDto, JobApplicationUsers>();
 
@@ -63,8 +73,17 @@ namespace JobFinder.WebApp.Mapping
             
 
 
-            // pogledaj za ovog nezans sto treba sta se tice usera
+           
             CreateMap<User, UserReadDto>();
+
+
+
+            CreateMap<UserFirm, UserFirmAdminVM>()
+                .ForMember(d => d.Username, o => o.MapFrom(s => s.User.Username))
+                .ForMember(d => d.FirmName, o => o.MapFrom(s => s.Firm.FirmName));
+
+
+
 
             CreateMap<LoginResponseDto, LoginVM>();
             CreateMap<LoginVM, LoginResponseDto>();
@@ -72,8 +91,11 @@ namespace JobFinder.WebApp.Mapping
 
 
 
-            CreateMap<Firm, FirmReadDto>();
-            CreateMap<FirmCreateDto, Firm>();
+            CreateMap<FirmReadDto, FirmLookupVM>();
+            CreateMap<FirmRequestDto, FirmRequestVM>();
+            CreateMap<FirmRequestVM, FirmRequestDto>();
+
+            
 
             CreateMap<WorkerCreateDto, Worker>();
             CreateMap<Worker, WorkerReadDto>()

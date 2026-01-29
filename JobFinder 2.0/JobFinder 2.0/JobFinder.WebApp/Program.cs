@@ -23,6 +23,10 @@ builder.Services.AddDbContext<JobFinderContext>(options =>
 );
 
 
+
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IJobTypeRepository, JobTypeRepository>();
+
 builder.Services.AddScoped<IJobOfferRepository, JobOfferRepository>();
 builder.Services.AddScoped<IJobOfferService, JobOfferService>();
 

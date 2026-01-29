@@ -33,7 +33,7 @@ namespace JobFinder.WebApp.Controllers
 
 
             var list = await _jobApplicationService.GetByUserAsync(userId);
-            var converter = _mapper.Map<JobApplicationListVM>(list);
+            var converter = _mapper.Map<List<JobApplicationListVM>>(list);
 
             return View(converter);
         }
@@ -83,7 +83,7 @@ namespace JobFinder.WebApp.Controllers
         public async Task<IActionResult> Details(int id)
         {
 
-            var response = await _jobApplicationService.GetByOfferAsync(id);
+            var response = await _jobApplicationService.GetByApplicationAsync(id);
 
             var converter = _mapper.Map<List<JobApplicationDetailsVM>>(response);
 

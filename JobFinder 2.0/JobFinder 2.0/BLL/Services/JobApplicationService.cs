@@ -57,28 +57,56 @@ namespace BLL.Services
 
         public async Task ApproveAsync(int jobApplicationID)
         {
+
+
+
+            // 1. Prvo dohvati podatke (van transakcije)
+            var jobApplications = await _repo.GetByApplicationAsync(jobApplicationID);
+            var jobapplication = jobApplications?.FirstOrDefault();
+
+            if (jobapplication == null) throw new Exception("Ne postoji.");
+            if (jobapplication.Status != APPLIED) throw new Exception("Već obrađen.");
+
+            // 2. Tek sada otvori transakciju za promjenu
             using var tx = await _context.Database.BeginTransactionAsync();
-
-            var jobApplications = await _repo.GetByApplicationAsync(jobApplicationID)
-                ?? throw new Exception("Zahtjev ne postoji.");
-
-            var jobapplication = jobApplications.FirstOrDefault();
-
-            if (jobapplication == null)
+            try
             {
-                throw new Exception("JobApplication nepostiji");
+                jobapplication.Status = APPROVED;
+                
+
+                await _context.SaveChangesAsync();
+                await tx.CommitAsync();
+            }
+            catch
+            {
+                await tx.RollbackAsync();
+                throw;
             }
 
 
-            if (jobapplication.Status != APPLIED)
-                throw new Exception("Zahtjev već obrađen.");
+            // var jobApplications = await _repo.GetByApplicationAsync(jobApplicationID)
+            //     ?? throw new Exception("Zahtjev ne postoji.");
 
-          
-            jobapplication.Status = APPROVED;
-           // dodat approved at u tablicu job application jobapplication.ApprovedAt = DateTime.Now;
+            // var jobapplication = jobApplications.FirstOrDefault();
 
-            await _context.SaveChangesAsync();
-            await tx.CommitAsync();
+            // using var tx = await _context.Database.BeginTransactionAsync();
+
+
+            // if (jobapplication == null)
+            // {
+            //     throw new Exception("JobApplication nepostiji");
+            // }
+
+
+            // if (jobapplication.Status != APPLIED)
+            //     throw new Exception("Zahtjev već obrađen.");
+
+
+            // jobapplication.Status = APPROVED;
+            //// dodat approved at u tablicu job application jobapplication.ApprovedAt = DateTime.Now;
+
+            // await _context.SaveChangesAsync();
+            // await tx.CommitAsync();
         }
 
 
