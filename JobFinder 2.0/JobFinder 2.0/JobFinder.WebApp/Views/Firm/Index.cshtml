@@ -14,6 +14,7 @@ else
                 <th style="text-align:left;">Naziv</th>
                 <th>Lokacija</th>
                 <th>Tip</th>
+                <th>Active</th>
                 <th></th>
             </tr>
         </thead>
@@ -24,8 +25,18 @@ else
                 <td>@job.Title</td>
                 <td>@job.LocationName</td>
                 <td>@job.JobName</td>
+                @if (job.IsActive)
+                    {
+                        <td>Active</td>
+                    }
+                    else
+                    {
+                        <td>Not Active</td>
+                    }
+
+
                 <td>
-                    <a href="/Firm/Details/@job.IDJobOffer">Details</a>
+                    <a href="/Firm/Details/@job.IDJobOffer">Show Applications</a>
                 </td>
             </tr>
         }

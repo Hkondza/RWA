@@ -7,5 +7,7 @@
         public string FirmName { get; set; }
         public string LocationName { get; set; }
         public string JobName { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

@@ -53,7 +53,12 @@ namespace BLL.Repositories
 
         public async Task<List<JobOffer>> GetAllSearchAsync(string? search, int page, int pageSize)
         {
-            var query = _context.JobOffers.AsQueryable();
+            var query = _context.JobOffers
+             .Include(o => o.Firm)
+                .Include(o => o.JobType)
+                  .Include(o => o.Location)
+                      .Where(o => o.IsActive)
+                         .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(search))
             {

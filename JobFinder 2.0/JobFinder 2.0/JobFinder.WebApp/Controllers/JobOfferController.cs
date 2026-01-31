@@ -28,20 +28,24 @@ namespace JobFinder.WebApp.Controllers
         }
 
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search, int page = 1)
         {
+            int pageSize = 10;
 
-            var response = await _jobOfferService.GetAllAsync();
+            var result = await _jobOfferService.GetAllSearchAsync(search, page, pageSize);
+            var totalCount = await _jobOfferService.CountAsync(search);
 
+            var vm = _mapper.Map<List<JobOfferListVM>>(result);
 
-            //if (!response.IsSuccessStatusCode)
-            //    return View(new List<JobOfferListVM>());
+            ViewBag.Search = search;
+            ViewBag.Page = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 
-            var converter = _mapper.Map<List<JobOfferListVM>>(response);
-            return View(converter);
+            return View(vm);
         }
 
-   
+
+
         public async Task<IActionResult> Details(int id)
         {
             var response = await _jobOfferService.GetByIdAsync(id);
