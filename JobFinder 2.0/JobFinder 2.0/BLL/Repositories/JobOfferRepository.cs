@@ -50,5 +50,35 @@ namespace BLL.Repositories
                .Where(o => o.FirmId == firmId)
                .ToListAsync();
         }
+
+        public async Task<List<JobOffer>> GetAllSearchAsync(string? search, int page, int pageSize)
+        {
+            var query = _context.JobOffers.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(f =>
+                    f.Title.Contains(search));
+            }
+
+            return await query
+                .OrderBy(f => f.Title)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+
+        public async Task<int> CountAsync(string? search)
+        {
+            var query = _context.JobOffers.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(f =>
+                    f.Title.Contains(search));
+            }
+
+            return await query.CountAsync();
+        }
     }
 }

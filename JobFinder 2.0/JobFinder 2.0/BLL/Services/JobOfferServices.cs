@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL.DTOs.Firm;
 using BLL.DTOs.JobOffer;
 using BLL.Repositories.Interfaces;
 using BLL.Services.Interfaces;
@@ -116,6 +117,36 @@ namespace BLL.Services
         {
             var offers = await _repo.GetAllByFirmAsync(firmId);
             return _mapper.Map<List<JobOfferReadDto>>(offers);
+        }
+
+        public async Task<List<JobOfferReadDto>> GetAllSearchAsync(string? search, int page, int pageSize)
+        {
+            var firms = await _repo.GetAllSearchAsync(search, page, pageSize);
+            return _mapper.Map<List<JobOfferReadDto>>(firms);
+        }
+
+        public async Task<int> CountAsync(string? search)
+        {
+            return await _repo.CountAsync(search);
+        }
+
+        public async Task RemoveJobOffer(int id)
+        {
+            using var tx = await _context.Database.BeginTransactionAsync();
+
+            var offer = await _repo.GetByIdAsync(id)
+                ?? throw new Exception("JobOffer Ne popsotji.");
+
+
+
+            if (!offer.IsActive)
+                throw new Exception("Zahtjev već obrađen.");
+
+
+            offer.IsActive = false;
+         
+            await _context.SaveChangesAsync();
+            await tx.CommitAsync();
         }
     }
 }
