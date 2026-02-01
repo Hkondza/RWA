@@ -73,5 +73,12 @@ namespace JobFinder.WebApp.Controllers
 
 
 
+        public async Task<IActionResult> EndOffer(int id)
+        {
+            await _jobOfferService.RemoveJobOffer(id);
+            return NoContent();
+        }
+
+
     }
 }

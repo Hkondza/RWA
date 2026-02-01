@@ -219,17 +219,8 @@ IF NOT EXISTS (SELECT 1 FROM Location WHERE LocationName = N'Karlovac')
 IF NOT EXISTS (SELECT 1 FROM Users WHERE Username = N'admin')
 INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Phone)
 VALUES
-(N'admin', N'admin@jobfinder.hr', N'admin123HASH', N'Admin', N'Admin', N'User', N'0990000000');
+(N'admin', N'admin@jobfinder.hr', N'100000.RA+93eJs6g8XEtD4nlSkiQ==.lzXfVtUl3cHdtQ9BUiDo44Ql4ZO2myf60B5YCrR6Ui4=', N'Admin', N'Hrvoje', N'Kondza', N'0994362136');
 
-IF NOT EXISTS (SELECT 1 FROM Users WHERE Username = N'user1')
-INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Phone)
-VALUES
-(N'user1', N'user1@jobfinder.hr', N'user123HASH', N'User', N'Ivan', N'Iviæ', N'0911111111');
-
-IF NOT EXISTS (SELECT 1 FROM Users WHERE Username = N'user2')
-INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Phone)
-VALUES
-(N'user2', N'user2@jobfinder.hr', N'user123HASH', N'User', N'Petra', N'Periæ', N'0922222222');
 
 ------------------------------------------------------
 -- DEFAULT PODACI: Firm

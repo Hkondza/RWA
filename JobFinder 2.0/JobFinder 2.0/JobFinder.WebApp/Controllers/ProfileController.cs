@@ -56,6 +56,11 @@ namespace JobFinder.WebApp.Controllers
         {
             //AttachJwt();
 
+            if (!vm.Email.Contains("@"))
+            {
+                return BadRequest();
+            }
+
             var converter = _mapper.Map<ProfileUpdateDto>(vm);
 
             await _profileService.UpdateAsync(int.Parse(UserId), converter);

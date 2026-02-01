@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BLL.DTOs.JobOffer;
 using BLL.Repositories.Interfaces;
+using BLL.Services;
 using BLL.Services.Interfaces;
 using JobFinder.WebApp.ViewModels.JobOffer;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,13 @@ namespace JobFinder.WebApp.Controllers
             _mapper = mapper;
             _jobTypeRepo = jobTypeRepo;
             _locationRepo = locationRepo;
+        }
+
+
+        public async Task<IActionResult> EndOffer(int id)
+        {
+            await _jobOfferService.RemoveJobOffer(id);
+            return NoContent();
         }
 
 

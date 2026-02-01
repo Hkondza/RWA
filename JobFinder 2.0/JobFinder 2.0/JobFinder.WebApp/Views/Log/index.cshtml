@@ -1,0 +1,60 @@
+﻿@model List<JobFinder.WebApp.ViewModels.Admin.LogVM>
+
+<h2>Job Offers</h2>
+
+<form method="get" asp-action="Index" style="margin-bottom:20px;">
+    <input type="text"
+           name="search"
+           value="@ViewBag.Search"
+           placeholder="Pretraži oglase..."
+           style="padding:6px; width:250px;" />
+
+    <button type="submit" style="padding:6px 12px;">Search</button>
+</form>
+
+@if (!Model.Any())
+{
+    <p>Nema dostupnih oglasa.</p>
+}
+else
+{
+    <table style="width:100%; border-collapse:collapse;">
+        <thead>
+            <tr style="border-bottom:2px solid #000;">
+                <th style="text-align:left; padding:8px;">ID</th>
+                <th style="padding:8px;">Message</th>
+                <th style="padding:8px;">Level</th>
+                <th style="padding:8px;">Time</th>
+                <th style="padding:8px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model)
+            {
+                <tr style="border-bottom:1px solid #ddd;">
+                    <td style="padding:8px;">@log.Id</td>
+                    <td style="padding:8px;">@log.Message</td>
+                    <td style="padding:8px;">@log.Level</td>
+                    <td style="padding:8px;">@log.Timestamp</td>
+                    <td style="padding:8px;">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@if (ViewBag.TotalPages != null && ViewBag.TotalPages > 1)
+{
+    <div style="margin-top:20px;">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <a href="?search=@ViewBag.Search&page=@i"
+               style="margin-right:8px; text-decoration:none;
+                              @(ViewBag.Page == i ? "font-weight:bold;" : "")">
+                @i
+            </a>
+        }
+    </div>
+}

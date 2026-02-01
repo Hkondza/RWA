@@ -13,7 +13,11 @@
 
 <h4>Osobni podaci</h4>
 <label class="col-sm-3 col-form-label fw-semibold">Email:</label>
-<input id="email" value="@Model.Email" placeholder="Email" />
+<input id="email"
+       type="email"
+       value="@Model.Email"
+       placeholder="Email"
+       required />
 <label class="col-sm-3 col-form-label fw-semibold">Ime:</label>
 <input id="firstName" value="@Model.FirstName" placeholder="Ime" />
 <label class="col-sm-3 col-form-label fw-semibold">Prezime:</label>

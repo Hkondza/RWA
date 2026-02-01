@@ -45,6 +45,7 @@ namespace JobFinder.WebApp.Mapping
 
             CreateMap<ProfileReadDto, ProfileVM>();
             CreateMap<ProfileUpdateDto, ProfileUpdateVM>();
+            CreateMap<ProfileUpdateVM, ProfileUpdateDto>();
 
 
             CreateMap<ChangePasswordDto, ChangePasswordVM>();
@@ -66,6 +67,9 @@ namespace JobFinder.WebApp.Mapping
             CreateMap<JobApplicationReadDto, JobApplicationUsers>();
 
 
+            CreateMap<Log, LogVM>();
+
+
 
             CreateMap<UserFirm, UserFirmReadDto>()
                 .ForMember(d => d.Username, o => o.MapFrom(s => s.User.Username))
@@ -76,6 +80,10 @@ namespace JobFinder.WebApp.Mapping
 
 
             CreateMap<WorkerReadDto, WorkerDetailsVM>();
+
+
+            CreateMap<ChangePasswordDto, ChangePasswordVM>();
+            CreateMap<ChangePasswordVM, ChangePasswordDto>();
             
 
 

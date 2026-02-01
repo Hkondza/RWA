@@ -24,6 +24,9 @@ builder.Services.AddDbContext<JobFinderContext>(options =>
 
 
 
+builder.Services.AddScoped<ILogRepository,LogRepository>();
+builder.Services.AddScoped<ILogService, LogService>();
+
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IJobTypeRepository, JobTypeRepository>();
 

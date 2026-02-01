@@ -14,6 +14,7 @@ else
                 <th style="text-align:left;">Naziv</th>
                 <th>Lokacija</th>
                 <th>Tip</th>
+                <th>Action</th>
                 <th>Active</th>
                 <th></th>
             </tr>
@@ -25,13 +26,28 @@ else
                 <td>@job.Title</td>
                 <td>@job.LocationName</td>
                 <td>@job.JobName</td>
+                   
                 @if (job.IsActive)
                     {
+
+                        <td class="text-center">
+                            <form asp-action="EndOffer"
+                                  method="post"
+                                  class="d-inline">
+                                <input type="hidden" name="id" value="@job.IDJobOffer" />
+                                <button class="btn btn-success btn-sm">
+                                    End Offer
+                                </button>
+                            </form>
+                        </td>
+
                         <td>Active</td>
                     }
                     else
                     {
+                        <td>Nothing</td>
                         <td>Not Active</td>
+                        
                     }
 
 
