@@ -3,12 +3,120 @@
   "WorkspaceRootPath": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\services\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\services\\workerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\userfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\userfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\jobtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\jobtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\iuserfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\iuserfirmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\ilocationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\ilocationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\ijobofferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\ijobofferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\ijobtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\ijobtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\mapping\\jobfinderprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\mapping\\jobfinderprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\dtos\\firm\\firmupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\dtos\\firm\\firmupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\dtos\\firm\\firmreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\dtos\\firm\\firmreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\services\\firmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\services\\firmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\services\\interfaces\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\dtos\\firm\\firmcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\dtos\\firm\\firmcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapi\\controllers\\firmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|solutionrelative:jobfinder.webapi\\controllers\\firmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapi\\controllers\\jobtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|solutionrelative:jobfinder.webapi\\controllers\\jobtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapi\\controllers\\joboffercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|solutionrelative:jobfinder.webapi\\controllers\\joboffercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapi\\controllers\\jobapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4081E265-2DA1-4A04-8762-C14343CAEA93}|JobFinder.WebAPI\\JobFinder.WebAPI.csproj|solutionrelative:jobfinder.webapi\\controllers\\jobapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\admin\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\admin\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\worker\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\worker\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\applicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +137,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\workercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\workercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\mapping\\mappingprofilevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,18 +161,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\joboffercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -101,14 +189,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\ilogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\ilogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\controllers\\admin\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|solutionrelative:jobfinder.webapp\\controllers\\admin\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D1BC623-DBA0-4474-9E91-0EA546B5F270}|JobFinder.WebApp\\JobFinder.WebApp.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\jobfinder.webapp\\views\\joboffer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -153,10 +233,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{403F2426-005A-468D-BF25-B4B5CF572B1B}|DAL\\DAL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\dal\\data\\jobfindercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{403F2426-005A-468D-BF25-B4B5CF572B1B}|DAL\\DAL.csproj|solutionrelative:dal\\data\\jobfindercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|c:\\users\\hrvoje\\documents\\github\\rwa\\jobfinder 2.0\\jobfinder 2.0\\bll\\repositories\\interfaces\\ijobofferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{850E627C-B466-485A-9CD0-BDD1C6B65549}|BLL\\BLL.csproj|solutionrelative:bll\\repositories\\interfaces\\ijobofferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -166,7 +242,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -174,7 +250,322 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T17:19:31.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JobTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\JobTypeRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\JobTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\JobTypeRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\JobTypeRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:06:29.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserFirmRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\UserFirmRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\UserFirmRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\UserFirmRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\UserFirmRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:06:33.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAawJ8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:10:05.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IJobTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IJobTypeRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\IJobTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IJobTypeRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\IJobTypeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:05:58.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorkerService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\WorkerService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\WorkerService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\WorkerService.cs",
+              "RelativeToolTip": "BLL\\Services\\WorkerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:17:21.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\UserService.cs",
+              "RelativeToolTip": "BLL\\Services\\UserService.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAkwHcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:37:38.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T14:58:28.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Program.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Program.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:27:57.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ILocationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\ILocationRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\ILocationRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\ILocationRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\ILocationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:06:00.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:06:13.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserFirmRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IUserFirmRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\IUserFirmRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IUserFirmRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\IUserFirmRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T17:06:14.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JobFinderProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Mapping\\JobFinderProfile.cs",
+              "RelativeDocumentMoniker": "BLL\\Mapping\\JobFinderProfile.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Mapping\\JobFinderProfile.cs",
+              "RelativeToolTip": "BLL\\Mapping\\JobFinderProfile.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:42:17.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FirmService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\FirmService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\FirmService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\FirmService.cs",
+              "RelativeToolTip": "BLL\\Services\\FirmService.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:38:59.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FirmCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\DTOs\\Firm\\FirmCreateDto.cs",
+              "RelativeDocumentMoniker": "BLL\\DTOs\\Firm\\FirmCreateDto.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\DTOs\\Firm\\FirmCreateDto.cs",
+              "RelativeToolTip": "BLL\\DTOs\\Firm\\FirmCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:38:32.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FirmUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\DTOs\\Firm\\FirmUpdateDto.cs",
+              "RelativeDocumentMoniker": "BLL\\DTOs\\Firm\\FirmUpdateDto.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\DTOs\\Firm\\FirmUpdateDto.cs",
+              "RelativeToolTip": "BLL\\DTOs\\Firm\\FirmUpdateDto.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA3wBEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:38:14.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FirmReadDto.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\DTOs\\Firm\\FirmReadDto.cs",
+              "RelativeDocumentMoniker": "BLL\\DTOs\\Firm\\FirmReadDto.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\DTOs\\Firm\\FirmReadDto.cs",
+              "RelativeToolTip": "BLL\\DTOs\\Firm\\FirmReadDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:36:32.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IJobOfferRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T13:37:00.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IProfileService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\Interfaces\\IProfileService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IProfileService.cs",
+              "RelativeToolTip": "BLL\\Services\\Interfaces\\IProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:41:06.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "JobApplicationController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\JobApplicationController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\JobApplicationController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\JobApplicationController.cs",
+              "RelativeToolTip": "JobFinder.WebAPI\\Controllers\\JobApplicationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:34:36.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "JobTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\JobTypeController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\JobTypeController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\JobTypeController.cs",
+              "RelativeToolTip": "JobFinder.WebAPI\\Controllers\\JobTypeController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:34:16.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FirmController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\FirmController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\FirmController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\FirmController.cs",
+              "RelativeToolTip": "JobFinder.WebAPI\\Controllers\\FirmController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAA7wEoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:28:00.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwD0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:37:03.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Log\\index.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Log\\index.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Log\\index.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Log\\index.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T14:22:33.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T15:03:12.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "JobOfferController.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\JobOfferController.cs",
               "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\JobOfferController.cs",
@@ -182,350 +573,35 @@
               "RelativeToolTip": "JobFinder.WebAPI\\Controllers\\JobOfferController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:23:28.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T15:23:28.845Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WorkerController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\WorkerController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\WorkerController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\WorkerController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\WorkerController.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:22:49.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAkwD0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:37:03.369Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Log\\index.cshtml",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Log\\index.cshtml",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Log\\index.cshtml",
-              "RelativeToolTip": "JobFinder.WebApp\\Views\\Log\\index.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAABoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-01T14:22:33.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserFirmAdminVM.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADgvwwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:19:50.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "JobOfferDetailsVM.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAvwAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:19:16.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JobOfferCreateVM.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAEwAgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:19:08.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ApplicationController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\ApplicationController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ApplicationController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\ApplicationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:37:01.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
-              "RelativeToolTip": "JobFinder.WebApp\\Views\\Profile\\Index.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-01T15:03:12.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MappingProfileVM.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAkwFUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:19:58.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\BaseController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:37:01.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:08:16.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "_Navbar.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
-              "RelativeToolTip": "JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-01T14:26:12.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "IJobApplicationService.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IJobApplicationService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\Interfaces\\IJobApplicationService.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IJobApplicationService.cs",
-              "RelativeToolTip": "BLL\\Services\\Interfaces\\IJobApplicationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:36:29.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FirmController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\FirmController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\FirmController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\FirmController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\FirmController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:10:54.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "JobApplicationService.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobApplicationService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\JobApplicationService.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobApplicationService.cs",
-              "RelativeToolTip": "BLL\\Services\\JobApplicationService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:36:33.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
-              "RelativeToolTip": "JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
+              "DocumentIndex": 27,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-01T15:03:03.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\UserService.cs",
-              "RelativeToolTip": "BLL\\Services\\UserService.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAawGwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:37:38.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "JobFinder.WebApp\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-01T14:58:28.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:10:05.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "LogController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
-              "RelativeToolTip": "JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:36:19.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Program.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Program.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:27:57.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "JobOfferController.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\JobOfferController.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\JobOfferController.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\JobOfferController.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\JobOfferController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCYAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:36:04.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "LogVM.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
-              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
-              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:19:44.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "LogService.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\LogService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\LogService.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\LogService.cs",
-              "RelativeToolTip": "BLL\\Services\\LogService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:57:03.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "JobOfferServices.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobOfferServices.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\JobOfferServices.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobOfferServices.cs",
-              "RelativeToolTip": "BLL\\Services\\JobOfferServices.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAkwIEAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:52:34.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ILogRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\ILogRepository.cs",
-              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\ILogRepository.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\ILogRepository.cs",
-              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\ILogRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:38:34.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T16:12:33.836Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Worker\\Index.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Worker\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Worker\\Index.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Worker\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T16:12:40.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "LogController.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\Admin\\LogController.cs",
               "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\Admin\\LogController.cs",
@@ -533,12 +609,239 @@
               "RelativeToolTip": "JobFinder.WebApp\\Controllers\\Admin\\LogController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAwBsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:10:21.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T14:10:21.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
+              "Title": "UserFirmAdminVM.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\Admin\\UserFirmAdminVM.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADgvwwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:19:50.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "WorkerController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\WorkerController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\WorkerController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\WorkerController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\WorkerController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:22:49.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "JobOfferDetailsVM.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferDetailsVM.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAvwAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:19:16.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "JobOfferCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferCreateVM.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAEwAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:19:08.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ApplicationController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ApplicationController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\ApplicationController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\ApplicationController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\ApplicationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:37:01.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "MappingProfileVM.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Mapping\\MappingProfileVM.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAkwFUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:19:58.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:37:01.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:08:16.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "_Navbar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Shared\\_Navbar.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAACUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T14:26:12.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IJobApplicationService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IJobApplicationService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\Interfaces\\IJobApplicationService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IJobApplicationService.cs",
+              "RelativeToolTip": "BLL\\Services\\Interfaces\\IJobApplicationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:36:29.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "FirmController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\FirmController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\FirmController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\FirmController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\FirmController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:10:54.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "JobApplicationService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobApplicationService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\JobApplicationService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobApplicationService.cs",
+              "RelativeToolTip": "BLL\\Services\\JobApplicationService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:36:33.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "JobFinder.WebApp\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-01T15:03:03.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "LogController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
+              "RelativeToolTip": "JobFinder.WebAPI\\Controllers\\Admin\\LogController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:36:19.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "JobOfferController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\JobOfferController.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\Controllers\\JobOfferController.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Controllers\\JobOfferController.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\Controllers\\JobOfferController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCYAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T13:36:04.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "LogVM.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
+              "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
+              "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\Admin\\LogVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T14:19:44.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "LogService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\LogService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\LogService.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\LogService.cs",
+              "RelativeToolTip": "BLL\\Services\\LogService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T13:57:03.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "JobOfferServices.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobOfferServices.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\JobOfferServices.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\JobOfferServices.cs",
+              "RelativeToolTip": "BLL\\Services\\JobOfferServices.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAkwIEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T13:52:34.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "ILogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\ILogRepository.cs",
+              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\ILogRepository.cs",
+              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\ILogRepository.cs",
+              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\ILogRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T13:38:34.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\Views\\JobOffer\\Index.cshtml",
               "RelativeDocumentMoniker": "JobFinder.WebApp\\Views\\JobOffer\\Index.cshtml",
@@ -546,12 +849,11 @@
               "RelativeToolTip": "JobFinder.WebApp\\Views\\JobOffer\\Index.cshtml",
               "ViewState": "AgIAACAAAAAAAAAAAAAmwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-01T13:35:59.21Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:35:59.21Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 49,
               "Title": "JobOfferListVM.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferListVM.cs",
               "RelativeDocumentMoniker": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferListVM.cs",
@@ -559,12 +861,11 @@
               "RelativeToolTip": "JobFinder.WebApp\\ViewModels\\JobOffer\\JobOfferListVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:19:12.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T14:19:12.657Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 51,
               "Title": "ILogService.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\ILogService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\Interfaces\\ILogService.cs",
@@ -572,12 +873,11 @@
               "RelativeToolTip": "BLL\\Services\\Interfaces\\ILogService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:56:17.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:56:17.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 50,
               "Title": "LogRepository.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\LogRepository.cs",
               "RelativeDocumentMoniker": "BLL\\Repositories\\LogRepository.cs",
@@ -585,12 +885,11 @@
               "RelativeToolTip": "BLL\\Repositories\\LogRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:39:55.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:39:55.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 52,
               "Title": "IJobOfferService.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Services\\Interfaces\\IJobOfferService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\Interfaces\\IJobOfferService.cs",
@@ -598,12 +897,11 @@
               "RelativeToolTip": "BLL\\Services\\Interfaces\\IJobOfferService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:07:04.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T14:07:04.787Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 53,
               "Title": "LocationController.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\JobFinder.WebAPI\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "JobFinder.WebAPI\\Controllers\\LocationController.cs",
@@ -616,7 +914,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 55,
               "Title": "LocationRepository.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\LocationRepository.cs",
               "RelativeDocumentMoniker": "BLL\\Repositories\\LocationRepository.cs",
@@ -624,12 +922,11 @@
               "RelativeToolTip": "BLL\\Repositories\\LocationRepository.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:43:09.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:43:09.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 56,
               "Title": "IWorkerRepository.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IWorkerRepository.cs",
               "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\IWorkerRepository.cs",
@@ -637,12 +934,11 @@
               "RelativeToolTip": "BLL\\Repositories\\Interfaces\\IWorkerRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:40:11.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:40:11.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 54,
               "Title": "JobOfferRepository.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\JobOfferRepository.cs",
               "RelativeDocumentMoniker": "BLL\\Repositories\\JobOfferRepository.cs",
@@ -650,12 +946,11 @@
               "RelativeToolTip": "BLL\\Repositories\\JobOfferRepository.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAA3wDgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:37:07.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:37:07.889Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 57,
               "Title": "JobFinderContext.cs",
               "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\DAL\\Data\\JobFinderContext.cs",
               "RelativeDocumentMoniker": "DAL\\Data\\JobFinderContext.cs",
@@ -663,21 +958,7 @@
               "RelativeToolTip": "DAL\\Data\\JobFinderContext.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAowCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:44:21.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "IJobOfferRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
-              "RelativeDocumentMoniker": "BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
-              "ToolTip": "C:\\Users\\Hrvoje\\Documents\\GitHub\\RWA\\JobFinder 2.0\\JobFinder 2.0\\BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
-              "RelativeToolTip": "BLL\\Repositories\\Interfaces\\IJobOfferRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T13:37:00.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-01T13:44:21.055Z"
             }
           ]
         }

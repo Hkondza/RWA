@@ -221,7 +221,27 @@ INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Pho
 VALUES
 (N'admin', N'admin@jobfinder.hr', N'100000.RA+93eJs6g8XEtD4nlSkiQ==.lzXfVtUl3cHdtQ9BUiDo44Ql4ZO2myf60B5YCrR6Ui4=', N'Admin', N'Hrvoje', N'Kondza', N'0994362136');
 
+IF NOT EXISTS (SELECT 1 FROM Users WHERE Username = N'Rob')
+INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Phone)
+VALUES
+(N'Rob', N'rob@jobfinder.hr', N'100000.RA+93eJs6g8XEtD4nlSkiQ==.lzXfVtUl3cHdtQ9BUiDo44Ql4ZO2myf60B5YCrR6Ui4=', N'Employee', N'Mirko', N'Prezime', N'0994362130');
 
+IF NOT EXISTS (SELECT 1 FROM Users WHERE Username = N'Rob2')
+INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Phone)
+VALUES
+(N'Rob2', N'rob2@jobfinder.hr', N'100000.RA+93eJs6g8XEtD4nlSkiQ==.lzXfVtUl3cHdtQ9BUiDo44Ql4ZO2myf60B5YCrR6Ui4=', N'Employee', N'Kik', N'Lop', N'0994362135');
+
+
+IF NOT EXISTS (SELECT 1 FROM Users WHERE Username = N'MrGreen')
+INSERT INTO Users (Username, Email, PasswordHash, Role, FirstName, LastName, Phone)
+VALUES
+(N'MrGreen', N'mr@jobfinder.hr', N'100000.RA+93eJs6g8XEtD4nlSkiQ==.lzXfVtUl3cHdtQ9BUiDo44Ql4ZO2myf60B5YCrR6Ui4=', N'Employer', N'Petar', N'Zeleni', N'0994362125');
+
+
+
+
+
+-- Lozinka: 1234
 ------------------------------------------------------
 -- DEFAULT PODACI: Firm
 ------------------------------------------------------

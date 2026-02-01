@@ -44,6 +44,11 @@
             </select>
         </div>
 
+        @if (Model?.ErrorMessage != null)
+        {
+            <p style="color:red">@Model.ErrorMessage</p>
+        }
+
         <button type="submit">Registriraj se</button>
     </form>
 

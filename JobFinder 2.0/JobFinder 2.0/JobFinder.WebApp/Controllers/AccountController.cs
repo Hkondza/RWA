@@ -36,10 +36,10 @@ namespace JobFinder.WebApp.Controllers
         public async Task<IActionResult> Login(LoginVM vm)
         {
 
-            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-            {
-                Console.WriteLine(error.ErrorMessage);
-            }
+            //foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            //{
+            //    Console.WriteLine(error.ErrorMessage);
+            //}
 
 
             if (!ModelState.IsValid)
@@ -47,13 +47,22 @@ namespace JobFinder.WebApp.Controllers
 
 
             var converter = _mapper.Map<UserLoginDto>(vm);
-            var loginResponse = await _userService.LoginAsync(converter);
 
-            if (loginResponse.User == null)
+
+            try
+            {
+              await _userService.LoginAsync(converter);
+            }
+            catch (Exception)
             {
                 vm.ErrorMessage = "Neispravni podaci za prijavu.";
                 return View(vm);
+                
             }
+
+            var loginResponse = await _userService.LoginAsync(converter);
+
+        
 
             // JWT (HttpOnly)
             Response.Cookies.Append(
@@ -133,15 +142,22 @@ namespace JobFinder.WebApp.Controllers
             if (!ModelState.IsValid)
                 return View(vm);
 
-
             var converter = _mapper.Map<UserRegisterDto>(vm);
+
+            try
+            {
+                await _userService.RegisterAsync(converter);
+            }
+            catch (Exception)
+            {
+                vm.ErrorMessage = "Mail vec Postoji.";
+                return View(vm);
+
+            }
+
             var register = await _userService.RegisterAsync(converter);
 
-            if (register == null)
-            {
-                vm.ErrorMessage = "Registracija nije uspjela. Provjerite podatke.";
-                return View(vm);
-            }
+    
 
             // nakon uspješne registracije → login
             return RedirectToAction(nameof(Login));

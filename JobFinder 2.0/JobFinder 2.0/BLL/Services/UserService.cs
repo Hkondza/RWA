@@ -107,6 +107,8 @@ namespace BLL.Services
         public async Task<LoginResponseDto> LoginAsync(UserLoginDto dto)
         {
             var user = await _repo.GetByEmailAsync(dto.Email);
+
+
             if (user == null)
             {
                 await LogHelper.WriteAsync(

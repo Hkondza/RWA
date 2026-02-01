@@ -1241,29 +1241,39 @@
       },
       "FirmUpdateDto": {
         "required": [
-          "firmName",
+          "idFirm",
           "jobTypeID"
         ],
         "type": "object",
         "properties": {
-          "firmName": {
+          "idFirm": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string"
           },
+          "jobTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firmName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "email": {
             "type": "string",
-            "format": "email",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
             "nullable": true
           },
           "websiteUrl": {
             "type": "string",
-            "format": "uri",
             "nullable": true
-          },
-          "jobTypeID": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false

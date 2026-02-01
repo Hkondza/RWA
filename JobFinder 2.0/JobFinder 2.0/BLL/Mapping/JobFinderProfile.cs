@@ -46,6 +46,11 @@ namespace BLL.Mapping
             CreateMap<UserRegisterDto, User>();
             CreateMap<User, UserReadDto>();
             CreateMap<Firm,FirmReadDto>();
+            CreateMap<Firm,FirmUpdateDto>()
+                .ForMember(d => d.IDFirm, o => o.MapFrom(s => s.Idfirm));
+            CreateMap<FirmUpdateDto, Firm>()
+               .ForMember(d => d.Idfirm, o => o.MapFrom(s => s.IDFirm));
+
             CreateMap<FirmCreateDto, Firm>();
 
             CreateMap<WorkerCreateDto, Worker>();
